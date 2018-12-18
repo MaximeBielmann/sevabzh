@@ -1,7 +1,6 @@
 class SneakersController < ApplicationController
   def index
-    # @sneakers = Sneaker.all.page(1).per(10)
-    @sneakers = Sneaker.pluck(:id, :sneakers_ref, :brand, :title, :img_url)
+    # @sneakers = Sneaker.all
   end
   
   def create
