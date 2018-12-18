@@ -13,20 +13,21 @@
             <h3>Ajouter une sneaker</h3>
             <%= form_tag "/sneakers", method: "post" do %>
                 <ul class="list-group">
-                  <li class="list-item"><input type="text" label="" placeholder="sneakers_ref" name="sneakers_ref" /></li>
-                  <li class="list-item"><input type="text" placeholder="brand" name="brand" /></li>
-                  <li class="list-item"><input type="text" placeholder="model"  name="title" /></li>
-                  <li class="list-item"><input type="text" placeholder="color"  name="color" /></li>
-                  <li class="list-item"><input type="text" placeholder="img_url"  name="img_url" /></li>
-                  <li class="list-item"><input type="text" placeholder="seller"  name="seller" /></li>
-                  <li class="list-item"><input type="text" placeholder="size"  name="size" /></li>
-                  <li class="list-item"><input type="text" placeholder="offer link"  name="offer_link" /></li>
-                  <li class="list-item"><input type="text" placeholder="price"  name="price" /></li>
-                  <li class="list-item"><input type="text" placeholder="shipping_cost"  name="shipping_cost" /></li>
-                  <li class="list-item"><input type="text" placeholder="shipping_time" name="shipping_time" /></li>
+                  <li class="list-item">Sneakers_ref : <input type="text" label="sneakers_ref" placeholder="sneakers_ref" name="sneakers_ref" /></li>
+                  <li class="list-item">Marque : <input type="text" placeholder="brand" name="brand" /></li>
+                  <li class="list-item">Modèle : <input type="text" placeholder="model"  name="title" /></li>
+                  <li class="list-item">Couleur : <input type="text" placeholder="color"  name="color" /></li>
+                  <li class="list-item">URL de l'image : <input type="text" placeholder="img_url"  name="img_url" /></li>
+                  <li class="list-item">Vendeur : <input type="text" placeholder="seller"  name="seller" /></li>
+                  <li class="list-item">Taille : <input type="text" placeholder="size"  name="size" /></li>
+                  <li class="list-item">Lien vers l'offre : <input type="text" placeholder="offer link"  name="offer_link" /></li>
+                  <li class="list-item">Prix : <input type="text" placeholder="price"  name="price" /></li>
+                  <li class="list-item">Coût d'envoi : <input type="text" placeholder="shipping_cost"  name="shipping_cost" /></li>
+                  <li class="list-item">Délai d'expédition : <input type="text" placeholder="shipping_time" name="shipping_time" /></li>
                   <li class="list-item"><input type="submit" value="Ajouter la sneaker" /></li>
                 </ul>
             <% end %>
+            
         </div>
     </div>
 </div>

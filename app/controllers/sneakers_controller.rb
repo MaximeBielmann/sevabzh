@@ -1,6 +1,7 @@
 class SneakersController < ApplicationController
   def index
-    @sneakers = Sneaker.all.select('sneakers_ref, brand, title, color, img_url').distinct('sneakers_ref').page(1).per(10)
+    # @sneakers = Sneaker.all.page(1).per(10)
+    @sneakers = Sneaker.select('DISTINCT ON (sneakers_ref) *')
   end
   
   def create
@@ -10,7 +11,7 @@ class SneakersController < ApplicationController
   
   def show
     @sneakers = Sneaker.find(params[:id])
-    @sellers = Sneaker.where(params[:sneakers_ref])
+    @sellers = Sneaker.where("sneakers_ref = ?", params[:sneakers_ref])
   end
   
   def update
@@ -27,7 +28,7 @@ class SneakersController < ApplicationController
     @sneakers.shipping_cost = params[:shipping_cost]
     @sneakers.shipping_time = params[:shipping_time]
     @sneakers.save
-    redirect_to "/sneakers/#{params[:id]}"
+    redirect_to "/sneakers/#{params[:id]}/#{params[:sneakers_ref]}"
   end
   
   def destroy

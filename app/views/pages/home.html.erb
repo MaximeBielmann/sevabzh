@@ -8,7 +8,7 @@
     <div class="row">
         <% @sneakers.each do |sneaker| %>
             <div class="col-md-3">
-                <p class="text-center"><a href="/sneakers/<%= sneaker.id %>">
+                <p class="text-center"><a href="/sneakers/<%= sneaker.id %>/<%= sneaker.sneakers_ref %>">
                     <%= image_tag (sneaker.img_url), class: 'img-fluid' %>
                     <%= sneaker.brand %> - 
                     <%= sneaker.title %> - 

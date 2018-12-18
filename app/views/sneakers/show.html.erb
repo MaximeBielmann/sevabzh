@@ -22,7 +22,7 @@
 <h1>Modifier la sneaker</h1>
 
 <div class="row">
-    <%= form_tag "/sneakers/#{@sneakers.id}", method: "patch" do %>
+    <%= form_tag "/sneakers/#{@sneakers.id}/#{@sneakers.sneakers_ref}", method: "patch" do %>
   <p><input type="text" value="<%= @sneakers.sneakers_ref %>" name="sneakers_ref" /></p> 
   <p><input type="text" value="<%= @sneakers.brand %>" name="brand" /></p>
   <p><input type="text" value="<%= @sneakers.title %>"  name="title" /></p>
@@ -39,7 +39,7 @@
 </div>
 
 <div class="row">
-<%= form_tag "/sneakers/#{@sneakers.id}", method: "delete" do %>
+<%= form_tag "/sneakers/#{@sneakers.id}/#{@sneakers.sneakers_ref}", method: "delete" do %>
   <input type="submit" value="Supprimer la sneaker" />
 <% end %>
 </div>
