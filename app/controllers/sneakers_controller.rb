@@ -1,7 +1,7 @@
 class SneakersController < ApplicationController
   def index
-    @sneakers = Sneaker.all.page(1).per(10)
-    # @sneakers = Sneaker.select('DISTINCT ON (sneakers_ref) *')
+    # @sneakers = Sneaker.all.page(1).per(10)
+    @sneakers = Sneaker.pluck(:id, :sneakers_ref, :brand, :title, :img_url)
   end
   
   def create
