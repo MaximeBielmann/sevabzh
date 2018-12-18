@@ -20,18 +20,18 @@
 <h1>Modifier la sneaker</h1>
 
 <div class="row">
-    <%= form_tag "/sneakers", method: "patch" do %>
-  <p><input type="text" placeholder="sneakersref" name="sneakers_ref" /></p>
-  <p><input type="text" placeholder="brand" name="brand" /></p>
-  <p><input type="text" placeholder="model"  name="title" /></p>
-  <p><input type="text" placeholder="color"  name="color" /></p>
-  <p><input type="text" placeholder="img_url"  name="img_url" /></p>
-  <p><input type="text" placeholder="seller"  name="seller" /></p>
-  <p><input type="text" placeholder="size"  name="size" /></p>
-  <p><input type="text" placeholder="offer_link"  name="offer_link" /></p>
-  <p><input type="text" placeholder="price"  name="price" /></p>
-  <p><input type="text" placeholder="shipping_cost"  name="shipping_cost" /></p>
-  <p><input type="text" placeholder="shipping_time" name="shipping_time" /></p>
+    <%= form_tag "/sneakers/#{@sneakers.id}", method: "patch" do %>
+  <p><input type="text" value="<%= @sneakers.sneakers_ref %>" name="sneakers_ref" /></p> 
+  <p><input type="text" value="<%= @sneakers.brand %>" name="brand" /></p>
+  <p><input type="text" value="<%= @sneakers.title %>"  name="title" /></p>
+  <p><input type="text" value="<%= @sneakers.color %>"  name="color" /></p>
+  <p><input type="text" value="<%= @sneakers.img_url %>"  name="img_url" /></p>
+  <p><input type="text" value="<%= @sneakers.seller %>"  name="seller" /></p>
+  <p><input type="text" value="<%= @sneakers.size %>"  name="size" /></p>
+  <p><input type="text" value="<%= @sneakers.offer_link %>"  name="offer_link" /></p>
+  <p><input type="text" value="<%= @sneakers.price %>"  name="price" /></p>
+  <p><input type="text" value="<%= @sneakers.shipping_cost %>"  name="shipping_cost" /></p>
+  <p><input type="text" value="<%= @sneakers.shipping_time %>" name="shipping_time" /></p>
   <p><input type="submit" value="Mettre à jour la sneaker" /></p>
 <% end %>
 
