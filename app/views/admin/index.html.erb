@@ -1,1 +1,33 @@
-<h1>ICI C'EST L'ADMIN</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>ICI C'EST L'ADMIN</h1>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Ajouter une sneaker</h3>
+            <%= form_tag "/sneakers", method: "post" do %>
+                <ul class="list-group">
+                  <li class="list-item"><input type="text" label="" placeholder="sneakers_ref" name="sneakers_ref" /></li>
+                  <li class="list-item"><input type="text" placeholder="brand" name="brand" /></li>
+                  <li class="list-item"><input type="text" placeholder="model"  name="title" /></li>
+                  <li class="list-item"><input type="text" placeholder="color"  name="color" /></li>
+                  <li class="list-item"><input type="text" placeholder="img_url"  name="img_url" /></li>
+                  <li class="list-item"><input type="text" placeholder="seller"  name="seller" /></li>
+                  <li class="list-item"><input type="text" placeholder="size"  name="size" /></li>
+                  <li class="list-item"><input type="text" placeholder="offer link"  name="offer_link" /></li>
+                  <li class="list-item"><input type="text" placeholder="price"  name="price" /></li>
+                  <li class="list-item"><input type="text" placeholder="shipping_cost"  name="shipping_cost" /></li>
+                  <li class="list-item"><input type="text" placeholder="shipping_time" name="shipping_time" /></li>
+                  <li class="list-item"><input type="submit" value="Ajouter la sneaker" /></li>
+                </ul>
+            <% end %>
+        </div>
+    </div>
+</div>
+

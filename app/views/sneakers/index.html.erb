@@ -13,18 +13,4 @@
             
 <%= paginate @sneakers %>
 
-<h3>Ajouter une sneaker</h3>
-<%= form_tag "/sneakers", method: "post" do %>
-  <p><input type="text" placeholder="sneakersref" name="sneakers_ref" /></p>
-  <p><input type="text" placeholder="brand" name="brand" /></p>
-  <p><input type="text" placeholder="model"  name="title" /></p>
-  <p><input type="text" placeholder="color"  name="color" /></p>
-  <p><input type="text" placeholder="img_url"  name="img_url" /></p>
-  <p><input type="text" placeholder="seller"  name="seller" /></p>
-  <p><input type="text" placeholder="size"  name="size" /></p>
-  <p><input type="text" placeholder="offer link"  name="offer_link" /></p>
-  <p><input type="text" placeholder="price"  name="price" /></p>
-  <p><input type="text" placeholder="shipping_cost"  name="shipping_cost" /></p>
-  <p><input type="text" placeholder="shipping_time" name="shipping_time" /></p>
-  <p><input type="submit" value="Ajouter le stock" /></p>
-<% end %>
+
