@@ -1,6 +1,6 @@
 class SneakersController < ApplicationController
   def index
-    @sneakers = Sneaker.all.distinct(:sneakers_ref).page(1).per(10)
+    @sneakers = Sneaker.all.select('sneakers_ref, brand, title, color, img_url').distinct('sneakers_ref').page(1).per(10)
   end
   
   def create
@@ -10,6 +10,7 @@ class SneakersController < ApplicationController
   
   def show
     @sneakers = Sneaker.find(params[:id])
+    @sellers = Sneaker.where(params[:sneakers_ref])
   end
   
   def update

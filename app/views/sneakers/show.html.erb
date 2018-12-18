@@ -10,7 +10,9 @@
     </div>
     <div class="col-lg-4">
       <h1>SHOPS</h1>
-      <h3><%= @sneakers.seller %></h3>
+      <% @sellers.each do |seller| %>
+      <h3><a href="<%= seller.offer_link  %>" ><%= seller.seller %> / Prix : <%= seller.price %> / Frais livraison (euros) : <%= seller.shipping_cost %> / Délai livraison (jours) : <%= seller.shipping_time %></a></h3>
+      <% end %>
     </div>
   </div>
 </div>    
@@ -34,7 +36,6 @@
   <p><input type="text" value="<%= @sneakers.shipping_time %>" name="shipping_time" /></p>
   <p><input type="submit" value="Mettre à jour la sneaker" /></p>
 <% end %>
-
 </div>
 
 <div class="row">
