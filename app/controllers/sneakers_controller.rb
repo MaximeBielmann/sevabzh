@@ -1,6 +1,10 @@
 class SneakersController < ApplicationController
   def index
-    @sneakers = Sneaker.all
+    # @sneakers = Sneaker.all
+    # @sneakers = Sneaker.pluck(:id, :sneakers_ref, :brand, :title, :img_url)
+    # @sneakers = Sneaker.select('DISTINCT ON (sneakers_ref) *')
+    # @sneakers = Sneaker.select(:sneakers_ref, :brand, :title, :img_url, :color).distinct
+    @sneakers = Sneaker.where(sneakers_ref: Sneaker.pluck(:sneakers_ref))
   end
   
   def create

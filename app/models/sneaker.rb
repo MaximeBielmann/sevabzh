@@ -11,4 +11,5 @@ class Sneaker < ApplicationRecord
  validates :shipping_cost, presence: true
  validates :shipping_time, presence: true
  
+ 
 end
