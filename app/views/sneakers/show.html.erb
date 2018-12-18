@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <%= image_tag @sneakers.img_url, class:'img-fluid' %>
+    </div>
+    <div class="col-lg-4">
+      <h1><%= @sneakers.brand %></h1>
+      <h3><%= @sneakers.title %></h3>
+      <h5><%= @sneakers.color %></h5>
+    </div>
+    <div class="col-lg-4">
+      <h1>SHOPS</h1>
+      <h1><%= @sneakers.seller %></h1>
+    </div>
+  </div>
+</div>    
+    						
+									
+								
+    
+    
+    <p><%= @sneakers.sneakers_ref %>
+    <%= @sneakers.brand %>
+    <%= @sneakers.title %>
+    <%= @sneakers.color %>
+    <%= @sneakers.img_url %></p>
+    
+    <%= form_tag "/sneakers", method: "patch" do %>
+  <p><input type="text" placeholder="sneakersref" name="sneakers_ref" /></p>
+  <p><input type="text" placeholder="brand" name="brand" /></p>
+  <p><input type="text" placeholder="model"  name="title" /></p>
+  <p><input type="text" placeholder="color"  name="color" /></p>
+  <p><input type="text" placeholder="img_url"  name="img_url" /></p>
+  <p><input type="text" placeholder="seller"  name="seller" /></p>
+  <p><input type="text" placeholder="size"  name="size" /></p>
+  <p><input type="text" placeholder="offer_link"  name="offer_link" /></p>
+  <p><input type="text" placeholder="price"  name="price" /></p>
+  <p><input type="text" placeholder="shipping_cost"  name="shipping_cost" /></p>
+  <p><input type="text" placeholder="shipping_time" name="shipping_time" /></p>
+  <p><input type="submit" value="Mettre à jour la sneaker" /></p>
+<% end %>
+
+<%= form_tag "/sneakers/#{@sneakers.id}", method: "delete" do %>
+  <input type="submit" value="Supprimer la sneaker" />
+<% end %>
+
+<p><a href="/sneakers">Retourner à l’index</a></p>
