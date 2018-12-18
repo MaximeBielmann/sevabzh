@@ -1,13 +1,25 @@
-<h1>Les sneakers</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="text-center">Les sneakers</h1>
+        </div>
+    </div>
+    
+    <div class="row">
+        <% @sneakers.each do |sneaker| %>
+            <div class="col-md-6">
+                <p class="text-center"><a href="/sneakers/<%= sneaker.id %>">
+                    <%= image_tag (sneaker.img_url), class: 'img-fluid' %>
+                    <%= sneaker.brand %> - 
+                    <%= sneaker.title %> - 
+                    <%= sneaker.color %> - 
+                    <%= sneaker.sneakers_ref %>
+                </a></p>
+            </div>
+        <% end %>
+    </div>
+</div>
 
-<% @sneakers.each do |sneaker| %>
- <p><a href="/sneakers/<%= sneaker.id %>">
-    <%= sneaker.id %>
-    <%= sneaker.sneakers_ref %>
-    <%= sneaker.brand %>
-    <%= sneaker.title %>
-    <%= sneaker.color %></a></p>
-<% end %>
 
 
             

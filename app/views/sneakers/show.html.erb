@@ -10,21 +10,16 @@
     </div>
     <div class="col-lg-4">
       <h1>SHOPS</h1>
-      <h1><%= @sneakers.seller %></h1>
+      <h3><%= @sneakers.seller %></h3>
     </div>
   </div>
 </div>    
-    						
-									
-								
-    
-    
-    <p><%= @sneakers.sneakers_ref %>
-    <%= @sneakers.brand %>
-    <%= @sneakers.title %>
-    <%= @sneakers.color %>
-    <%= @sneakers.img_url %></p>
-    
+
+<div class="container">    
+
+<h1>Modifier la sneaker</h1>
+
+<div class="row">
     <%= form_tag "/sneakers", method: "patch" do %>
   <p><input type="text" placeholder="sneakersref" name="sneakers_ref" /></p>
   <p><input type="text" placeholder="brand" name="brand" /></p>
@@ -40,8 +35,16 @@
   <p><input type="submit" value="Mettre à jour la sneaker" /></p>
 <% end %>
 
+</div>
+
+<div class="row">
 <%= form_tag "/sneakers/#{@sneakers.id}", method: "delete" do %>
   <input type="submit" value="Supprimer la sneaker" />
 <% end %>
+</div>
 
+<div class="row">
 <p><a href="/sneakers">Retourner à l’index</a></p>
+</div>
+
+</div>
