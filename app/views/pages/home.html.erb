@@ -6,6 +6,16 @@
     </div>
     
     <div class="row">
+        <% @sneakersref.each do |sneakerref| %>
+            <div class="col-md-3">
+                <p class="text-center">
+                   <%= sneakerref %>
+                </p>
+            </div>
+        <% end %>
+    </div>
+    
+    <div class="row">
         <% @sneakers.each do |sneaker| %>
             <div class="col-md-3">
                 <p class="text-center"><a href="/sneakers/<%= sneaker.sneakers_ref %>">

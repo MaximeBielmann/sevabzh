@@ -1,7 +1,7 @@
 class SneakersController < ApplicationController
   def index
     @sneakers = Sneaker.select(:sneakers_ref, :brand, :title, :img_url, :color).group(:sneakers_ref).having("count(*) > 1")
-    end
+  end
   
   def create
     Sneaker.create sneakers_ref: params[:sneakers_ref], brand: params[:brand], title: params[:title], color: params[:color], size: params[:size], seller: params[:seller], img_url: params[:img_url], offer_link: params[:offer_link], price: params[:price], shipping_cost: params[:shipping_cost], shipping_time: params[:shipping_time]
