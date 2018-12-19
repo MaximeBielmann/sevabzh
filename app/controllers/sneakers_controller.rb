@@ -1,6 +1,6 @@
 class SneakersController < ApplicationController
   def index
-    @sneakers = Sneaker.select(:id,:sneakers_ref, :brand, :title, :img_url, :color).group(:sneakers_ref).having("count(*) > 1").order(:id)
+    @sneakers = Sneaker.select(:sneakers_ref, :brand, :title, :img_url, :color).group(:sneakers_ref).having("count(*) > 1")
     end
   
   def create
@@ -12,12 +12,12 @@ class SneakersController < ApplicationController
     if session[:admin_id]
       @current_admin = Admin.find(session[:admin_id])
     end
-    @sneakers = Sneaker.find(params[:id])
+    @sneakers = Sneaker.find_by sneakers_ref: params[:sneakers_ref]
     @sellers = Sneaker.where("sneakers_ref = ?", params[:sneakers_ref])
   end
   
   def update
-    @sneakers = Sneaker.find(params[:id])
+    @sneakers = Sneaker.find_by sneakers_ref: params[:sneakers_ref]
     @sneakers.sneakers_ref = params[:sneakers_ref] 
     @sneakers.brand = params[:brand]
     @sneakers.title = params[:title]
@@ -34,7 +34,7 @@ class SneakersController < ApplicationController
   end
   
   def destroy
-  Sneaker.find(params[:id]).destroy
+  Sneaker.find_by sneakers_ref: params[:sneakers_ref].destroy
   redirect_to "/sneakers"
   end
 end
