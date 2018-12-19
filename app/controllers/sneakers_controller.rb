@@ -1,6 +1,6 @@
 class SneakersController < ApplicationController
   def index
-    @sneakers = Sneaker.select(:sneakers_ref, :brand, :title, :img_url, :color).group(:sneakers_ref).having("count(*) > 1")
+    @sneakers = Sneaker.select(:sneakers_ref, :brand, :title, :img_url, :color).group(:sneakers_ref, :brand, :title, :img_url, :color).having("count(*) > 1")
     end
   
   def create
@@ -30,7 +30,7 @@ class SneakersController < ApplicationController
     @sneakers.shipping_cost = params[:shipping_cost]
     @sneakers.shipping_time = params[:shipping_time]
     @sneakers.save
-    redirect_to "/sneakers/#{params[:id]}/#{params[:sneakers_ref]}"
+    redirect_to "/sneakers/#{params[:sneakers_ref]}"
   end
   
   def destroy
