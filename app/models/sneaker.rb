@@ -1,4 +1,5 @@
 class Sneaker < ApplicationRecord
+ 
  validates :sneakers_ref, presence: true
  validates :brand, presence: true
  validates :title, presence: true
