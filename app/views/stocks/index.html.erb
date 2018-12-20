@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="text-center">Les stocks</h1>
+        </div>
+    </div>
+    <div class="row">
+        <% @stocks.each do |stock| %>
+            <div class="col-md-12">
+                <p class="text-center"><a href="/sneakers/<%= stock.sneaker_id %>">
+                    <%= Sneaker.find(stock.sneaker_id).sneakers_ref %> - 
+                    <%= Sneaker.find(stock.sneaker_id).brand %> -
+                    <%= Sneaker.find(stock.sneaker_id).title %> -
+                    <%= Sneaker.find(stock.sneaker_id).color %> -
+                    <%= stock.seller %> - 
+                    <%= stock.size %> - 
+                    <%= stock.offer_link %>
+                    <%= stock.price %> - 
+                    <%= stock.shipping_cost %> - 
+                    <%= stock.shipping_time %>
+                </a></p>
+            </div>
+        <% end %>
+    </div>
+</div>

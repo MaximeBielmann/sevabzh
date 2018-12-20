@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   get 'sneakers' => 'sneakers#index'
   post 'sneakers' => 'sneakers#create'
-  get 'sneakers/:sneakers_ref' => 'sneakers#show'
-  patch 'sneakers/:sneakers_ref' => 'sneakers#update'
-  delete 'sneakers/:sneakers_ref' => 'sneakers#destroy'
+  get 'sneakers/:id' => 'sneakers#show'
+  patch 'sneakers/:id' => 'sneakers#update'
+  delete 'sneakers/:id' => 'sneakers#destroy'
+  
+  post 'stocks' => 'stocks#create'
+  get 'stocks' => 'stocks#index'
   
   get 'streetwear' => 'streetwears#index'
   get 'blog' => 'streetwears#index'
