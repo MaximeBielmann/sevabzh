@@ -1,4 +1,9 @@
 class Sneaker < ApplicationRecord
+ filterrific(
+   available_filters: [
+     :search_query,
+   ]
+ )
  
  has_many :stocks
  

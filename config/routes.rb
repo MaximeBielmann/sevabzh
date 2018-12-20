@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'sneakers/:id' => 'sneakers#show'
   patch 'sneakers/:id' => 'sneakers#update'
   delete 'sneakers/:id' => 'sneakers#destroy'
+  post 'sneakers/search' => 'sneakers#search'
   
   post 'stocks' => 'stocks#create'
   get 'stocks' => 'stocks#index'
