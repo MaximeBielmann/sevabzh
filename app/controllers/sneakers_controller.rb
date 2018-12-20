@@ -1,7 +1,6 @@
 class SneakersController < ApplicationController
   def index
-    @sneakers = Sneaker.all
-    
+    # @sneakers = Sneaker.all
     @filterrific = initialize_filterrific(
      Sneaker,
      params[:filterrific]
