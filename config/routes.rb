@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'admin' => 'admin#index'
   get 'admin/login' => 'admin#login'
   post 'admin/login' => 'admin#check'
+  get 'admin/logout' => 'admin#destroy'
   
   root 'pages#home'
 end

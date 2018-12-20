@@ -20,4 +20,9 @@ class AdminController < ApplicationController
     end
   end
   
+  def destroy
+    session[:admin_id] = nil
+    redirect_to "/admin"
+  end
+  
 end
