@@ -1,16 +1,6 @@
 class SneakersController < ApplicationController
   def index
-    # @sneakers = Sneaker.all
-    @filterrific = initialize_filterrific(
-     Sneaker,
-     params[:filterrific]
-   ) or return
-   @sneakers = @filterrific.find.page(params[:page])
-
-   respond_to do |format|
-     format.html
-     format.js
-   end
+    @sneakers = Sneaker.all
   end
   
   def create

@@ -1,25 +1,5 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <%= form_for_filterrific @filterrific do |f| %>
-              <div>
-                Search
-                <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
-                <%= f.text_field(
-                  :search_query,
-                  class: 'filterrific-periodically-observed'
-                ) %>
-              </div>
-              
-            <% end %>
-
-        <%= render(
-          partial: 'sneakers/list',
-          locals: { sneakers: @sneakers }
-        ) %>
-        </div>
-    </div>
-    <div class="row">
         <div class="col-sm-12">
             <h1 class="text-center">Les sneakers</h1>
         </div>
