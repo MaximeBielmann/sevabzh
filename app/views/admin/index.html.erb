@@ -1,4 +1,10 @@
 <% if @current_admin %>
+ <p>Se déconnecter</p>
+<% else %>
+ <p>Se connecter</p>
+<% end %>
+
+<% if @current_admin %>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -6,8 +12,6 @@
         </div>
     </div>
 </div>
-
-
 
 <div class="container">
     <div class="row">
