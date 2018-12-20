@@ -1,5 +1,5 @@
-  <% if @current_admin %>
-    <div class="container">
+<% if @current_admin %>
+<div class="container">
     <div class="row">
         <div class="col-md-12">
             <h1>ICI C'EST L'ADMIN</h1>
@@ -47,8 +47,9 @@
             
         </div>
     </div>
+</div>
     
-    <div class="container">
+<div class="container">
     <div class="row">
         <div class="col-sm-12">
             <h1 class="text-center">Les stocks</h1>
@@ -73,8 +74,8 @@
         <% end %>
     </div>
 </div>
-</div>
-  <% else %>
+
+<% else %>
   <h1>Bienvenue visiteur anonyme !</h1>
   <a href="/admin/login">S'identifier</a>
 <% end %>
