@@ -1,6 +1,5 @@
 class SneakersController < ApplicationController
   def index
-    @sneakers = Sneaker.all
     
     @filterrific = initialize_filterrific(
      Sneaker,
@@ -12,7 +11,7 @@ class SneakersController < ApplicationController
         search_color: Sneaker.options_for_select,
       },
    ) or return
-   @students = @filterrific.find.page(params[:page])
+   @sneakers = @filterrific.find.page(params[:page])
 
    respond_to do |format|
      format.html
