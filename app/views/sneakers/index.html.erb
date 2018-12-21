@@ -10,6 +10,13 @@
                   class: 'filterrific-periodically-observed'
                 ) %>
               </div>
+                  <%= link_to(
+                  'Reset filters',
+                  reset_filterrific_url,
+                  ) %>
+              </div>
+              <%# add an automated spinner to your form when the list is refreshed %>
+              <%= render_filterrific_spinner %>
             <% end %>
             
             <%= render(
