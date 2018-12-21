@@ -14,7 +14,7 @@ class Sneaker < ApplicationRecord
  validates :img_url, presence: true
  
  
- scope :search_sneakers_ref {where sneakers_ref: params[:search_sneakers_ref]}
+ scope :search_sneakers_ref, lambda { |query| where 'sneakers_ref' }
  
  
  def self.options_for_select
