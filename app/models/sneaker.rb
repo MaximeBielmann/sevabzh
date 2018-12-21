@@ -1,10 +1,7 @@
 class Sneaker < ApplicationRecord
  filterrific(
    available_filters: [
-    :search_sneakers_ref,
-    :search_brand,
-    :search_title,
-    :search_color,
+    :search_sneakers_ref
    ]
  )
  
@@ -21,20 +18,9 @@ class Sneaker < ApplicationRecord
   where(sneakers_ref: params[:search_sneakers_ref])
  }
  
- scope :search_brand, lambda {
-  where(brand: params[:search_brand])
- }
- 
- scope :search_title, lambda {
-  where(title: params[:search_title])
- }
- 
- scope :search_color, lambda {
-  where(color: params[:search_color])
- }
  
  def self.options_for_select
- order('LOWER(sneakers_ref)').map { |e| [e.sneakers_ref, e.id] }
+ order('LOWER(sneakers_ref)')
  end
 
 end
