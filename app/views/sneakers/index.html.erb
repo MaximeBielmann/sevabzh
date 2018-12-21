@@ -1,6 +1,50 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
+            <%= form_for_filterrific @filterrific do |f| %>
+              <div>
+                Ref
+                <%= f.select(
+                  :with_sneaker_sneakers_ref,
+                  @filterrific.select_options[:with_sneaker_sneakers_ref],
+                  { include_blank: '- Any -' }
+                ) %>
+              </div>
+              <div>
+                Marque
+                <%= f.select(
+                  :with_sneaker_brand,
+                  @filterrific.select_options[:with_sneaker_brand],
+                  { include_blank: '- Any -' }
+                ) %>
+              </div>
+              <div>
+                Modèle
+                <%= f.select(
+                  :with_sneaker_title,
+                  @filterrific.select_options[:with_sneaker_title],
+                  { include_blank: '- Any -' }
+                ) %>
+              </div>
+              <div>
+                Couleur
+                <%= f.select(
+                  :with_sneaker_color,
+                  @filterrific.select_options[:with_sneaker_color],
+                  { include_blank: '- Any -' }
+                ) %>
+              </div>
+              <%# add an automated spinner to your form when the list is refreshed %>
+            <% end %>
+            
+            <%= render(
+              partial: 'sneakers/list',
+              locals: { sneakers: @sneakers }
+            ) %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
             <h1 class="text-center">Les sneakers</h1>
         </div>
     </div>
