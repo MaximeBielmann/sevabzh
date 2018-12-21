@@ -4,37 +4,36 @@
             <%= form_for_filterrific @filterrific do |f| %>
               <div>
                 Ref
-                <%= f.select(
-                  :with_sneaker_sneakers_ref,
-                  @filterrific.select_options[:with_sneaker_sneakers_ref],
-                  { include_blank: '- Any -' }
+                <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+                <%= f.text_field(
+                  :search_sneakers_ref,
+                  class: 'filterrific-periodically-observed'
                 ) %>
               </div>
               <div>
                 Marque
-                <%= f.select(
-                  :with_sneaker_brand,
-                  @filterrific.select_options[:with_sneaker_brand],
-                  { include_blank: '- Any -' }
+                <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+                <%= f.text_field(
+                  :search_brand,
+                  class: 'filterrific-periodically-observed'
                 ) %>
               </div>
               <div>
                 Modèle
-                <%= f.select(
-                  :with_sneaker_title,
-                  @filterrific.select_options[:with_sneaker_title],
-                  { include_blank: '- Any -' }
+                <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+                <%= f.text_field(
+                  :search_title,
+                  class: 'filterrific-periodically-observed'
                 ) %>
               </div>
               <div>
                 Couleur
-                <%= f.select(
-                  :with_sneaker_color,
-                  @filterrific.select_options[:with_sneaker_color],
-                  { include_blank: '- Any -' }
+                <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+                <%= f.text_field(
+                  :search_color,
+                  class: 'filterrific-periodically-observed'
                 ) %>
               </div>
-              <%# add an automated spinner to your form when the list is refreshed %>
             <% end %>
             
             <%= render(
