@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <%= form_for_filterrific @filterrific do |f| %>
+            <%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' } do |f| %>
               <div>
                 Ref
                 <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
@@ -10,6 +10,7 @@
                   class: 'filterrific-periodically-observed'
                 ) %>
               </div>
+              <%= f.submit 'Filter' %>
             <% end %>
             
             <%= render(
