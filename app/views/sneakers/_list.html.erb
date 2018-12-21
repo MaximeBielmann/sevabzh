@@ -2,10 +2,16 @@
   <table>
     <tr>
       <th>Ref</th>
+      <th>Marque</th>
+      <th>Modèle</th>
+      <th>Couleur</th>
     </tr>
     <% sneakers.each do |sneaker| %>
       <tr>
         <td><%= sneaker.sneakers_ref %></td>
+        <td><%= sneaker.brand %></td>
+        <td><%= sneaker.title %></td>
+        <td><%= sneaker.color %></td>
       </tr>
     <% end %>
   </table>

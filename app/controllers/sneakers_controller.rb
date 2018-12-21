@@ -5,7 +5,11 @@ class SneakersController < ApplicationController
      Sneaker,
      params[:filterrific],
      select_options: {
-        search_sneakers_ref: Sneaker
+        search_sneakers_ref: Sneaker,
+        search_brand: Sneaker,
+        search_title: Sneaker,
+        search_color: Sneaker
+        
       },
    ) or return
    @sneakers = @filterrific.find.page(params[:page])
