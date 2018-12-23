@@ -1,4 +1,6 @@
 class Sneaker < ApplicationRecord
+ paginates_per 1
+ 
  filterrific(
    available_filters: [
     :search_sneakers_ref,

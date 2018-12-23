@@ -2,42 +2,43 @@
     <div class="row">
         <div class="col-sm-12">
             <%= form_for_filterrific @filterrific do |f| %>
-              <div>
-                Référence
+            <ul class="list_inline">
+              <li class="list-inline-item">
+                
                 <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
                 <%= f.text_field(
                   :search_sneakers_ref,
                   class: 'filterrific-periodically-observed',
                   placeholder: "Référence"
                 ) %>
-              </div>
-              <div>
-                Marque
+              </li>
+              <li class="list-inline-item">
+                
                 <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
                 <%= f.text_field(
                   :search_brand,
                   class: 'filterrific-periodically-observed',
                   placeholder: "Marque"
                 ) %>
-              </div>
-              <div>
-                Modèle
+              </li>
+              <li class="list-inline-item">
+                
                 <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
                 <%= f.text_field(
                   :search_title,
                   class: 'filterrific-periodically-observed',
                   placeholder: "Modèle"
                 ) %>
-              </div>
-              <div>
-                Couleur
+              </li>
+              <li class="list-inline-item">
+                
                 <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
                 <%= f.text_field(
                   :search_color,
                   class: 'filterrific-periodically-observed',
                   placeholder: "Couleur"
                 ) %>
-              </div>
+              </li>
                   <%= f.submit 'Filter' %>
                   <%= link_to(
                   'Reset filters',
@@ -45,26 +46,48 @@
                   ) %>
               </div>
               <%# add an automated spinner to your form when the list is refreshed %>
-            
+            </ul>
             <% end %>
         </div>
     </div>
+    
     <div class="row">
-        <div class="col-sm-12">
-            <h1 class="text-center">Les sneakers</h1>
-        </div>
-    </div>
-    <div class="row">
-        <% @sneakers.each do |sneaker| %>
-            <div class="col-md-3">
-                <p class="text-center"><a href="/sneakers/<%= sneaker.id %>">
-                    <%= image_tag (sneaker.img_url), class: 'img-fluid' %>
+      <% @sneakers.each do |sneaker| %>
+      <div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
+							<!-- Block2 -->
+							<div class="block2 col-lg-6">
+								<div class="block2-img wrap-pic-w of-hidden pos-relative">
+									<%= image_tag (sneaker.img_url) %>
+
+									<div class="block2-overlay trans-0-4">
+										<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+											<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+											<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+										</a>
+										<div class="block2-btn-addcart w-size1 trans-0-4">
+											<!-- Button -->
+											<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+												<a href="/sneakers/<%= sneaker.id %>">Voir la sneaker</a>
+											</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="block2-txt p-t-20">
+									  <p class="text-center"><a href="/sneakers/<%= sneaker.id %>">
                     <%= sneaker.brand %> - 
                     <%= sneaker.title %> - 
                     <%= sneaker.color %> - 
-                    <%= sneaker.sneakers_ref %>
-                </a></p>
-            </div>
-        <% end %>
+                    <%= sneaker.sneakers_ref %></a>
+                    </p>
+								</div>
+					</div>
+			</div>
+			<% end %>
     </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <%= paginate @sneakers %>
+      </div>
+    </div
 </div>

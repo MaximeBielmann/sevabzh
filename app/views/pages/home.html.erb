@@ -7,9 +7,10 @@
     <div class="row">
         <% @sneakers.each do |sneaker| %>
                 <div class="col-md-3">
-                    <p class="text-center"><a href="/sneakers/<%= sneaker.id %>">
-                        <%= image_tag (sneaker.img_url), class: 'img-fluid' %>
-                        <%= sneaker.brand %> - 
+                    <a href="/sneakers/<%= sneaker.id %>">
+                        <p class="text-center">
+                        <%= image_tag (sneaker.img_url), class: 'img-fluid' %></p>
+                        <p><%= sneaker.brand %> - 
                         <%= sneaker.title %> - 
                         <%= sneaker.color %> - 
                         <%= sneaker.sneakers_ref %>
