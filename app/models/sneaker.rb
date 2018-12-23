@@ -17,10 +17,10 @@ class Sneaker < ApplicationRecord
  validates :img_url, presence: true
  
  
- scope :search_sneakers_ref, -> (search_sneakers_ref) { where("sneakers_ref = ?", search_sneakers_ref) }
- scope :search_brand, -> (search_brand) { where("brand = ?", search_brand) }
- scope :search_title, -> (search_title) { where("title = ?", search_title) }
- scope :search_color, -> (search_color) { where("color = ?", search_color) }
+ scope :search_sneakers_ref, -> (search_sneakers_ref) { where("lower(sneakers_ref) = ?", search_sneakers_ref.downcase) }
+ scope :search_brand, -> (search_brand) { where("lower(brand) = ?", search_brand.downcase) }
+ scope :search_title, -> (search_title) { where("lower(title)  ?", search_title.downcase) }
+ scope :search_color, -> (search_color) { where("lower(color) LIKE ?", '%#{search_color.downcase}%') }
  
  
 end
