@@ -7,6 +7,13 @@ class AdminController < ApplicationController
     @stocks = Stock.all
   end
   
+  def updatesneakers
+    @newsneakers = CSV.foreach('tmp/test.csv', :headers => true, :col_sep => "|") do |newsneaker|
+    newsneaker = Sneaker.create sneakers_ref: row['sneakers_ref'], brand: row['brand'], title: row['title'], color: row['color'], img_url: row['img_url']
+    end
+    redirect_to "/sneakers/"
+  end
+  
   def check
     @current_admin = Admin.where(name: params[:name], password: params[:password]).first
     if @current_admin

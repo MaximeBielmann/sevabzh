@@ -3,8 +3,7 @@
         <div class="col-sm-12">
             <%= form_for_filterrific @filterrific do |f| %>
             <ul class="list_inline">
-              <li class="list-inline-item">
-                
+              <li class="list-inline-item selection-2">
                 <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
                 <%= f.text_field(
                   :search_sneakers_ref,
@@ -12,8 +11,7 @@
                   placeholder: "Référence"
                 ) %>
               </li>
-              <li class="list-inline-item">
-                
+              <li class="list-inline-item selection-2">
                 <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
                 <%= f.text_field(
                   :search_brand,
@@ -21,8 +19,7 @@
                   placeholder: "Marque"
                 ) %>
               </li>
-              <li class="list-inline-item">
-                
+              <li class="list-inline-item selection-2">
                 <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
                 <%= f.text_field(
                   :search_title,
@@ -31,7 +28,6 @@
                 ) %>
               </li>
               <li class="list-inline-item">
-                
                 <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
                 <%= f.text_field(
                   :search_color,
@@ -86,7 +82,7 @@
 			<% end %>
     </div>
     <div class="row">
-      <div class="col-md-12 text-center">
+      <div class="col-md-12">
         <%= paginate @sneakers %>
       </div>
     </div
