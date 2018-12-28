@@ -9,7 +9,7 @@ class AdminController < ApplicationController
   
   def updatesneakers
     require 'csv'
-    @newsneakers = CSV.foreach('ej2za7lz3x7b/public/test.csv', :headers => true, :col_sep => "|") do |newsneaker|
+    @newsneakers = CSV.foreach('https://cloud-cube-eu.s3.amazonaws.com/ej2za7lz3x7b/public/test.csv', :headers => true, :col_sep => "|") do |newsneaker|
     newsneaker = Sneaker.create sneakers_ref: row['sneakers_ref'], brand: row['brand'], title: row['title'], color: row['color'], img_url: row['img_url']
     end
     redirect_to "/sneakers/"
