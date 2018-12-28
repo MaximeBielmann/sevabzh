@@ -8,6 +8,7 @@ class AdminController < ApplicationController
   end
   
   def updatesneakers
+    require 'csv'
     @newsneakers = CSV.foreach('tmp/storage/test.csv', :headers => true, :col_sep => "|") do |newsneaker|
     newsneaker = Sneaker.create sneakers_ref: row['sneakers_ref'], brand: row['brand'], title: row['title'], color: row['color'], img_url: row['img_url']
     end
