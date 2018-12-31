@@ -30,6 +30,8 @@ gem "aws-sdk-s3", require: false
 
 gem 'carrierwave', '~> 1.0'
 
+gem 'activerecord-import'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
