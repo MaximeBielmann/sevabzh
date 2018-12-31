@@ -5,8 +5,8 @@ class ListingUploaderController < ApplicationController
         @import = ListingUploader.new
         @import.store!(params[:file])
         
-        CSV.foreach(@import.current_path, headers: true) do |row|
-            Sneaker.create!(row.to_h)
-        end
+        # CSV.foreach(@import.current_path, headers: true) do |row|
+        #     Sneaker.create!(row.to_h)
+        # end
     end
 end
