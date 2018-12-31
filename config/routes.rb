@@ -21,5 +21,7 @@ Rails.application.routes.draw do
   
   get 'sellers' => 'pages#sellers'
   
+  post 'listing_uploader' => 'listing_uploader#upload'
+  
   root 'pages#home'
 end
