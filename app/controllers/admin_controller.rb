@@ -7,14 +7,13 @@ class AdminController < ApplicationController
     @stocks = Stock.all
   end
   
-  def updatesneakers
-    require 'csv'
-    require 'aws-sdk-s3'
-    @newsneakers = CSV.foreach(open('/ej2za7lz3x7b/public/test.csv'), :headers => true, :col_sep => "|") do |newsneaker|
-    newsneaker = Sneaker.create sneakers_ref: row['sneakers_ref'], brand: row['brand'], title: row['title'], color: row['color'], img_url: row['img_url']
-    end
-    redirect_to "/sneakers/"
-  end
+  # def updatesneakers
+  #  require 'csv'
+  #  @newsneakers = CSV.foreach(open('/ej2za7lz3x7b/public/test.csv'), :headers => true, :col_sep => "|") do |newsneaker|
+  #  newsneaker = Sneaker.create sneakers_ref: row['sneakers_ref'], brand: row['brand'], title: row['title'], color: row['color'], img_url: row['img_url']
+  #  end
+  #  redirect_to "/sneakers/"
+  # end
   
   def check
     @current_admin = Admin.where(name: params[:name], password: params[:password]).first

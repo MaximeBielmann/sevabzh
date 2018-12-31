@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'admin/login' => 'admin#login'
   post 'admin/login' => 'admin#check'
   get 'admin/logout' => 'admin#destroy'
-  post 'admin' => 'admin#updatesneakers'
+  post 'admin' => 'sneakers#create'
   
   get 'sellers' => 'pages#sellers'
   

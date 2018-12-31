@@ -13,16 +13,26 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+            <div class="col-md-6">
+            <h3>Ajouter une sneaker</h3>
+            <%= form_tag "/sneakers", method: "post" do %>
+                <ul class="list-group">
+                  <li class="list-item">Sneakers_ref : <input type="text" label="sneakers_ref" placeholder="sneakers_ref" name="sneakers_ref" /></li>
+                  <li class="list-item">Marque : <input type="text" placeholder="brand" name="brand" /></li>
+                  <li class="list-item">Modèle : <input type="text" placeholder="model"  name="title" /></li>
+                  <li class="list-item">Couleur : <input type="text" placeholder="color"  name="color" /></li>
+                  <li class="list-item">URL de l'image : <input type="text" placeholder="img_url"  name="img_url" /></li>
+                  <li class="list-item"><input type="submit" value="Ajouter la sneaker" /></li>
+                </ul>
+            <% end %>
+            </div>
             <div class="col-md-6">
                 <h3>Update</h3>
-                <%= form_tag '/admin', method: 'post' do %>
-                    <ul class="list-group">
-                        <li class="list-item"><input type="submit" value="update" /></li>
-                    </ul>
+                <%= form_tag({controller: "sneakers", action: :create}, multipart: true) do %>
+                  <%= file_field_tag 'picture' %>
+                  <%= submit_tag 'Envoyer le fichier' %>
                 <% end %>
             </div>
-        </div>
     </div>
 </div>
 
@@ -49,20 +59,7 @@
             
         </div>
    
-        <div class="col-md-6">
-            <h3>Ajouter une sneaker</h3>
-            <%= form_tag "/sneakers", method: "post" do %>
-                <ul class="list-group">
-                  <li class="list-item">Sneakers_ref : <input type="text" label="sneakers_ref" placeholder="sneakers_ref" name="sneakers_ref" /></li>
-                  <li class="list-item">Marque : <input type="text" placeholder="brand" name="brand" /></li>
-                  <li class="list-item">Modèle : <input type="text" placeholder="model"  name="title" /></li>
-                  <li class="list-item">Couleur : <input type="text" placeholder="color"  name="color" /></li>
-                  <li class="list-item">URL de l'image : <input type="text" placeholder="img_url"  name="img_url" /></li>
-                  <li class="list-item"><input type="submit" value="Ajouter la sneaker" /></li>
-                </ul>
-            <% end %>
-            
-        </div>
+        
     </div>
 </div>
     
