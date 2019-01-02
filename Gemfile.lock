@@ -942,6 +942,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   csv
   filterrific
+  fog-aws
   jbuilder (~> 2.5)
   jquery-rails
   kaminari

@@ -1,4 +1,6 @@
 class Sneaker < ApplicationRecord
+ mount_uploader :listing, ListingUploader
+ 
  paginates_per 20
  
  filterrific(

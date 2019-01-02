@@ -30,6 +30,7 @@ gem "aws-sdk-s3", require: false
 
 gem 'carrierwave', '~> 1.0'
 gem 'carrierwave_direct'
+gem 'fog-aws', group: :production
 
 gem 'activerecord-import'
 
