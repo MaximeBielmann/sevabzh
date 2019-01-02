@@ -10,7 +10,7 @@ class ListingUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads"
+    "https://cloud-cube-eu.s3.amazonaws.com/ej2za7lz3x7b/public"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
