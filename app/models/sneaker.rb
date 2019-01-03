@@ -1,4 +1,5 @@
 class Sneaker < ApplicationRecord
+ mount_uploader :sneaker, ListingUploader
  
  paginates_per 20
  
