@@ -4,6 +4,7 @@ class ListingUploaderController < ApplicationController
     def upload
         @import = ListingUploader.new
         @import.store!(params[:file])
+        @link = @import.url
         # @import.retrieve_from_store!(params[:file])
         
         # CSV.foreach(@import.current_path, headers: true) do |row|
@@ -12,6 +13,6 @@ class ListingUploaderController < ApplicationController
         #    # faire un if pour le cas où la sneaker ou le stock existent déjà dans la table
         #    redirect_to "/sneakers/"
         # end
-        redirect_to "/sneakers/"
+        redirect_to "/admin/"
     end
 end
