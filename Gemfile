@@ -26,10 +26,6 @@ gem 'jquery-rails'
 
 gem 'csv'
 
-# Storage for csv file
-gem 'carrierwave', '~> 1.0'
-gem 'fog-aws'
-
 gem 'activerecord-import'
 
 # Use CoffeeScript for .coffee assets and views
