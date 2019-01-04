@@ -16,15 +16,19 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
+# Pagination
 gem 'kaminari'
 
+# Search with filter
 gem 'filterrific'
 
 gem 'jquery-rails'
 
 gem 'csv'
 
+# Storage for csv file
 gem 'carrierwave', '~> 1.0'
+gem 'fog-aws'
 
 gem 'activerecord-import'
 
