@@ -9,7 +9,5 @@ class Stock < ApplicationRecord
  validates :size, presence: true
  validates :offer_link, presence: true
  validates :price, presence: true
- validates :shipping_time, presence: true
- validates :shipping_cost, presence: true
 
 end

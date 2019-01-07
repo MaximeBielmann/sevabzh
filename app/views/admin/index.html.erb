@@ -30,10 +30,9 @@
             </div>
             <div class="col-md-6">
                 <h3>Update</h3>
-                <%= form_tag({controller: "listing_uploader", action: :upload}, multipart: true) do %>
-                  <%= file_field_tag 'sneaker' %>
-                  <%= submit_tag 'Send' %>
-                <% end %>
+                <%= form_tag '/listing_uploader', method: 'post' do %>
+                   <input type="submit" value="update" />
+            <% end %>
             </div>
     </div>
 </div>
