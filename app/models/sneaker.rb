@@ -24,5 +24,4 @@ class Sneaker < ApplicationRecord
  scope :search_title, -> (search_title) { where("lower(title) LIKE ?", "%#{search_title.to_s.downcase}%") }
  scope :search_color, -> (search_color) { where("lower(color) LIKE ?", "%#{search_color.to_s.downcase}%") }
  
- 
 end

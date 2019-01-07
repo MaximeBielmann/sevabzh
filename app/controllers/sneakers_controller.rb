@@ -45,7 +45,9 @@ class SneakersController < ApplicationController
   end
   
   def destroy
-  Sneaker.find(params[:id]).destroy
+  @sneakerid = params[:id]
+  Stock.where(sneaker_id: params[:id]).destroy_all
+  Sneaker.find(@sneakerid).destroy
   redirect_to "/sneakers"
   end
   
