@@ -6,7 +6,6 @@ class Stock < ApplicationRecord
  
  validates :sneaker_id, presence: true
  validates :seller, presence: true
- validates :size, presence: true
  validates :offer_link, presence: true
  validates :price, presence: true
 

@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @sneakers = Sneaker.all.last(4)
+    @sneakers = Sneaker.order("RANDOM()").limit(4)
   end
   
   def sellers
