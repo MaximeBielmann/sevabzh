@@ -1,9 +1,9 @@
 <div class="container">
-    <div class="row">
-        <div class="col-sm-12">
+    <div class="row search-field">
+        <div class="col-sm-12" class="flex-sb-m flex-w p-b-35">
             <%= form_for_filterrific @filterrific do |f| %>
-            <ul class="list_inline">
-              <li class="list-inline-item selection-2">
+            <ul class="flex-w">
+              <li class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10 selection-2">
                 <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
                 <%= f.text_field(
                   :search_sneakers_ref,
@@ -11,7 +11,7 @@
                   placeholder: "Référence"
                 ) %>
               </li>
-              <li class="list-inline-item selection-2">
+              <li class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10 selection-2">
                 <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
                 <%= f.text_field(
                   :search_brand,
@@ -19,7 +19,7 @@
                   placeholder: "Marque"
                 ) %>
               </li>
-              <li class="list-inline-item selection-2">
+              <li class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10 selection-2">
                 <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
                 <%= f.text_field(
                   :search_title,
@@ -27,7 +27,7 @@
                   placeholder: "Modèle"
                 ) %>
               </li>
-              <li class="list-inline-item">
+              <li class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10 selection-2">
                 <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
                 <%= f.text_field(
                   :search_color,
@@ -35,23 +35,25 @@
                   placeholder: "Couleur"
                 ) %>
               </li>
-                  <%= f.submit 'Filter' %>
-                  <%= link_to(
-                  'Reset filters',
+              <li><%= f.submit '   Chercher   ', class:'btn btn-primary' %>
+              </li>
+              <li><%= link_to(
+                  'Réinitialiser',
                   reset_filterrific_url,
                   ) %>
+              </li>
               </div>
               <%# add an automated spinner to your form when the list is refreshed %>
             </ul>
             <% end %>
         </div>
-    </div>
+    
     
     <div class="row">
       <% @sneakers.each do |sneaker| %>
-      <div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
+      <div class="col-md-2 p-b-50">
 							<!-- Block2 -->
-							<div class="block2 col-lg-6">
+							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative">
 									<%= image_tag (sneaker.img_url) %>
 
@@ -85,5 +87,5 @@
       <div class="col-md-12">
         <%= paginate @sneakers %>
       </div>
-    </div
+    </div>
 </div>

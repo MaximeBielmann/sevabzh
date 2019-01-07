@@ -11,7 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
- *= require_self
+ *= 
  */
 
 
@@ -56,7 +56,9 @@ a:hover {
 
 /* ------------------------------------ */
 h1,h2,h3,h4,h5,h6 {
-	margin: 0px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: black;
 }
 
 p {
@@ -6422,3 +6424,7 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
 	}
 }
 
+.search-field {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

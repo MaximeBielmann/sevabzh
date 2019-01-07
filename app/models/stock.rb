@@ -3,4 +3,13 @@ class Stock < ApplicationRecord
  paginates_per 20
  
  belongs_to :sneaker
+ 
+ validates :sneaker_id, presence: true
+ validates :seller, presence: true
+ validates :size, presence: true
+ validates :offer_link, presence: true
+ validates :price, presence: true
+ validates :shipping_time, presence: true
+ validates :shipping_cost, presence: true
+
 end

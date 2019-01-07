@@ -1,19 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-md-12 text-center title">
+      <h2><%= @sneakers.sneakers_ref %> - <%= @sneakers.brand %> - <%= @sneakers.title %> - <%= @sneakers.color %></h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
       <%= image_tag @sneakers.img_url, class:'img-fluid' %>
     </div>
-    <div class="col-lg-4">
-      <h1><%= @sneakers.sneakers_ref %></h1>
-      <h1><%= @sneakers.brand %></h1>
-      <h3><%= @sneakers.title %></h3>
-      <h5><%= @sneakers.color %></h5>
-    </div>
-    <div class="col-lg-4">
+    <div class="col-md-8">
       <h1>SHOPS</h1>
-      <% @stocks.each do |stock| %>
-      <h3><a href="<%= stock.offer_link  %>" ><%= stock.seller %> / Prix : <%= stock.price %> / Frais livraison (euros) : <%= stock.shipping_cost %> / Délai livraison (jours) : <%= stock.shipping_time %></a></h3>
-      <% end %>
+          <% @stocks.each do |stock| %>
+              <h5><%= stock.seller %> - taille : <%= stock.size %> - <%= stock.price %>€ <a href="<%= stock.offer_link %>" class="btn btn-primary btn-xs" role="button" aria-pressed="true">VOIR L'OFFRE</a>
+          <% end %>
     </div>
   </div>
 </div>    

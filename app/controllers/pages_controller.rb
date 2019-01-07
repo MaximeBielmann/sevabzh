@@ -5,5 +5,8 @@ class PagesController < ApplicationController
   
   def sellers
   end
+  
+  def faq
+  end
 
 end
