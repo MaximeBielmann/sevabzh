@@ -13,7 +13,7 @@ class Sneaker < ApplicationRecord
  
  has_many :stocks
  
- validates :sneakers_ref, presence: true
+ validates :sneakers_ref, presence: true, uniqueness: true
  validates :brand, presence: true
  validates :title, presence: true
  validates :img_url, presence: true
