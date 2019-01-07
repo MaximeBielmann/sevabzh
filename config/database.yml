@@ -24,7 +24,7 @@ production:
   <<: *default
   adapter: postgresql
   encoding: utf8
-  database: <%= ENV['DATABASE_URL'] %>
+  database: <%= ENV['HEROKU_POSTGRESQL_YELLOW_URL'] %>
   #database: <%= ENV['RDS_DB_NAME'] %>
   #username: <%= ENV['RDS_USERNAME'] %>
   #password: <%= ENV['RDS_PASSWORD'] %>
