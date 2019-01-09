@@ -51,4 +51,8 @@ class SneakersController < ApplicationController
   redirect_to "/sneakers"
   end
   
+  def search
+  redirect_to "/sneakers?utf8=✓&filterrific%5Bsearch_sneakers_ref%5D=#{params[:reference]}&filterrific%5Bsearch_brand%5D=#{params[:marque]}&filterrific%5Bsearch_title%5D=#{params[:modele]}&filterrific%5Bsearch_color%5D=&commit=+++Chercher+++"
+  end
+  
 end

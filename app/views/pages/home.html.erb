@@ -11,43 +11,24 @@
     							RECHERCHE TA PAIRE MAINTENANT
     						</p>
     						<div class="row justify-content-center">
-                            <div class="col-12 col-md-10 col-lg-8">
-                                <form class="card card-sm">
-                                    <%= form_for_filterrific(
-                                          @filterrific, 
-                                          url: sneakers_path, 
-                                          html: { id: 'filterrific-no-ajax-auto-submit' }
-                                      ) do |f| %>
+                            <div class="col-md-8">
+                               <%= form_tag "/sneakers/search", class: "card card-sm", method: "post" do %>
                                     <div class="card-body row no-gutters align-items-center">
                                         <div class="col-auto">
                                             <i class="fas fa-search h4 text-body"></i>
                                         </div>
                                         <!--end of col-->
                                         <div class="col">
-                                            <%= f.text_field(
-                                          :search_sneakers_ref,
-                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
-                                          placeholder: "Référence"
-                                        ) %>
+                                            <input class="form-control form-control-lg form-control-borderless" type="search" name="reference" placeholder="Référence">
                                         </div>
                                         <div class="col">
-                                             <%= f.text_field(
-                                          :search_brand,
-                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
-                                          placeholder: "Marque"
-                                        ) %>
+                                            <input class="form-control form-control-lg form-control-borderless" type="search" name="marque" placeholder="Marque">
                                         </div>
                                         <div class="col">
-                                            <%= f.text_field(
-                                          :search_title,
-                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
-                                          placeholder: "Modèle"
-                                        ) %>
+                                           <input class="form-control form-control-lg form-control-borderless" type="search" name="modele" placeholder="Modèle">
                                         </div>
-                                        
-                                        <!--end of col-->
                                         <div class="col-auto">
-                                            <%= f.submit '   Chercher   ', class:'btn btn-lg btn-succes' %>
+                                        <button class="btn btn-lg btn-success" type="submit">Chercher</button>
                                         </div>
                                         <div class="col-auto">
                                           <%= link_to(
