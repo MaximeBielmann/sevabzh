@@ -1,6 +1,5 @@
 class SneakersController < ApplicationController
   def index
-    
     @filterrific = initialize_filterrific(
      Sneaker,
      params[:filterrific],
