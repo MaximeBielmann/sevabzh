@@ -7,28 +7,54 @@
     						<p class="caption2-slide1 l-text1 t-center">
     							RECHERCHE TA PAIRE DE SNEAKERS
     						</p>
-    					</div>
-    					<div class="row justify-content-center">
+    						<div class="row justify-content-center">
                             <div class="col-12 col-md-10 col-lg-8">
                                 <form class="card card-sm">
+                                    <%= form_for_filterrific(
+                                          @filterrific, 
+                                          url: sneakers_path, 
+                                          html: { id: :manual_filterrific_form }
+                                      ) do |f| %>
                                     <div class="card-body row no-gutters align-items-center">
                                         <div class="col-auto">
                                             <i class="fas fa-search h4 text-body"></i>
                                         </div>
                                         <!--end of col-->
                                         <div class="col">
-                                            <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="exemple : Air Force One">
+                                            <%= f.text_field(
+                                          :search_sneakers_ref,
+                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
+                                          placeholder: "Référence"
+                                        ) %>
                                         </div>
+                                        <div class="col">
+                                             <%= f.text_field(
+                                          :search_brand,
+                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
+                                          placeholder: "Marque"
+                                        ) %>
+                                        </div>
+                                        <div class="col">
+                                            <%= f.text_field(
+                                          :search_title,
+                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
+                                          placeholder: "Modèle"
+                                        ) %>
+                                        </div>
+                                        
                                         <!--end of col-->
                                         <div class="col-auto">
-                                            <button class="btn btn-lg btn-success" type="submit">Search</button>
+                                            <%= f.submit '   Chercher   ', class:'btn btn-lg btn-succes' %>
                                         </div>
                                         <!--end of col-->
                                     </div>
+                                    <% end %>
                                 </form>
                             </div>
                             <!--end of col-->
                         </div>
+                            </div>
+    					</div>
     			    </div>
     		    </div>
     		</div>
@@ -42,7 +68,7 @@
         </div>
     </div>
     <div class="row">
-        <% @sneakers.each do |sneaker| %>
+        <% @shoes.each do |sneaker| %>
                 <div class="col-md-3">
                     <a href="/sneakers/<%= sneaker.id %>">
                         <p class="text-center">

@@ -1,52 +1,62 @@
 <div class="container">
-    <div class="row search-field">
-        <div class="col-sm-12" class="flex-sb-m flex-w p-b-35">
-            <%= form_for_filterrific @filterrific do |f| %>
-            <ul class="flex-w">
-              <li class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10 selection-2">
-                <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
-                <%= f.text_field(
-                  :search_sneakers_ref,
-                  class: 'filterrific-periodically-observed',
-                  placeholder: "Référence"
-                ) %>
-              </li>
-              <li class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10 selection-2">
-                <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
-                <%= f.text_field(
-                  :search_brand,
-                  class: 'filterrific-periodically-observed',
-                  placeholder: "Marque"
-                ) %>
-              </li>
-              <li class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10 selection-2">
-                <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
-                <%= f.text_field(
-                  :search_title,
-                  class: 'filterrific-periodically-observed',
-                  placeholder: "Modèle"
-                ) %>
-              </li>
-              <li class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10 selection-2">
-                <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
-                <%= f.text_field(
-                  :search_color,
-                  class: 'filterrific-periodically-observed',
-                  placeholder: "Couleur"
-                ) %>
-              </li>
-              <li><%= f.submit '   Chercher   ', class:'btn btn-primary' %>
-              </li>
-              <li><%= link_to(
-                  'Réinitialiser',
-                  reset_filterrific_url,
-                  ) %>
-              </li>
-              </div>
-              <%# add an automated spinner to your form when the list is refreshed %>
-            </ul>
-            <% end %>
-        </div>
+    <div class="row justify-content-center">
+                            <div class="col-lg-12">
+                                <form class="card card-sm">
+                                    <%= form_for_filterrific(
+                                          @filterrific, 
+                                          url: sneakers_path, 
+                                          html: { id: :manual_filterrific_form }
+                                      ) do |f| %>
+                                    <div class="card-body row no-gutters align-items-center">
+                                        <div class="col-auto">
+                                            <i class="fas fa-search h4 text-body"></i>
+                                        </div>
+                                        <!--end of col-->
+                                        <div class="col">
+                                            <%= f.text_field(
+                                          :search_sneakers_ref,
+                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
+                                          placeholder: "Référence"
+                                        ) %>
+                                        </div>
+                                        <div class="col">
+                                             <%= f.text_field(
+                                          :search_brand,
+                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
+                                          placeholder: "Marque"
+                                        ) %>
+                                        </div>
+                                        <div class="col">
+                                            <%= f.text_field(
+                                          :search_title,
+                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
+                                          placeholder: "Modèle"
+                                        ) %>
+                                        </div>
+                                        <div class="col">
+                                            <%= f.text_field(
+                                          :search_color,
+                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
+                                          placeholder: "Couleur"
+                                        ) %>
+                                        </div>
+                                        <!--end of col-->
+                                        <div class="col-auto">
+                                            <%= f.submit '   Chercher   ', class:'btn btn-lg btn-succes' %>
+                                        </div>
+                                        <div class="col-auto">
+                                          <%= link_to(
+                                          'Réinitialiser',
+                                          reset_filterrific_url,
+                                          ) %>
+                                        </div>
+                                        <!--end of col-->
+                                    </div>
+                                    <% end %>
+                                </form>
+                            </div>
+                            <!--end of col-->
+                        </div>
     
     
     <div class="row">

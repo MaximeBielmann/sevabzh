@@ -20,8 +20,9 @@ Rails.application.routes.draw do
   post 'admin' => 'sneakers#create'
   
   get 'sellers' => 'pages#sellers'
-  
   get 'faq' => 'pages#faq'
+  get 'cgu' => 'pages#cgu'
+  get 'mentions' => 'pages#legal'
   
   post 'listing_uploader' => 'listing_uploader#upload'
   

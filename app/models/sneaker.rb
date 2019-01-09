@@ -7,7 +7,8 @@ class Sneaker < ApplicationRecord
     :search_sneakers_ref,
     :search_brand,
     :search_title,
-    :search_color
+    :search_color,
+    :search_all
    ]
  )
  
@@ -23,5 +24,5 @@ class Sneaker < ApplicationRecord
  scope :search_brand, -> (search_brand) { where("lower(brand) LIKE ?", "%#{search_brand.to_s.downcase}%") }
  scope :search_title, -> (search_title) { where("lower(title) LIKE ?", "%#{search_title.to_s.downcase}%") }
  scope :search_color, -> (search_color) { where("lower(color) LIKE ?", "%#{search_color.to_s.downcase}%") }
- 
+ scope :search_all, -> (search_all) { where("lower(sneakers_ref) AND lower(brand) AND lower(title) AND lower(color) LIKE ?", "%#{search_all.to_s.downcase}%") }
 end
