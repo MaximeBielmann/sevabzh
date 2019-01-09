@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   
   get 'streetwear' => 'streetwears#index'
   get 'blog' => 'streetwears#index'
-  get 'contact' => 'streetwears#index'
+  get 'contact' => 'pages#contact'
   
   get 'admin' => 'admin#index'
   get 'admin/login' => 'admin#login'
