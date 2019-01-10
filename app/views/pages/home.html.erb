@@ -28,7 +28,7 @@
                                            <input class="form-control form-control-lg form-control-borderless" type="search" name="modele" placeholder="Modèle">
                                         </div>
                                         <div class="col-auto">
-                                        <button class="btn btn-lg btn-success" type="submit">Chercher</button>
+                                        <button class="btn btn-lg btn-seva" type="submit">Chercher</button>
                                         </div>
                                         <div class="col-auto">
                                           <%= link_to(
@@ -58,18 +58,32 @@
         </div>
     </div>
     <div class="row">
-        <% @shoes.each do |sneaker| %>
-                <div class="col-md-3">
-                    <a href="/sneakers/<%= sneaker.id %>">
-                        <p class="text-center">
-                        <%= image_tag (sneaker.img_url), class: 'img-fluid' %></p>
-                        <p><%= sneaker.brand %> - 
-                        <%= sneaker.title %> - 
-                        <%= sneaker.color %> - 
-                        <%= sneaker.sneakers_ref %>
-                    </a></p>
-                </div>
-        <% end %>
+      <% @shoes.each do |shoe| %>
+      <div class="col-md-3 p-b-50">
+							<!-- Block2 -->
+							<div class="block2">
+								<div class="block2-img wrap-pic-w of-hidden pos-relative">
+									<%= image_tag (shoe.img_url) %>
+
+									<div class="block2-overlay trans-0-4">
+										<div class="block2-btn-addcart w-size1 trans-0-4">
+											<!-- Button -->
+												<a href="/sneakers/<%= shoe.id %>" class="btn btn-primary btn-seva w-100">Voir la sneaker</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="block2-txt p-t-20">
+									  <p class="text-center"><a href="/sneakers/<%= shoe.id %>">
+                    <%= shoe.sneakers_ref %> - 
+                    <%= shoe.brand %> - 
+                    <%= shoe.title %> - 
+                    <%= shoe.color %></a>
+                    </p>
+								</div>
+					</div>
+			</div>
+			<% end %>
     </div>
 </div>
 

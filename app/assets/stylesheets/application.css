@@ -51,7 +51,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-	color: #e65540;
+	color: #f3d1bb;
 }
 
 /* ------------------------------------ */
@@ -6443,4 +6443,16 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
 	
 .black {
   color: black;
+}
+
+.btn-seva:hover {
+  background-color: black;
+  color: #f3d1bb;
+  border-color: black;
+}
+
+.btn-seva {
+  background-color: #f3d1bb;
+  color: black;
+  border-color: #f3d1bb;
 }
