@@ -18,14 +18,24 @@
             <div class="col-md-6">
             <h3>Ajouter une sneaker</h3>
             <%= form_tag "/sneakers", method: "post" do %>
-                <ul class="list-group">
-                  <li class="list-item">Sneakers_ref : <input type="text" label="sneakers_ref" placeholder="sneakers_ref" name="sneakers_ref" /></li>
-                  <li class="list-item">Marque : <input type="text" placeholder="brand" name="brand" /></li>
-                  <li class="list-item">Modèle : <input type="text" placeholder="model"  name="title" /></li>
-                  <li class="list-item">Couleur : <input type="text" placeholder="color"  name="color" /></li>
-                  <li class="list-item">URL de l'image : <input type="text" placeholder="img_url"  name="img_url" /></li>
-                  <li class="list-item"><input type="submit" value="Ajouter la sneaker" /></li>
-                </ul>
+                <form>
+                  <div class="form-group">
+                    <input type="text" class="form-control border" label="sneakers_ref" placeholder="Référence" name="sneakers_ref" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control border" placeholder="Marque" name="brand" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control border" placeholder="Modèle" name="title" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control border" placeholder="Couleur" name="color" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control border" placeholder="Url de l'image" name="img_url" />
+                  </div>
+                  <button type="submit" class="btn btn-primary">Ajouter la sneaker</button>
+                </form>
             <% end %>
             </div>
             <div class="col-md-6">

@@ -11,7 +11,14 @@
     <div class="col-md-8">
       <h1>SHOPS</h1>
           <% @stocks.each do |stock| %>
-              <h5><%= stock.seller %> - taille : <%= stock.size %> - <%= stock.price %>€ <a href="<%= stock.offer_link %>" class="btn btn-primary btn-xs" target="_blank" role="button" aria-pressed="true">VOIR L'OFFRE</a>
+            <div class="row">  
+              <div class="col-md-10">
+              <h5><%= stock.seller %> - taille : <%= stock.size %> - <%= stock.price %>€</h5>
+              </div>
+              <div class="col-md-2">
+              <a href="<%= stock.offer_link %>" class="btn btn-primary btn-xs btn-seva" target="_blank" role="button" aria-pressed="true">VOIR L'OFFRE</a>
+              </div>
+            </div>
           <% end %>
     </div>
   </div>
