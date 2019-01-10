@@ -7,7 +7,8 @@ class SneakersController < ApplicationController
         search_sneakers_ref: Sneaker,
         search_brand: Sneaker,
         search_title: Sneaker,
-        search_color: Sneaker
+        search_color: Sneaker,
+        search_price: Stock
         
       },
    ) or return
