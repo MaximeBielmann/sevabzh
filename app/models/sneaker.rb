@@ -14,6 +14,7 @@ class Sneaker < ApplicationRecord
  )
  
  has_many :stocks
+ has_many :sellers
  
  validates :sneakers_ref, presence: true, uniqueness: true
  validates :brand, presence: true

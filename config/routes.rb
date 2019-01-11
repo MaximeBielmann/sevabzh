@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sellers/index'
   get 'sneakers' => 'sneakers#index'
   post 'sneakers' => 'sneakers#create'
   get 'sneakers/:id' => 'sneakers#show'
@@ -8,6 +9,12 @@ Rails.application.routes.draw do
   
   post 'stocks' => 'stocks#create'
   get 'stocks' => 'stocks#index'
+  
+  get 'sellers' => 'sellers#index'
+  get 'sellers/:id' => 'sellers#show'
+  post 'sellers' => 'sellers#create'
+  patch 'sellers/:id' => 'sellers#update'
+  delete 'sellers/:id' => 'sellers#destroy'
   
   get 'streetwear' => 'streetwears#index'
   get 'blog' => 'streetwears#index'

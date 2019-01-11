@@ -3,6 +3,7 @@ class Stock < ApplicationRecord
  paginates_per 20
  
  belongs_to :sneaker
+ belongs_to :seller
  
  validates :sneaker_id, presence: true
  validates :seller, presence: true

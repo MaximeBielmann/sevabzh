@@ -1,0 +1,12 @@
+<div class="container d-flex h-100">
+    <div class="row justify-content-center m-t-10">
+        <% @sellers.each do |seller| %>
+                <div class="col-md-2">
+                <%= image_tag (seller.logo_url), :class => "img-fluid" %> 
+                </div>
+                <div class="col-md-4">
+                <a href="/sellers/<%= seller.id %>"><h1><%= seller.vendor %></h1></a>
+                </div> 
+        <% end %> 
+    </div>
+</div>

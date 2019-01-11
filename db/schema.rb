@@ -10,11 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_10_143602) do
+ActiveRecord::Schema.define(version: 2019_01_11_140141) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name"
     t.string "password"
+  end
+
+  create_table "sellers", force: :cascade do |t|
+    t.text "logo_url"
+    t.string "vendor"
+    t.string "country"
+    t.text "description"
+    t.text "shop_link"
+    t.string "shipping_cost"
+    t.string "shipping_time"
+    t.string "payment"
   end
 
   create_table "sneakers", force: :cascade do |t|
@@ -32,8 +43,6 @@ ActiveRecord::Schema.define(version: 2019_01_10_143602) do
     t.string "size"
     t.text "offer_link"
     t.decimal "price"
-    t.string "shipping_cost"
-    t.string "shipping_time"
     t.decimal "old_price"
   end
 

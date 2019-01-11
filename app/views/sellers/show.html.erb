@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center"><%= @sellers.vendor %></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <%= image_tag (@sellers.logo_url), :class => "img-fluid" %>
+        </div>
+        <div class="col-md-4">
+            <h3>Infos</h3>
+            <p>Pays : <%= @sellers.country %></p>
+            <p>Coût d'envoi : <%= @sellers.shipping_cost %></p>
+            <p>Délai d'envoi : <%= @sellers.shipping_time %></p>
+            <p>Moyen de paiement : <%= @sellers.payment %></p>
+        </div>
+        <div class="col-md-4">
+            <h3>Description</h3>
+            <p><%= @sellers.description  %></p>
+            <a href="<%= @sellers.shop_link %>" target ="_blank" class="btn btn-primary btn-seva m-t-10">Voir le shop</a> 
+        </div>
+    </div>
+</div>
+
+<% if @current_admin %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center">Modifier la boutique</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+         <%= form_tag "/sellers/#{@sellers.id}", method: "patch" do %>
+                <form>
+                  <div class="form-group">
+                    <p>Url du logo</p>
+                    <input type="text" class="form-control border" value="<%= @sellers.logo_url %>" name="logo_url" />
+                  </div>
+                  <div class="form-group">
+                    <p>Nom de la boutique</p>
+                    <input type="text" class="form-control border" value="<%= @sellers.vendor %>" name="vendor" />
+                  </div>
+                  <div class="form-group">
+                    <p>Pays</p>
+                    <input type="text" class="form-control border" value="<%= @sellers.country %>" name="country" />
+                  </div>
+                  <div class="form-group">
+                    <p>Lien de la boutique</p>
+                    <input type="text" class="form-control border" value="<%= @sellers.shop_link %>" name="shop_link" />
+                  </div>
+                  <div class="form-group">
+                    <p>Coût d'envoi</p>
+                    <input type="text" class="form-control border" value="<%= @sellers.shipping_cost %>" name="shipping_cost" />
+                  </div>
+                  <div class="form-group">
+                    <p>Délai d'expédition</p>
+                    <input type="text" class="form-control border" value="<%= @sellers.shipping_time %>" name="shipping_time" />
+                  </div>
+                  <div class="form-group">
+                    <p>Moyen de paiement</p>
+                    <input type="text" class="form-control border" value="<%= @sellers.payment %>" name="payment" />
+                  </div>
+                  <div class="form-group">
+                    <p>Description</p>
+                    <input type="text-area" class="form-control border" value="<%= @sellers.description %>" name="description" />
+                  </div>
+                  <button type="submit" class="btn btn-primary">Modifier la boutique</button>
+                </form>
+            <% end %>
+        </div>
+    </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+            <%= form_tag "/sellers/#{@sellers.id}", method: "delete" do %>
+              <button type="submit" class="btn btn-primary">Supprimer la boutique</button>
+            <% end %>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+            <p><a href="/sellers">Retourner à l’index</a></p>
+            </div>
+        </div>
+</div>
+
+<% end %>
