@@ -12,13 +12,15 @@ class ListingUploaderController < ApplicationController
             Stock.where(sneaker_id: Sneaker.where(sneakers_ref: row['sneakers_ref']).ids, 
                         seller: row['seller'],
                         size: row['size'], 
-                        offer_link: row['offer_link'], 
+                        offer_link: row['offer_link'],
+                        old_price: row['old_price'],
                         price: row['price'], 
                         shipping_cost: row['shipping_cost'], 
                         shipping_time: row['shipping_time']).first_or_create
         end
         redirect_to "/admin/"
     end
+    
 end
         # @import = ListingUploader.new
         # @import.store!(params[:file])

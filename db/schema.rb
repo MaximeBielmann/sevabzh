@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_07_152829) do
+ActiveRecord::Schema.define(version: 2019_01_10_143602) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_01_07_152829) do
     t.decimal "price"
     t.string "shipping_cost"
     t.string "shipping_time"
+    t.decimal "old_price"
   end
 
 end

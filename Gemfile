@@ -26,6 +26,8 @@ gem 'jquery-rails'
 
 gem 'csv'
 
+gem "aws-sdk-s3", require: false
+
 gem 'activerecord-import'
 
 # Use CoffeeScript for .coffee assets and views

@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get 'faq' => 'pages#faq'
   get 'cgu' => 'pages#cgu'
   get 'mentions' => 'pages#legal'
+  get 'presskit' => 'pages#presskit'
   
   post 'listing_uploader' => 'listing_uploader#upload'
   
