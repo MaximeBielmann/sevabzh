@@ -13,7 +13,7 @@
           <% @stocks.each do |stock| %>
               <div class="row">  
                 <div class="col-md-8">
-                <h5><%= stock.vendor %> </br>Taille : <%= stock.size %> / Prix : <del><%= stock.old_price %></del> <%= stock.price %>€</h5>
+                <h5></br>Taille : <%= stock.size %> / Prix : <del><%= stock.old_price %></del> <%= stock.price %>€</h5>
                 </div>
                 <div class="col-md-4">
                 <a href="<%= stock.offer_link %>" class="btn btn-primary btn-xs btn-seva m-t-20" target="_blank" role="button" aria-pressed="true">VOIR L'OFFRE</a>
