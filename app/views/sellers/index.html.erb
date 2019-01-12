@@ -1,10 +1,10 @@
 <div class="container d-flex">
-    <div class="row justify-content-center align-self-center p-t-10 p-b-10">
+    <div class="row justify-content-center align-self-center">
         <% @sellers.each do |seller| %>
-                <div class="col-md-2 my-auto">
+                <div class="col-md-2 my-auto  p-t-10 p-b-20">
                 <%= image_tag (seller.logo_url), size: '200', :class => "img-fluid" %> 
                 </div>
-                <div class="col-md-4 my-auto">
+                <div class="col-md-4 my-auto p-t-10 p-b-20">
                 <a href="/sellers/<%= seller.id %>"><h3><%= seller.vendor %></h3></a>
                 </div> 
         <% end %> 
