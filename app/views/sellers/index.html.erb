@@ -1,11 +1,11 @@
 <div class="container d-flex">
-    <div class="row justify-content-center m-t-10">
+    <div class="row justify-content-center align-self-center m-t-10">
         <% @sellers.each do |seller| %>
-                <div class="col-md-2">
-                <%= image_tag (seller.logo_url), :class => "img-fluid" %> 
+                <div class="col-md-2 my-auto">
+                <%= image_tag (seller.logo_url), size: '200', :class => "img-fluid" %> 
                 </div>
-                <div class="col-md-4">
-                <a href="/sellers/<%= seller.id %>"><h1><%= seller.vendor %></h1></a>
+                <div class="col-md-4 my-auto">
+                <a href="/sellers/<%= seller.id %>"><h3><%= seller.vendor %></h3></a>
                 </div> 
         <% end %> 
     </div>
