@@ -32,6 +32,7 @@ class SneakersController < ApplicationController
     end
     @sneakers = Sneaker.find_by id: params[:id]
     @stocks = Stock.where(sneaker_id: params[:id])
+    @sellers = Seller.
   end
   
   def update

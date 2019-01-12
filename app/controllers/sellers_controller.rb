@@ -30,7 +30,7 @@ class SellersController < ApplicationController
   end
 
   def destroy
-    Seller.find()
+    Seller.find(params[:id]).destroy
     redirect_to "/sellers"
   end
 end

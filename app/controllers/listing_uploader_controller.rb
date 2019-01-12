@@ -10,7 +10,7 @@ class ListingUploaderController < ApplicationController
                            img_url: row['img_url']).first_or_create
                
             Stock.where(sneaker_id: Sneaker.where(sneakers_ref: row['sneakers_ref']).ids, 
-                        seller: row['seller'],
+                        seller_id: Seller.where(vendor: row['seller']).ids,
                         size: row['size'], 
                         offer_link: row['offer_link'],
                         old_price: row['old_price'],
