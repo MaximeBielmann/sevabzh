@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'pages#home'
+  
   get 'sellers/index'
   get 'sneakers' => 'sneakers#index'
   post 'sneakers' => 'sneakers#create'
@@ -16,10 +18,6 @@ Rails.application.routes.draw do
   patch 'sellers/:id' => 'sellers#update'
   delete 'sellers/:id' => 'sellers#destroy'
   
-  get 'streetwear' => 'streetwears#index'
-  get 'blog' => 'streetwears#index'
-  get 'contact' => 'pages#contact'
-  
   get 'admin' => 'admin#index'
   get 'admin/login' => 'admin#login'
   post 'admin/login' => 'admin#check'
@@ -33,6 +31,9 @@ Rails.application.routes.draw do
   get 'presskit' => 'pages#presskit'
   
   post 'listing_uploader' => 'listing_uploader#upload'
-  
-  root 'pages#home'
+ 
+  # PAGES WITHOUT CONTROLLER / FUTUR FEATURES
+  get 'streetwear' => 'streetwears#index'
+  get 'blog' => 'streetwears#index'
+  get 'contact' => 'pages#contact'
 end

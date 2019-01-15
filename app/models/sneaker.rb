@@ -14,7 +14,7 @@ class Sneaker < ApplicationRecord
  )
  
  has_many :stocks
- has_many :sellers
+ has_many :sellers, through: :stocks
  
  validates :sneakers_ref, presence: true, uniqueness: true
  validates :brand, presence: true
@@ -23,7 +23,7 @@ class Sneaker < ApplicationRecord
  
  
  scope :search_sneakers_ref, -> (search_sneakers_ref) { where("lower(sneakers_ref) LIKE ?", "%#{search_sneakers_ref.to_s.downcase}%") }
- scope :search_brand, -> (search_brand) { where("lower(brand) LIKE ?", "%#{search_brand.to_s.downcase}%") }
+
  scope :search_title, -> (search_title) { where("lower(title) LIKE ?", "%#{search_title.to_s.downcase}%") }
  scope :search_color, -> (search_color) { where("lower(color) LIKE ?", "%#{search_color.to_s.downcase}%") }
  scope :search_price, -> (search_price) { joins(:stocks).where("price < ?", "#{search_price.to_f}").select(:id, :sneakers_ref, :brand, :title, :color, :img_url).distinct }
