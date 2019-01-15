@@ -3,8 +3,9 @@ class AdminController < ApplicationController
     if session[:admin_id]
       @current_admin = Admin.find(session[:admin_id])
     end
-    @sneakers = Sneaker.all
+    @sneakers = Sneaker.all.reverse
     @stocks = Stock.all
+    @sellers = Seller.all
   end
   
   # def updatesneakers

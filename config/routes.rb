@@ -18,6 +18,14 @@ Rails.application.routes.draw do
   patch 'sellers/:id' => 'sellers#update'
   delete 'sellers/:id' => 'sellers#destroy'
   
+  get 'calendar' => 'calendars#index'
+  get 'calendar/:id' => 'calendars#show'
+  post 'calendar' => 'calendars#create'
+  patch 'calendar/:id' => 'calendars#update'
+  delete 'calendar/:id' => 'calendars#destroy'
+  
+  post 'listing_uploader' => 'listing_uploader#upload'
+  
   get 'admin' => 'admin#index'
   get 'admin/login' => 'admin#login'
   post 'admin/login' => 'admin#check'
@@ -29,11 +37,9 @@ Rails.application.routes.draw do
   get 'cgu' => 'pages#cgu'
   get 'mentions' => 'pages#legal'
   get 'presskit' => 'pages#presskit'
-  
-  post 'listing_uploader' => 'listing_uploader#upload'
  
   # PAGES WITHOUT CONTROLLER / FUTUR FEATURES
-  get 'streetwear' => 'streetwears#index'
   get 'blog' => 'streetwears#index'
+  get 'streetwear' => 'streetwears#index'
   get 'contact' => 'pages#contact'
 end

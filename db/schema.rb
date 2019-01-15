@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_14_174256) do
+ActiveRecord::Schema.define(version: 2019_01_15_161745) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name"
     t.string "password"
+  end
+
+  create_table "calendars", force: :cascade do |t|
+    t.integer "sneaker_id"
+    t.integer "seller_id"
+    t.datetime "release_date"
+    t.text "release_link"
+    t.text "release_price"
   end
 
   create_table "sellers", force: :cascade do |t|
