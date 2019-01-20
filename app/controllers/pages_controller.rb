@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
     @shoes = Sneaker.last(4)
+    @releases = Calendar.last(4)
   end
   
   def sellers

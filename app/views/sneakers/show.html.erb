@@ -12,26 +12,33 @@
       <h1>SHOPS</h1>
           <div class="row">  
            <% @sellers.each do |seller| %>
-                <div class="col-md-8 m-t-20">
-                <h5><%= image_tag seller.logo_url, size: '40', class:'img-fluid' %> <%= seller.vendor %></h5> 
+                <div class="col-md-4 m-t-20">
+                <h5><%= image_tag seller.logo_url, size: '40', class:'img-fluid' %> <%= seller.vendor %></h5>
                 </div>
                 <div class="col-md-4 m-t-20">
-                <a href="<%= seller.shop_link %>" class="btn btn-primary btn-xs btn-seva " target="_blank" role="button" aria-pressed="true">VOIR L'OFFRE</a>
+                <% seller.stocks.each do |s| %>
+                <p>Taille : <%= s.size %> / Prix : <del><%= s.old_price %></del> <%= s.price %>€</p>
                 </div>
-                <!--  <div class="col-md-10">
-                <p>Taille : <%# = seller.size %> / Prix : <del><%#= seller.old_price %></del> <%# = seller.price %>€</p>
+                <div class="col-md-4 m-t-20">
+                <a href="<%= s.offer_link %>" class="btn btn-primary btn-xs btn-seva " target="_blank" role="button" aria-pressed="true">VOIR L'OFFRE</a>
+                </div>
+                <% end %>
+                <!-- <div class="col-md-10">
+                <p>Taille : <%#= seller.size %> / Prix : <del><%#= seller.old_price %></del> <%#= seller.price %>€</p>
                 </div>
                 <div class="col-md-2">
                 <a href="stock.offer_link" class="btn btn-primary btn-xs btn-seva m-t-20" target="_blank" role="button" aria-pressed="true">VOIR L'OFFRE</a> -->
+            
           <% end %>
         </div>
     </div>
   </div>
-</div>    
+</div>
+
 
 <% if @current_admin %>
 
-<div class="container">    
+<div class="container m-t-200">    
 
 <h1>Modifier la sneaker</h1>
 

@@ -12,7 +12,7 @@
  *
  *= require_tree .
  *= 
- */
+*/
 
 
 
@@ -31,7 +31,8 @@ body, html {
   font-weight: 400;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 a {
 	font-family: 'Quicksand', sans-serif;
   font-weight: 400;
@@ -54,7 +55,8 @@ a:hover {
 	color: #f3d1bb;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 h1,h2,h3,h4,h5,h6 {
 	color: black;
 }
@@ -73,7 +75,8 @@ ul, li {
 }
 
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 input {
 	outline: none;
 	border: none !important;
@@ -85,7 +88,8 @@ textarea {
 
 /* textarea:focus, input:focus {
   border-color: transparent !important;
-} */
+} *= require cookies_eu
+*/
 
 input:focus::-webkit-input-placeholder { color:transparent; }
 input:focus:-moz-placeholder { color:transparent; }
@@ -97,7 +101,8 @@ textarea:focus:-moz-placeholder { color:transparent; }
 textarea:focus::-moz-placeholder { color:transparent; }
 textarea:focus:-ms-input-placeholder { color:transparent; }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 button {
 	outline: none !important;
 	border: none;
@@ -113,7 +118,8 @@ iframe {
 }
 
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .container {
 	max-width: 1200px;
 }
@@ -128,6 +134,7 @@ iframe {
 
 /*[ LOADDING ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .animsition-loading-1 {
   position: absolute;
@@ -225,6 +232,7 @@ iframe {
 
 /*[ BACK TO TOP ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .btn-back-to-top {
   display: none;
@@ -265,8 +273,10 @@ iframe {
 
 /*[ Restyle Select2 ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
-/* Select2 */
+/* Select2 *= require cookies_eu
+*/
 .select2-container {
   display: block;
   max-width: 100% !important;
@@ -287,7 +297,8 @@ iframe {
   position: relative;
 }
 
-/* in select */
+/* in select *= require cookies_eu
+*/
 .select2-container .select2-selection--single .select2-selection__rendered {
   font-size: 13px;
   font-family: 'Quicksand', sans-serif;
@@ -332,7 +343,8 @@ iframe {
   margin-right: 8px;
 }
 
-/* dropdown option */
+/* dropdown option *= require cookies_eu
+*/
 .select2-container--open .select2-dropdown {
   z-index: 1251;
   border: 1px solid #e5e5e5;
@@ -371,6 +383,7 @@ iframe {
 
 /*[ rs1-select2 ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .rs1-select2 .select2-container {
   margin-left: 26px;
@@ -382,6 +395,7 @@ iframe {
 
 /*[ rs2-select2 ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .rs2-select2 .select2-container .select2-selection--single {
   background-color: white;
@@ -410,6 +424,7 @@ iframe {
 
 /*[ rs3-select2 ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .rs3-select2 .select2-container .select2-selection--single {
   height: 45px;
@@ -425,6 +440,7 @@ iframe {
 
 /*[ rs4-select2 ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .rs4-select2 .select2-container .select2-selection--single {
   height: 40px;
@@ -441,6 +457,7 @@ iframe {
 
 /*[ Header ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .header1 {
   height: 125px;
@@ -454,7 +471,8 @@ iframe {
 
 
 /*[ Header Desktop ]
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*= require cookies_eu
+*/
 
 .container-menu-header {
   width: 100%;
@@ -470,7 +488,8 @@ iframe {
 }
 
 /*[ Top bar ]
-===========================================================*/
+===========================================================*= require cookies_eu
+*/
 .topbar {
   height: 45px;
   background-color: #f5f5f5;
@@ -485,7 +504,8 @@ iframe {
 }
 
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 
 .topbar-social {
   position: absolute;
@@ -507,7 +527,8 @@ iframe {
   padding: 10px;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .topbar-email,
 .topbar-child1 {
   font-family: 'Quicksand', sans-serif;
@@ -516,7 +537,8 @@ iframe {
   line-height: 1.7;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .topbar-child2 {
   position: absolute;
   height: 100%;
@@ -534,7 +556,8 @@ iframe {
 
 
 /*[ Menu ]
-===========================================================*/
+===========================================================*= require cookies_eu
+*/
 .wrap_header {
   display: -webkit-box;
   display: -webkit-flex;
@@ -560,7 +583,8 @@ iframe {
 
 
 /*[ Logo ]
------------------------------------------------------------*/
+-----------------------------------------------------------*= require cookies_eu
+*/
 .logo {
   display: block;
   position: absolute;
@@ -579,7 +603,8 @@ iframe {
 
 
 /*[ Menu ]
------------------------------------------------------------*/
+-----------------------------------------------------------*= require cookies_eu
+*/
 .main_menu {
   list-style-type: none;
   margin: 0px;
@@ -676,7 +701,8 @@ li.sale-noti > a {
   text-decoration: none;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .header-icons {
   display: -webkit-box;
   display: -webkit-flex;
@@ -742,6 +768,7 @@ li.sale-noti > a {
 
 /*[ Header cart ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .header-cart {
   position: absolute;
@@ -801,7 +828,8 @@ li.sale-noti > a {
   padding-top: 5px;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .header-cart-item-img {
   width: 80px;
   position: relative;
@@ -842,7 +870,8 @@ li.sale-noti > a {
   opacity: 1;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .header-cart-item-txt {
   width: calc(100% - 100px);
 }
@@ -874,7 +903,8 @@ li.sale-noti > a {
   padding-bottom: 25px;
   padding-right: 3px;
 }
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .header-cart-buttons {
   display: -webkit-box;
   display: -webkit-flex;
@@ -893,7 +923,8 @@ li.sale-noti > a {
 
 
 /*[ Header Mobile ]
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*= require cookies_eu
+*/
 .wrap_header_mobile {
   display: -webkit-box;
   display: -webkit-flex;
@@ -912,7 +943,8 @@ li.sale-noti > a {
 }
 
 /*[ Logo mobile ]
------------------------------------------------------------*/
+-----------------------------------------------------------*= require cookies_eu
+*/
 .logo-mobile {
   display: block;
 }
@@ -922,7 +954,8 @@ li.sale-noti > a {
 }
 
 /*[ btn show menu ]
------------------------------------------------------------*/
+-----------------------------------------------------------*= require cookies_eu
+*/
 .btn-show-menu {
   display: -webkit-box;
   display: -webkit-flex;
@@ -945,7 +978,8 @@ li.sale-noti > a {
 
 
 /*[ Header icon mobile ]
------------------------------------------------------------*/
+-----------------------------------------------------------*= require cookies_eu
+*/
 .header-icons-mobile {
   display: -webkit-box;
   display: -webkit-flex;
@@ -973,7 +1007,8 @@ li.sale-noti > a {
 }
 
 /*[ Menu mobile ]
------------------------------------------------------------*/
+-----------------------------------------------------------*= require cookies_eu
+*/
 .wrap-side-menu {
   width: 100%;
   background-color: white;
@@ -1063,7 +1098,8 @@ li.sale-noti > a {
   }
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .item-topbar-mobile {
   border-bottom: 1px solid #ececec;
 }
@@ -1090,6 +1126,7 @@ li.sale-noti > a {
 
 /*[ Header2 ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .topbar2 {
   background-color: #fff;
@@ -1103,7 +1140,8 @@ li.sale-noti > a {
   align-items: center;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .logo2 {
   display: block;
 }
@@ -1139,6 +1177,7 @@ li.sale-noti > a {
 
 /*[ Header3 ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .container-menu-header-v3 {
   position: fixed;
@@ -1162,7 +1201,8 @@ li.sale-noti > a {
 }
 
 /*[ Menu ]
-===========================================================*/
+===========================================================*= require cookies_eu
+*/
 .container-menu-header-v3 .wrap_header {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1179,7 +1219,8 @@ li.sale-noti > a {
 
 
 /*[ Logo ]
------------------------------------------------------------*/
+-----------------------------------------------------------*= require cookies_eu
+*/
 .container-menu-header-v3 .logo3 {
   display: block;
 }
@@ -1189,7 +1230,8 @@ li.sale-noti > a {
 }
 
 /*[ Header Icon ]
------------------------------------------------------------*/
+-----------------------------------------------------------*= require cookies_eu
+*/
 .container-menu-header-v3 .header-icons3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1202,6 +1244,7 @@ li.sale-noti > a {
 
 /*[ Header cart ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .container-menu-header-v3 .header-cart {
   left: -10px;
@@ -1209,7 +1252,8 @@ li.sale-noti > a {
 }
 
 /*[ Menu ]
------------------------------------------------------------*/
+-----------------------------------------------------------*= require cookies_eu
+*/
 .container-menu-header-v3 .main_menu {
   list-style-type: none;
   margin: 0px;
@@ -1253,6 +1297,7 @@ li.sale-noti > a {
 
 /*[ Page sidebar ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .container1-page {
   margin-left: 320px;
@@ -1285,10 +1330,12 @@ li.sale-noti > a {
 
 /*[ Slide1 ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 
 /*[ Slick1 ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .wrap-slick1 {
   position: relative;
@@ -1362,6 +1409,7 @@ li.sale-noti > a {
 
 /*[ Caption ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 @media (max-width: 992px) {
   .wrap-content-slide1 .xl-text2 {
@@ -1405,6 +1453,7 @@ li.sale-noti > a {
 
 /*[ rs1-slick1 ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .rs1-slick1 .item-slick1 {
   height: 100vh;
@@ -1421,10 +1470,12 @@ li.sale-noti > a {
 
 /*[ Slide2 ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 
 /*[ Slick2 ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .wrap-slick2 {
   position: relative;
@@ -1432,7 +1483,8 @@ li.sale-noti > a {
   margin-left: -15px;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .arrow-slick2 {
   position: absolute;
   z-index: 100;
@@ -1485,6 +1537,7 @@ li.sale-noti > a {
 
 /*[ rs Sweetalert ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .swal-overlay {
     overflow-y: auto;
@@ -1551,6 +1604,7 @@ li.sale-noti > a {
 
 /*[ Block1 ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .block1-wrapbtn {
   position: absolute;
@@ -1572,6 +1626,7 @@ li.sale-noti > a {
 
 /*[ Block2 ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .block2-labelsale::before,
 .block2-labelnew::before 
@@ -1605,7 +1660,8 @@ li.sale-noti > a {
   content: 'New';
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .block2-overlay {
   position: absolute;
   width: 100%;
@@ -1616,7 +1672,8 @@ li.sale-noti > a {
   opacity: 0;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .block2-btn-addcart {
   position: absolute;
   left: 50%;
@@ -1628,7 +1685,8 @@ li.sale-noti > a {
   bottom: -45px;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .block2-btn-towishlist,
 .block2-btn-addwishlist {
   display: block;
@@ -1662,7 +1720,8 @@ li.sale-noti > a {
   display: block;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .block2-btn-towishlist .icon_heart_alt {
   display: none;
 }
@@ -1672,7 +1731,8 @@ li.sale-noti > a {
   color: #e65540;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .block2-overlay:hover {
   opacity: 1;
 }
@@ -1693,6 +1753,7 @@ li.sale-noti > a {
 
 /*[ Block4 ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .block4 {
   position: relative;
@@ -1724,7 +1785,8 @@ li.sale-noti > a {
   }
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 @media (max-width: 1660px) {
   .rs1-block4 .block4 {
     width: calc(100% / 4);
@@ -1749,7 +1811,8 @@ li.sale-noti > a {
   }
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .block4-overlay {
   display: block;
   background-color: rgba(0,0,0,0.9);
@@ -1761,7 +1824,8 @@ li.sale-noti > a {
   color: unset;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .block4-overlay-txt {
   position: absolute;
   width: 100%;
@@ -1769,7 +1833,8 @@ li.sale-noti > a {
   bottom: -100%;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .block4-overlay-heart {
   transform-origin: top left;
   -webkit-transform: scale(0);
@@ -1779,7 +1844,8 @@ li.sale-noti > a {
   transform: scale(0);
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .block4:hover .block4-overlay {
   visibility: visible;
   opacity: 1;
@@ -1800,6 +1866,7 @@ li.sale-noti > a {
 
 /*[ BG Title Page ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .bg-title-page {
   width: 100%;
@@ -1818,6 +1885,7 @@ li.sale-noti > a {
 
 /*[ rs NoUI ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .leftbar #filter-bar {
   margin-right: 6px;
@@ -1852,6 +1920,7 @@ li.sale-noti > a {
 
 /*[ Filter Color ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .color-filter1 {background-color: #00bbec;}
 .color-filter2 {background-color: #2c6ed5;}
@@ -1883,6 +1952,7 @@ li.sale-noti > a {
 
 /*[ Pagination ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .pagination {
   margin-right: -6px;
@@ -1913,6 +1983,7 @@ li.sale-noti > a {
 
 /*[ Slick3 ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 
 .wrap-slick3-dots {
@@ -1959,6 +2030,7 @@ li.sale-noti > a {
 
 /*[ Dropdown content ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .show-dropdown-content .down-mark {
   display: block;
@@ -1971,9 +2043,11 @@ li.sale-noti > a {
 
 /*[ Cart ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 /*[ Table ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .wrap-table-shopping-cart {
   overflow: auto;
@@ -2056,7 +2130,8 @@ li.sale-noti > a {
 }
 
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .cart-img-product {
   width: 90px;
   position: relative;
@@ -2099,6 +2174,7 @@ li.sale-noti > a {
 
 /*[ Tags ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .wrap-tags {
   margin-right: -3px;
@@ -2124,6 +2200,7 @@ li.sale-noti > a {
 
 /*[ tab01 ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .tab01 .nav-tabs {
   display: -webkit-box;
@@ -2179,6 +2256,7 @@ li.sale-noti > a {
 
 /*[ Modal video 01 ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 body {padding-right: 0px !important;}
 
@@ -2190,7 +2268,8 @@ body {padding-right: 0px !important;}
 }
 .modal-open {overflow-y: scroll;}
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .modal-backdrop {
   background-color: transparent;
 }
@@ -2269,6 +2348,7 @@ body {padding-right: 0px !important;}
 
 /*[ Input NumProduct ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 input.num-product {
     -moz-appearance: textfield;
@@ -2284,6 +2364,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*[ FONT SIZE ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .fs-1 {font-size: 1px;}
 .fs-2 {font-size: 2px;}
@@ -2488,6 +2569,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*[ PADDING ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .p-t-0 {padding-top: 0px;}
 .p-t-1 {padding-top: 1px;}
@@ -3496,6 +3578,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*[ MARGIN ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .m-t-0 {margin-top: 0px;}
 .m-t-1 {margin-top: 1px;}
@@ -4509,23 +4592,28 @@ input.num-product::-webkit-inner-spin-button {
 
 /*[ TEXT ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .text-white {color: white;}
 .text-black {color: black;}
 
 .text-hov-white:hover {color: white;}
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .text-up {text-transform: uppercase;}
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .t-center {text-align: center;}
 .t-left {text-align: left;}
 .t-right {text-align: right;}
 .t-middle {vertical-align: middle;}
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .lh-1-0 {line-height: 1.0;}
 .lh-1-1 {line-height: 1.1;}
 .lh-1-2 {line-height: 1.2;}
@@ -4553,10 +4641,12 @@ input.num-product::-webkit-inner-spin-button {
 
 /*[ SHAPE ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 
 /*[ Display ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .dis-none {display: none;}
 .dis-block {display: block;}
@@ -4572,6 +4662,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*[ Position ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .pos-relative {position: relative;}
 .pos-absolute {position: absolute;}
@@ -4579,6 +4670,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*[ float ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .float-l {float: left;}
 .float-r {float: right;}
@@ -4586,6 +4678,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*[ Width & Height ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .sizefull {
 	width: 100%;
@@ -4600,6 +4693,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*[ Top Bottom Left Right ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .top-0 {top: 0;}
 .bottom-0 {bottom: 0;}
@@ -4614,6 +4708,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*[ Opacity ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .op-0-0 {opacity: 0;}
 .op-0-1 {opacity: 0.1;}
@@ -4629,6 +4724,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*[ Background ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .bgwhite {background-color: white;}
 .bgblack {background-color: black;}
@@ -4637,15 +4733,18 @@ input.num-product::-webkit-inner-spin-button {
 
 /*[ Wrap Picture ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .wrap-pic-w img {width: 100%;}
 .wrap-pic-max-w img {max-width: 100%;}
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .wrap-pic-h img {height: 100%;}
 .wrap-pic-max-h img {max-height: 100%;}
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .wrap-pic-cir {
 	border-radius: 50%;
 	overflow: hidden;
@@ -4658,10 +4757,12 @@ input.num-product::-webkit-inner-spin-button {
 
 /*[ Hover ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .hov-pointer:hover {cursor: pointer;}
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .hov-img-zoom {
 	display: block;
 	overflow: hidden;
@@ -4685,6 +4786,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*[  ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .bo-cir {border-radius: 50%;}
 
@@ -4699,6 +4801,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*[ Transition ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .trans-0-1 {
 	-webkit-transition: all 0.1s;
@@ -4753,12 +4856,15 @@ input.num-product::-webkit-inner-spin-button {
 
 /*[ Layout ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 
 /*[ Flex ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .flex-w {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -4772,7 +4878,8 @@ input.num-product::-webkit-inner-spin-button {
 	flex-wrap: wrap;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .flex-l {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -4818,7 +4925,8 @@ input.num-product::-webkit-inner-spin-button {
 	justify-content: space-between;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .flex-t {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -4859,7 +4967,8 @@ input.num-product::-webkit-inner-spin-button {
 	align-items: stretch;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .flex-row {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -4912,7 +5021,8 @@ input.num-product::-webkit-inner-spin-button {
 	flex-direction: column-reverse;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .flex-c-m {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -5001,7 +5111,8 @@ input.num-product::-webkit-inner-spin-button {
 	align-items: center;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .flex-col-l {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -5140,7 +5251,8 @@ input.num-product::-webkit-inner-spin-button {
 	justify-content: space-between;
 }
 
-/* ------------------------------------ */
+/* ------------------------------------ *= require cookies_eu
+*/
 .flex-col-rev-l {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -5204,6 +5316,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*[ Absolute ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .ab-c-m {
 	position: absolute;
@@ -5294,10 +5407,12 @@ input.num-product::-webkit-inner-spin-button {
 
 /*=========================================================
 TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
-=========================================================*/
+=========================================================*= require cookies_eu
+*/
 
 /*[ S-Text 0 - 15 ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .s-text1 {
 	font-family: 'Quicksand', sans-serif;
@@ -5459,6 +5574,7 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 
 /*[ M-Text 16 - 30 ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .m-text1 {
 	font-family: 'Quicksand', sans-serif;
@@ -5659,6 +5775,7 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 
 /*[ L-Text 31 - 50 ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .l-text1 {
 	font-family: 'Quicksand-Bold', sans-serif;
@@ -5679,6 +5796,7 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 
 /*[ XL-Text >= 51 ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .xl-text1 {
 	font-family: 'Quicksand', sans-serif;
@@ -5710,6 +5828,7 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 
 /*[ Color ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .colorwhite {color: #fff;}
 .color0 {color: #e65540;}
@@ -5719,6 +5838,7 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 
 /*[  ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .color0-hov:hover {color: #e65540;}
 
@@ -5726,16 +5846,19 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 
 /*=========================================================
 SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
-=========================================================*/
+=========================================================*= require cookies_eu
+*/
 
 /*[ Special ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 
 
 
 /*[ Size ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .size1 {
 	width: 100%;
@@ -5864,6 +5987,7 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 
 /*[ Width Size ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .w-size1 {
 	width: 161px;
@@ -5979,6 +6103,7 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 
 /*[ Height Size ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .h-size1 {
 	max-height: 138px;
@@ -5991,6 +6116,7 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 
 /*[ Background ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .bg0 {background-color: #e65540;}
 .bg1 {background-color: #222222;}
@@ -6010,6 +6136,7 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 
 /*[  ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .bg0-hov:hover {background-color: #e65540;}
 
@@ -6017,12 +6144,14 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 
 /*[  ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .bg1-overlay {background-color: rgba(0,0,0,0.35);}
 
 
 /*[  ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .bg1-pattern {
 	background-image: url(../images/icons/pattern1.png);
@@ -6033,6 +6162,7 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 
 /*[ Border ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .bo1 {
 	border: 1px solid #dbdbdb;
@@ -6109,6 +6239,7 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 
 /*[  ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .bo-rad-2 {border-radius: 2px;}
 .bo-rad-3 {border-radius: 3px;}
@@ -6139,10 +6270,12 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 
 /*=========================================================
 EFFECT   EFFECT   EFFECT   EFFECT   EFFECT   EFFECT  EFFECT
-=========================================================*/
+=========================================================*= require cookies_eu
+*/
 
 /*[ Effect1 ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .effect1 {
 	position: relative;
@@ -6168,6 +6301,7 @@ EFFECT   EFFECT   EFFECT   EFFECT   EFFECT   EFFECT  EFFECT
 
 /*[ Effect2 ]
 -----------------------------------------------------------
+*= require cookies_eu
 */
 .eff2:active {
 	background-color: #e65540;
@@ -6185,6 +6319,7 @@ EFFECT   EFFECT   EFFECT   EFFECT   EFFECT   EFFECT  EFFECT
 
 /*[ Position ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .pos1 {
 	position: absolute;
@@ -6207,6 +6342,7 @@ EFFECT   EFFECT   EFFECT   EFFECT   EFFECT   EFFECT  EFFECT
 
 /*[ Box Shadow ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .shadow1 {
 	box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.1);
@@ -6219,6 +6355,7 @@ EFFECT   EFFECT   EFFECT   EFFECT   EFFECT   EFFECT  EFFECT
 
 /*[ Gradient ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .gradient1 {
     background: -webkit-linear-gradient(rgba(0,0,0,0.6) , rgba(0,0,0,0));
@@ -6231,6 +6368,7 @@ EFFECT   EFFECT   EFFECT   EFFECT   EFFECT   EFFECT  EFFECT
 
 /*[ Transform ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .transform1 {
 	-webkit-transform: translate(-50%, -50%) rotateZ(90deg);
@@ -6245,6 +6383,7 @@ EFFECT   EFFECT   EFFECT   EFFECT   EFFECT   EFFECT  EFFECT
 
 /*[ Hover ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .hov1:hover {
     background-color: #e65540;
@@ -6280,6 +6419,7 @@ EFFECT   EFFECT   EFFECT   EFFECT   EFFECT   EFFECT  EFFECT
 
 /*[ Active ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .active1 {
 	color: #333333;
@@ -6289,6 +6429,7 @@ EFFECT   EFFECT   EFFECT   EFFECT   EFFECT   EFFECT  EFFECT
 
 /*[ Parallax ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 .parallax0 {
     background-attachment: fixed;
@@ -6308,7 +6449,8 @@ EFFECT   EFFECT   EFFECT   EFFECT   EFFECT   EFFECT  EFFECT
 
 /*=========================================================
 RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
-=========================================================*/
+=========================================================*= require cookies_eu
+*/
 
 @media (max-width: 1350px) {
 	.p-lr-0-xl1 {
@@ -6320,6 +6462,7 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
 
 /*[ XL ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 @media (max-width: 1200px) {
 	.p-t-30-xl {padding-top: 30px;}
@@ -6349,6 +6492,7 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
 
 /*[ LG ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 @media (max-width: 992px) {
 	.p-r-0-lg {padding-right: 0;}
@@ -6370,6 +6514,7 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
 
 /*[ MD ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 @media (max-width: 768px) {
 	.respon5 {
@@ -6381,6 +6526,7 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
 
 /*[ SM ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 @media (max-width: 576px) {
 	.p-r-0-sm {padding-right: 0;}
@@ -6410,6 +6556,7 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
 
 /*[ SSM ]
 ///////////////////////////////////////////////////////////
+*= require cookies_eu
 */
 @media (max-width: 480px) {
 	.p-b-20per-ssm {

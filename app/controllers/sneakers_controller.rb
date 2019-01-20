@@ -1,5 +1,6 @@
 class SneakersController < ApplicationController
   def index
+    
     @filterrific = initialize_filterrific(
      Sneaker,
      params[:filterrific],
@@ -13,11 +14,11 @@ class SneakersController < ApplicationController
       },
    ) or return
    @sneakers = @filterrific.find.page(params[:page])
-
    respond_to do |format|
      format.html
      format.js
    end
+   
   end
   
   
@@ -32,11 +33,11 @@ class SneakersController < ApplicationController
     end
     @sneakers = Sneaker.find(params[:id])
     @stocks = Sneaker.find(params[:id]).stocks
-    @sellers = Seller.includes(:stocks).where(stocks: { sneaker_id: params[:id] })
+    @sellers = Seller.includes(:stocks).references(:stocks).where(stocks: { sneaker_id: "4113" })
     # Stock.includes(:sellers).where(sneaker_id: "4113").select(:logo_url, :vendor, :size, :old_price, :price, :offer_link)
     # Seller.joins(:stocks).where(stocks: { sneaker_id: "4113" })
     # Seller.includes(:stocks).where(stocks: { sneaker_id: "4113" }).select(:logo_url, :vendor, :size, :old_price, :price, :offer_link)
-    # 
+    # Stock.preload(:sellers).where(sneaker_id: "4113")
   end
   
   def update

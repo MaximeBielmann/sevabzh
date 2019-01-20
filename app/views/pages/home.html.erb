@@ -1,5 +1,4 @@
- <div class="container">
-     <section class="slide1">
+<section class="slide1">
     		<div class="wrap-slick1">
     			<div class="slick1">
     			    <div class="item-slick1 item1-slick1" style="background-image: url(https://res.cloudinary.com/hqfexni0y/image/upload/v1547055631/Home/pexels-photo-233315.jpg);">
@@ -47,9 +46,7 @@
     					</div>
     			    </div>
     		    </div>
-    		</div>
     </section>
-</div>
 
 <div class="container m-t-50 m-b-100">
     <div class="row">
@@ -87,6 +84,41 @@
     </div>
 </div>
 
+<div class="container m-t-50 m-b-100">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="text-center">Les prochaines releases</h1>
+        </div>
+    </div>
+    <div class="row">
+      <% @releases.each do |release| %>
+      <div class="col-md-3 p-b-50">
+							<!-- Block2 -->
+							<div class="block2">
+								<div class="block2-img wrap-pic-w of-hidden pos-relative">
+									<%= image_tag (release.img_url) %>
+
+									<div class="block2-overlay trans-0-4">
+										<div class="block2-btn-addcart w-size1 trans-0-4">
+											<!-- Button -->
+												<a href="/calendar/<%= release.id %>" class="btn btn-primary btn-seva w-100">Voir la release</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="block2-txt p-t-20">
+									  <p class="text-center"><a href="/sneakers/<%= release.id %>">
+                    <%= release.sneakers_ref %> - 
+                    <%= release.brand %> - 
+                    <%= release.title %> - 
+                    <%= release.color %></a>
+                    </p>
+								</div>
+					</div>
+			</div>
+			<% end %>
+    </div>
+</div>
 
 <div class="container">
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
