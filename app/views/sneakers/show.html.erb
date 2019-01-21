@@ -1,34 +1,51 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12 text-center title">
-      <h2><%= @sneakers.sneakers_ref %> - <%= @sneakers.brand %> - <%= @sneakers.title %> - <%= @sneakers.color %></h2>
+    <div class="col-md-4 text-left title">
+      <h6><%= @sneakers.brand %></h6>
+      <h5><%= @sneakers.title %></h5>
+      <p><%= @sneakers.sneakers_ref %></p>
+    </div>
+    <div class="col-md-8">
+      
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4">
-      <%= image_tag @sneakers.img_url, class:'img-fluid' %>
+    <div class="col-md-4 border-right">
+      <div class="row">
+        <div class="col-md-12">
+          <%= image_tag @sneakers.img_url, class:'img-fluid' %>
+        </div>
+        <div class="col-md-6">
+          <%= image_tag @sneakers.img_url, class:'img-fluid' %>
+        </div>
+        <div class="col-md-6">
+          <%= image_tag @sneakers.img_url, class:'img-fluid' %>
+        </div>
+      </div>
     </div>
     <div class="col-md-8">
-      <h1>SHOPS</h1>
-          <div class="row">  
-           <% @sellers.each do |seller| %>
-                <div class="col-md-4 m-t-20">
-                <h5><%= image_tag seller.logo_url, size: '40', class:'img-fluid' %> <%= seller.vendor %></h5>
-                </div>
-                <div class="col-md-4 m-t-20">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>Disponible dans <%= @sellers.size %> <% if @sellers.size > 1 %> shops <% else %> shop <% end %></h1>
+        </div>
+        <div class="col-md-4">
+        </div>
+      </div>
+        <div class="row">  
+          <% @sellers.each do |seller| %>
+                 <div class="col-md-8 m-t-20">
+                  <h5><%= image_tag seller.logo_url, size: '40', class:'img-fluid' %> <%= seller.vendor %></h5>
+                 </div>
+                 <div class="col-md-4 m-t-20">
+                  <% seller.stocks.limit(1).each do |s| %>
+                    <a href="<%= s.offer_link %>" class="btn btn-primary btn-xs btn-seva " target="_blank" role="button" aria-pressed="true"><%= s.price %>€</a>
+                  <% end %>
+                 </div>
+                <ul class="list-inline">
                 <% seller.stocks.each do |s| %>
-                <p>Taille : <%= s.size %> / Prix : <del><%= s.old_price %></del> <%= s.price %>€</p>
-                </div>
-                <div class="col-md-4 m-t-20">
-                <a href="<%= s.offer_link %>" class="btn btn-primary btn-xs btn-seva " target="_blank" role="button" aria-pressed="true">VOIR L'OFFRE</a>
-                </div>
+                <li class="list-inline-item m-l-20"><p><%= s.size %></p></li>
                 <% end %>
-                <!-- <div class="col-md-10">
-                <p>Taille : <%#= seller.size %> / Prix : <del><%#= seller.old_price %></del> <%#= seller.price %>€</p>
-                </div>
-                <div class="col-md-2">
-                <a href="stock.offer_link" class="btn btn-primary btn-xs btn-seva m-t-20" target="_blank" role="button" aria-pressed="true">VOIR L'OFFRE</a> -->
-            
+                </ul>
           <% end %>
         </div>
     </div>

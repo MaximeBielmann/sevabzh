@@ -33,7 +33,7 @@ class SneakersController < ApplicationController
     end
     @sneakers = Sneaker.find(params[:id])
     @stocks = Sneaker.find(params[:id]).stocks
-    @sellers = Seller.includes(:stocks).references(:stocks).where(stocks: { sneaker_id: "4113" })
+    @sellers = Seller.includes(:stocks).references(:stocks).where(stocks: { sneaker_id: params[:id] })
     # Stock.includes(:sellers).where(sneaker_id: "4113").select(:logo_url, :vendor, :size, :old_price, :price, :offer_link)
     # Seller.joins(:stocks).where(stocks: { sneaker_id: "4113" })
     # Seller.includes(:stocks).where(stocks: { sneaker_id: "4113" }).select(:logo_url, :vendor, :size, :old_price, :price, :offer_link)
