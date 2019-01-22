@@ -43,7 +43,7 @@
                  <div class="col-md-4 m-t-20">
                   <% seller.stocks.each do |s| %>
                     <% if @i<1 %>
-                    <a href="<%= s.offer_link %>" class="btn btn-primary btn-xs btn-seva " target="_blank" role="button" aria-pressed="true"><%= s.price %>€</a>
+                    <h5><del><%= s.old_price %></del>  <%= s.price %>€ <a href="<%= s.offer_link %>" class="btn btn-primary btn-xs btn-seva " target="_blank" role="button" aria-pressed="true">Voir l'offre</a></h5>
                     <% @i += 1 %>
                     <% end %>
                   <% end %>
