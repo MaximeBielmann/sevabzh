@@ -23,7 +23,7 @@ class SneakersController < ApplicationController
   
   
   def create
-    Sneaker.create sneakers_ref: params[:sneakers_ref], brand: params[:brand], title: params[:title], color: params[:color], img_url: params[:img_url]
+    Sneaker.create sneakers_ref: params[:sneakers_ref], brand: params[:brand], title: params[:title], color: params[:color], img_url: params[:img_url], img_url2: params[:img_url2], img_url3: params[:img_url3]
     redirect_to "/sneakers/"
   end
   
@@ -31,6 +31,7 @@ class SneakersController < ApplicationController
     if session[:admin_id]
       @current_admin = Admin.find(session[:admin_id])
     end
+    @i = 0
     @sneakers = Sneaker.find(params[:id])
     @stocks = Sneaker.find(params[:id]).stocks
     @sellers = Seller.includes(:stocks).references(:stocks).where(stocks: { sneaker_id: params[:id] })
@@ -47,6 +48,8 @@ class SneakersController < ApplicationController
     @sneakers.title = params[:title]
     @sneakers.color = params[:color]
     @sneakers.img_url = params[:img_url]
+    @sneakers.img_url2 = params[:img_url2]
+    @sneakers.img_url3 = params[:img_url3]
     @sneakers.save
     redirect_to "/sneakers/#{params[:id]}"
   end

@@ -16,10 +16,14 @@
           <%= image_tag @sneakers.img_url, class:'img-fluid' %>
         </div>
         <div class="col-md-6">
-          <%= image_tag @sneakers.img_url, class:'img-fluid' %>
+          <% if @sneakers.img_url2 %>
+          <%= image_tag @sneakers.img_url2, class:'img-fluid' %>
+          <% end %>
         </div>
         <div class="col-md-6">
-          <%= image_tag @sneakers.img_url, class:'img-fluid' %>
+          <% if @sneakers.img_url3 %>
+          <%= image_tag @sneakers.img_url3, class:'img-fluid' %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -37,8 +41,11 @@
                   <h5><%= image_tag seller.logo_url, size: '40', class:'img-fluid' %> <%= seller.vendor %></h5>
                  </div>
                  <div class="col-md-4 m-t-20">
-                  <% seller.stocks.limit(1).each do |s| %>
+                  <% seller.stocks.each do |s| %>
+                    <% if @i<1 %>
                     <a href="<%= s.offer_link %>" class="btn btn-primary btn-xs btn-seva " target="_blank" role="button" aria-pressed="true"><%= s.price %>€</a>
+                    <% @i += 1 %>
+                    <% end %>
                   <% end %>
                  </div>
                 <ul class="list-inline">
@@ -66,6 +73,8 @@
   <p><input type="text" value="<%= @sneakers.title %>"  name="title" /></p>
   <p><input type="text" value="<%= @sneakers.color %>"  name="color" /></p>
   <p><input type="text" value="<%= @sneakers.img_url %>"  name="img_url" /></p>
+  <p><input type="text" value="<%= @sneakers.img_url2 %>"  name="img_url2" /></p>
+  <p><input type="text" value="<%= @sneakers.img_url3 %>"  name="img_url3" /></p>
   <p><input type="submit" value="Mettre à jour la sneaker" /></p>
 <% end %>
 </div>

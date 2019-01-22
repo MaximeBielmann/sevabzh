@@ -1,5 +1,7 @@
 class ListingUploaderController < ApplicationController
     require 'csv'
+    require 'open-uri'
+    # https://s3.us-east-2.amazonaws.com/sevabzh/upload.csv
     
     def upload
         CSV.foreach('public/upload.csv', headers: true) do |row|
@@ -7,7 +9,9 @@ class ListingUploaderController < ApplicationController
                         brand: row['brand'], 
                         title: row['title'], 
                         color: row['color'], 
-                        img_url: row['img_url']).first_or_create
+                        img_url: row['img_url'],
+                        img_url2: row['img_url2'],
+                        img_url3: row['img_url3']).first_or_create
                            
             # Seller.where(vendor: row['seller'],
             #            logo_url: row['logo_url'], 
