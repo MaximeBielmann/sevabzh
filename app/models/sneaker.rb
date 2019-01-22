@@ -1,6 +1,6 @@
 class Sneaker < ApplicationRecord
  
- paginates_per 24
+ paginates_per 16
  
  filterrific(
    available_filters: [

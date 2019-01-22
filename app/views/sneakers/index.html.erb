@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row justify-content-center">
-                            <div class="col-lg-12">
+                            <div class="row">
                                 <form class="card card-sm">
                                     <%= form_for_filterrific(
                                           @filterrific, 
@@ -8,32 +8,32 @@
                                           html: { id: :manual_filterrific_form }
                                       ) do |f| %>
                                     <div class="card-body row no-gutters align-items-center">
-                                        <div class="col-auto">
+                                        <div class="col-auto col-md-1 col-sm-12">
                                             <i class="fas fa-search h4 text-body"></i>
                                         </div>
                                         <!--end of col-->
-                                        <div class="col">
+                                        <div class="col col-md-2 col-sm-12">
                                             <%= f.text_field(
                                           :search_sneakers_ref,
                                           class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
                                           placeholder: "Référence"
                                         ) %>
                                         </div>
-                                        <div class="col">
+                                        <div class="col col-md-2 col-sm-12">
                                              <%= f.text_field(
                                           :search_brand,
                                           class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
                                           placeholder: "Marque"
                                         ) %>
                                         </div>
-                                        <div class="col">
+                                        <div class="col col-md-2 col-sm-12">
                                             <%= f.text_field(
                                           :search_title,
                                           class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
                                           placeholder: "Modèle"
                                         ) %>
                                         </div>
-                                        <div class="col">
+                                        <div class="col col-md-2 col-sm-12">
                                           <%= f.text_field(
                                           :search_price,
                                           class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
@@ -41,14 +41,13 @@
                                         ) %>
                                         </div>
                                         <!--end of col-->
-                                        <div class="col-auto">
+                                        <div class="col-auto col-md-3 col-sm-12">
                                             <%= f.submit '   Chercher   ', class:'btn btn-lg btn-seva' %>
-                                        </div>
-                                        <div class="col-auto">
-                                          <%= link_to(
-                                          'Réinitialiser',
-                                          reset_filterrific_url,
-                                          ) %>
+                                            
+                                            <%= link_to(
+                                              'Réinitialiser',
+                                              reset_filterrific_url,
+                                              ) %>
                                         </div>
                                         <!--end of col-->
                                     </div>
