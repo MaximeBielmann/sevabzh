@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#home'
   
-  get 'sellers/index'
   get 'sneakers' => 'sneakers#index'
   post 'sneakers' => 'sneakers#create'
   get 'sneakers/:id' => 'sneakers#show'
@@ -32,7 +31,6 @@ Rails.application.routes.draw do
   get 'admin/logout' => 'admin#destroy'
   post 'admin' => 'sneakers#create'
   
-  get 'sellers' => 'pages#sellers'
   get 'faq' => 'pages#faq'
   get 'cgu' => 'pages#cgu'
   get 'mentions' => 'pages#legal'
