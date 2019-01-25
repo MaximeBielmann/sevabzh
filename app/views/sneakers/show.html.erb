@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@sneakers.title} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "#{@sneakers.brand} - #{@sneakers.title}" %>
+<% content_for :meta_image, @sneakers.img_url %>
+
 <div class="container">
   <div class="row">
     <div class="col-md-4 text-left title">
@@ -38,11 +42,11 @@
         <div class="row">  
           <% @sellers.each do |seller| %>
                  <div class="col-md-6 m-t-20">
-                  <h5><%= image_tag seller.logo_url, size: '40', class:'img-fluid' %> <%= seller.vendor %></h5>
+                  <h5><%= image_tag seller.logo_url, size: '65', class:'img-fluid' %> <%= seller.vendor %></h5>
                  </div>
-                 <div class="col-md-6 m-t-20">
+                 <div class="col-md-6 m-t-35">
                   <% seller.stocks.each do |s| %>
-                    <% if @i<1 %>
+                    <% if @i<1  %>
                     <h5><% if s.old_price > s.price %><del><%= s.old_price %>€</del>  <%= s.price %>€ <% else %> <%= s.price %>€ <% end %><a href="<%= s.offer_link %>" class="btn btn-primary btn-xs btn-seva " target="_blank" role="button" aria-pressed="true">Voir l'offre</a></h5>
                     <% @i += 1 %>
                     <% end %>

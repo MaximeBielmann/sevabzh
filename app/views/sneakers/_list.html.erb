@@ -1,5 +1,10 @@
 <div class="container">
     <div class="row">
+    	<div class="col-md-1">
+    		
+    	</div>
+    	<div class="col-md-10">
+    		<div class="row">
       <% @sneakers.each do |sneaker| %>
       <div class="col-md-3 col-sm-6 p-b-50">
 							<!-- Block2 -->
@@ -19,12 +24,14 @@
 									  <p class="text-center"><a href="/sneakers/<%= sneaker.id %>">
 					                    <%= sneaker.sneakers_ref %> - 
 					                    <%= sneaker.brand %> - 
-					                    <%= sneaker.title %> - 
-					                    <%= sneaker.color %></a>
+					                    <%= sneaker.title %></a>
 					                   </p>
 								</div>
 					</div>
 			</div>
 			<% end %>
+    			
+    		</div>
+    	</div>
     </div>
 </div>

@@ -1,5 +1,13 @@
 <div class="container">
     <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">Boutiques partenaires</h1>
+        </div>
+        <div class="col-md-12">
+            <p class="text-center">Vous trouverez ici l'ensemble de nos partenaires européens et internationaux. Les boutiques ont été sélectionnées avec le plus grand soin afin de vous proposer des produits de qualité.</p>
+        </div>
+    </div>
+    <div class="row border m-t-20 m-b-50">
         <% @sellers.each do |seller| %>
                 <div class="col-md-4 col-sm-6 my-auto text-center">
                 <a href="/sellers/<%= seller.id %>"><%= image_tag (seller.logo_url), size: '200', :class => "img-fluid" %></a>

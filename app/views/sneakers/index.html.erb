@@ -1,16 +1,16 @@
 <div class="container">
     <div class="row justify-content-center">
                             <div class="row">
-                                <form class="card card-sm">
+                                <div class="col-md-2">
+                                    
+                                </div>
+                                <form class="card card-sm col-md-8 m-t-20">
                                     <%= form_for_filterrific(
                                           @filterrific, 
                                           url: sneakers_path, 
                                           html: { id: :manual_filterrific_form }
                                       ) do |f| %>
                                     <div class="card-body row no-gutters align-items-center">
-                                        <div class="col-auto col-md-1 col-sm-12">
-                                            <i class="fas fa-search h4 text-body"></i>
-                                        </div>
                                         <!--end of col-->
                                         <div class="col col-md-2 col-sm-12">
                                             <%= f.text_field(
@@ -35,20 +35,28 @@
                                         </div>
                                         <div class="col col-md-2 col-sm-12">
                                           <%= f.text_field(
+                                          :search_color,
+                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
+                                          placeholder: "Couleur"
+                                        ) %>
+                                        </div>
+                                        <div class="col col-md-1 col-sm-12">
+                                          <%= f.text_field(
                                           :search_price,
                                           class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
                                           placeholder: "Prix maxi"
                                         ) %>
                                         </div>
                                         <!--end of col-->
-                                        <div class="col-auto col-md-3 col-sm-12">
-                                            <%= f.submit '   Chercher   ', class:'btn btn-lg btn-seva' %>
-                                            
+                                        <div class="col-auto col-md-2 col-sm-12">
+                                            <%= f.submit 'Chercher', class:'btn btn-md btn-seva float-right' %>
+                                        </div>
+                                        <div class="col-auto col-md-1 col-sm-12 text-right">
                                             <%= link_to(
-                                              'Réinitialiser',
+                                              'reset',
                                               reset_filterrific_url,
                                               ) %>
-                                        </div>
+                                        </div
                                         <!--end of col-->
                                     </div>
                                     <% end %>
