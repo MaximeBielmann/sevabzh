@@ -41,17 +41,20 @@
       </div>
         <div class="row">  
           <% @sellers.each do |seller| %>
+            <div class="row">
                  <div class="col-md-6 m-t-20">
                   <h5><%= image_tag seller.logo_url, size: '65', class:'img-fluid' %> <%= seller.vendor %></h5>
                  </div>
                  <div class="col-md-6 m-t-35">
                   <% seller.stocks.each do |s| %>
+                    <% @i = 0 %>
                     <% if @i<1  %>
                     <h5><% if s.old_price > s.price %><del><%= s.old_price %>€</del>  <%= s.price %>€ <% else %> <%= s.price %>€ <% end %><a href="<%= s.offer_link %>" class="btn btn-primary btn-xs btn-seva " target="_blank" role="button" aria-pressed="true">Voir l'offre</a></h5>
                     <% @i += 1 %>
                     <% end %>
                   <% end %>
                  </div>
+                </div>
                 <ul class="list-inline">
                 <% seller.stocks.each do |s| %>
                 <li class="list-inline-item m-l-20"><p><%= s.size %></p></li>

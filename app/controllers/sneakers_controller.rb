@@ -31,7 +31,6 @@ class SneakersController < ApplicationController
     if session[:admin_id]
       @current_admin = Admin.find(session[:admin_id])
     end
-    @i = 0
     @sneakers = Sneaker.find(params[:id])
     @stocks = Sneaker.find(params[:id]).stocks
     @sellers = Seller.includes(:stocks).references(:stocks).where(stocks: { sneaker_id: params[:id] })
