@@ -55,31 +55,75 @@
         </div>
     </div>
     <div class="row">
-      <% @shoes.each do |shoe| %>
-      <div class="col-md-3 p-b-50">
+      <div class="col-md-4 p-b-50">
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative">
-									<%= image_tag (shoe.img_url) %>
+									<%= image_tag (Sneaker.find(15542).img_url) %>
 
 									<div class="block2-overlay trans-0-4">
 										<div class="block2-btn-addcart w-size1 trans-0-4">
 											<!-- Button -->
-												<a href="/sneakers/<%= shoe.id %>" class="btn btn-primary btn-seva w-100">Voir la sneaker</a>
+												<a href="/sneakers/15542" class="btn btn-primary btn-seva w-100">Voir la sneaker</a>
 										</div>
 									</div>
 								</div>
 
 								<div class="block2-txt p-t-20">
-									  <p class="text-center"><a href="/sneakers/<%= shoe.id %>">
-                    <%= shoe.sneakers_ref %> - 
-                    <%= shoe.brand %> - 
-                    <%= shoe.title %></a>
+									  <p class="text-center"><a href="/sneakers/15542">
+                    <%= Sneaker.find(15542).sneakers_ref %> - 
+                    <%= Sneaker.find(15542).brand %> - 
+                    <%= Sneaker.find(15542).title %></a>
                     </p>
 								</div>
 					</div>
 			</div>
-			<% end %>
+			<div class="col-md-4 p-b-50">
+							<!-- Block2 -->
+							<div class="block2">
+								<div class="block2-img wrap-pic-w of-hidden pos-relative">
+									<%= image_tag (Sneaker.find(16262).img_url) %>
+
+									<div class="block2-overlay trans-0-4">
+										<div class="block2-btn-addcart w-size1 trans-0-4">
+											<!-- Button -->
+												<a href="/sneakers/16262" class="btn btn-primary btn-seva w-100">Voir la sneaker</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="block2-txt p-t-20">
+									  <p class="text-center"><a href="/sneakers/16262">
+                    <%= Sneaker.find(16262).sneakers_ref %> - 
+                    <%= Sneaker.find(16262).brand %> - 
+                    <%= Sneaker.find(16262).title %></a>
+                    </p>
+								</div>
+					</div>
+			</div>
+			<div class="col-md-4 p-b-50">
+							<!-- Block2 -->
+							<div class="block2">
+								<div class="block2-img wrap-pic-w of-hidden pos-relative">
+									<%= image_tag (Sneaker.find(11673).img_url) %>
+
+									<div class="block2-overlay trans-0-4">
+										<div class="block2-btn-addcart w-size1 trans-0-4">
+											<!-- Button -->
+												<a href="/sneakers/11673" class="btn btn-primary btn-seva w-100">Voir la sneaker</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="block2-txt p-t-20">
+									  <p class="text-center"><a href="/sneakers/11673">
+                    <%= Sneaker.find(11673).sneakers_ref %> - 
+                    <%= Sneaker.find(11673).brand %> - 
+                    <%= Sneaker.find(11673).title %></a>
+                    </p>
+								</div>
+					</div>
+			</div>
     </div>
 </div>
 
@@ -92,21 +136,21 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <a href="/sneakers?utf8=✓&filterrific%5Bsearch_sneakers_ref%5D=&filterrific%5Bsearch_brand%5D=asics&filterrific%5Bsearch_title%5D=kayano+&filterrific%5Bsearch_price%5D=&commit=+++Chercher+++">
+      <a href="/sneakers/13108">
       <img class="d-block img-fluid" src="https://res.cloudinary.com/hqfexni0y/image/upload/v1548400334/Slider/asics-gel-kayano-5-og-stone-grey.png" alt="First slide">
         <div class="carousel-caption d-none d-md-block p-b-200">
         </div>
       </a>
     </div>
     <div class="carousel-item">
-      <a href="/sneakers?utf8=✓&filterrific%5Bsearch_sneakers_ref%5D=&filterrific%5Bsearch_brand%5D=nike&filterrific%5Bsearch_title%5D=air+max+1&filterrific%5Bsearch_price%5D=&commit=+++Chercher+++">
+      <a href="/sneakers/15500">
       <img class="d-block w-100" src="https://res.cloudinary.com/hqfexni0y/image/upload/v1548400335/Slider/nike-air-max-1-wheat-gold.png" alt="Second slide">
           <div class="carousel-caption d-none d-md-block p-b-200">
           </div>
       </a>
     </div>
     <div class="carousel-item">
-      <a href="/sneakers?utf8=✓&filterrific%5Bsearch_sneakers_ref%5D=&filterrific%5Bsearch_brand%5D=nike&filterrific%5Bsearch_title%5D=zoom+2k&filterrific%5Bsearch_price%5D=&commit=+++Chercher+++">
+      <a href="/sneakers/18093">
       <img class="d-block w-100" src="https://res.cloudinary.com/hqfexni0y/image/upload/v1548400334/Slider/nike-zoom-2k-white-black.png" alt="Third slide">
           <div class="carousel-caption d-none d-md-block p-b-200">
           </div>
