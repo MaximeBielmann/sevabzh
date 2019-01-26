@@ -58,7 +58,11 @@
                   <div class="col-md-12">
                     <ul class="list-inline">
                     <% seller.stocks.each do |s| %>
-                    <li class="list-inline-item m-l-20"><p><%= s.size %></p></li>
+                      <% @a = 0 %>
+                        <% if @a<1  %>
+                        <li class="list-inline-item m-l-20"><p><%= s.size %></p></li>
+                        <% @i += 1 %>
+                      <% end %>
                     <% end %>
                 </ul>
                   </div>
