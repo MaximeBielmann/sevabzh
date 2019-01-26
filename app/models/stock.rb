@@ -7,7 +7,7 @@ class Stock < ApplicationRecord
  
  validates :sneaker_id, presence: true
  validates :seller_id, presence: true
- validates :offer_link, presence: true, uniqueness: true
+ validates :offer_link, presence: true
  validates :price, presence: true
  
  scope :search_size, -> (search_size) { where("lower(size) LIKE ?", "%#{search_size.to_s.downcase}%") }
