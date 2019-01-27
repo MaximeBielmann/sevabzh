@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="col-md-12">
+    <div class="form-area">  
+      <h3 style="margin-bottom: 25px; text-align: center;">Formulaire de contact</h3>
+      <%= form_for @message, url: create_message_url do |f| %>
+        <%= notice %>
+        <%= @message.errors.full_messages.join(', ') %>
+      
+        <%= f.text_field :name, class:'form-group form-control', placeholder: 'Nom' %>
+        <%= f.email_field :email, class:'form-group form-control', placeholder: 'Email' %>
+        <%= f.text_area :body, class:'form-group form-control', placeholder: 'Message' %>
+        <%= f.submit 'Envoyer', class:'btn btn-primary pull-right btn-seva'  %>
+      <% end %>
+    </div>
+  </div>
+</div>

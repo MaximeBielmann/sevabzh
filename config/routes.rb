@@ -35,9 +35,11 @@ Rails.application.routes.draw do
   get 'cgu' => 'pages#cgu'
   get 'mentions' => 'pages#legal'
   get 'presskit' => 'pages#presskit'
+  
+  get 'contact-me', to: 'messages#new', as: 'new_message'
+  post 'contact-me', to: 'messages#create', as: 'create_message'
  
   # PAGES WITHOUT CONTROLLER / FUTUR FEATURES
   get 'blog' => 'streetwears#index'
   get 'streetwear' => 'streetwears#index'
-  get 'contact' => 'pages#contact'
 end
