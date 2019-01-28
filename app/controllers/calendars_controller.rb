@@ -1,6 +1,6 @@
 class CalendarsController < ApplicationController
   def index
-    @releases = Calendar.includes(:sneaker).references(:sneaker)
+    @releases = Calendar.distinct.includes(:sneaker).references(:sneaker)
   end
   
   def create
