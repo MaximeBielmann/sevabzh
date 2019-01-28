@@ -64,6 +64,17 @@
                   </div>
                 </div>
           <% end %>
+          <% @releases.each do |release| %>
+            <% @i = 0 %>
+            <div class="row">
+                 <div class="col-md-6">
+                  <h5><%= image_tag release.seller.logo_url, size: '65', class:'img-fluid' %> <%= release.seller.vendor %></h5>
+                 </div>
+                 <div class="col-md-6">
+                    <h5><%= release.release_price %>€ <a href="<%= release.release_link %>" class="btn btn-primary btn-xs btn-seva " target="_blank" role="button" aria-pressed="true">Voir l'offre</a></h5>
+                  </div>
+            </div>
+          <% end %>
     </div>
   </div>
 </div>

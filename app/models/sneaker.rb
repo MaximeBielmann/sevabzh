@@ -13,7 +13,8 @@ class Sneaker < ApplicationRecord
    ]
  )
  
- has_many :stocks
+ has_many :stocks, :foreign_key => "sneaker_id"
+ has_many :calendars, :foreign_key => "sneaker_id"
  has_many :sellers, through: :stocks
  
  validates :sneakers_ref, presence: true, uniqueness: true

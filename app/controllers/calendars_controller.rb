@@ -1,7 +1,6 @@
 class CalendarsController < ApplicationController
   def index
-    @calendars = Calendar.all
-    @sneakers 
+    @releases = Calendar.includes(:sneaker).references(:sneaker)
   end
   
   def create
@@ -14,7 +13,7 @@ class CalendarsController < ApplicationController
       @current_admin = Admin.find(session[:admin_id])
     end
     @calendars = Calendar.find(params[:id])
-    @sneakers = Sneaker.all.reverse
+    @sneakers = Sneaker.all
     @sellers = Seller.all
   end
   
