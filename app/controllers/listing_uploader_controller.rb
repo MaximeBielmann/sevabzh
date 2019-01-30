@@ -4,7 +4,7 @@ class ListingUploaderController < ApplicationController
     # https://s3.us-east-2.amazonaws.com/sevabzh/upload.csv
     
     def upload
-        CSV.foreach('public/upload.csv', headers: true) do |row|
+        CSV.foreach('public/upload.csv', :col_sep => (";"), headers: true) do |row|
             # Sneaker.where(sneakers_ref: row['sneakers_ref'], 
             #            brand: row['brand'], 
             #            title: row['title'], 
