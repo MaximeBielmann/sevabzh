@@ -5,11 +5,7 @@
                                     
                                 </div>
                                 <form class="card card-sm col-md-8 col-sm-10 m-t-20 m-b-20">
-                                    <%= form_for_filterrific(
-                                          @filterrific, 
-                                          url: sneakers_path, 
-                                          html: { id: :manual_filterrific_form }
-                                      ) do |f| %>
+                                    <%= form_for_filterrific @filterrific do |f| %>
                                     <div class="card-body row no-gutters align-items-center">
                                         <!--end of col-->
                                         <div class="col col-md-2 col-sm-12">
