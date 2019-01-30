@@ -1,6 +1,6 @@
 class CalendarsController < ApplicationController
   def index
-    @releases = Calendar.includes(:sneaker).select(:sneaker_id).distinct(:sneaker_id)
+    @releases = Calendar.includes(:sneaker).select(:sneaker_id, :release_date).distinct(:sneaker_id)
   end
   
   def create

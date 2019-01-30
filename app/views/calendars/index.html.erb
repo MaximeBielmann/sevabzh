@@ -1,11 +1,21 @@
 <div class="container">
-	<div class="row">
+	<div class="row m-t-50 m-b-200">
+		<% @i = 0 %>
 		<% @releases.each do |release| %>
-		<div class="col-md-3">
-				<a href="/sneakers/<%= release.sneaker.id %>">
-          		<%= image_tag release.sneaker.img_url, class:'img-fluid' %>
-          		<p><%= release.sneaker.title %></p></a>
-        </div>
+			<% if @i < 1 %>
+			<div class="col-md-3">
+					<div class="position-absolute">
+					<a href="/sneakers/<%= release.sneaker.id %>">
+	          		<%= image_tag release.sneaker.img_url, class:'img-fluid' %>
+	          		<p><%= release.sneaker.title %></p></a>
+	          		</div>
+					<time class="icon">
+					  <strong><%= release.release_date.strftime("%B") %></strong>
+					  <span><%= release.release_date.strftime("%d") %></span>
+					</time>
+	        </div>
+	        <% @i += 1 %>
+	        <% end %>
         <% end %>
 	</div>
 </div>

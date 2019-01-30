@@ -57,6 +57,7 @@ class SneakersController < ApplicationController
   def destroy
   @sneakerid = params[:id]
   Stock.where(sneaker_id: params[:id]).destroy_all
+  Calendar.where(sneaker_id: params[:id]).destroy_all
   Sneaker.find(@sneakerid).destroy
   redirect_to "/sneakers"
   end
