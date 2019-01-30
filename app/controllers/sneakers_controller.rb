@@ -12,7 +12,8 @@ class SneakersController < ApplicationController
         search_price: Stock
         
       },
-   ) or return
+   ) or return 
+   
    @sneakers = @filterrific.find.page(params[:page])
    respond_to do |format|
      format.html
