@@ -11,7 +11,7 @@ class SneakersController < ApplicationController
         search_color: Sneaker,
         search_price: Stock
         
-      },
+      }, :persistence_id => false,
    ) or return 
    
    @sneakers = @filterrific.find.page(params[:page])

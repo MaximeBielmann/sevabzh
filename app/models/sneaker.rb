@@ -19,7 +19,6 @@ class Sneaker < ApplicationRecord
  validates :sneakers_ref, presence: true, uniqueness: true
  validates :brand, presence: true
  validates :title, presence: true
- validates :img_url, presence: true
  
  
  scope :search_sneakers_ref, -> (search_sneakers_ref) { where("lower(sneakers_ref) LIKE ?", "%#{search_sneakers_ref.to_s.downcase}%") }

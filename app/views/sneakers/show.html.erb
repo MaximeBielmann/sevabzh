@@ -17,11 +17,16 @@
     <div class="col-md-4 border-right">
       <div class="row">
         <div class="col-md-12">
-          <%= image_tag @sneakers.img_url, class:'img-fluid' %>
+          <% if @sneakers.img_url %>
+					<%= image_tag (@sneakers.img_url), class:'img-fluid' %>
+					<% else %>
+          <%= image_tag("noimage.png", class:'img-fluid') %>
+          <% end %>
         </div>
         <div class="col-md-6">
           <% if @sneakers.img_url2 %>
           <%= image_tag @sneakers.img_url2, class:'img-fluid' %>
+          
           <% end %>
         </div>
         <div class="col-md-6">

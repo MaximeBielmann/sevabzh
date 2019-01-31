@@ -9,9 +9,12 @@
       <div class="col-md-3 col-sm-6 p-b-50">
 							<!-- Block2 -->
 							<div class="block2">
-								<div class="block2-img wrap-pic-w of-hidden pos-relative">
-									<%= image_tag (sneaker.img_url) %>
-
+								<div class="block2-img wrap-pic-w wrap-pic-h of-hidden pos-relative">
+									<% if sneaker.img_url %>
+									<%= image_tag (sneaker.img_url), class:'h-100' %>
+									<% else %>
+          							<%= image_tag("noimage.png") %>
+          							<% end %>
 									<div class="block2-overlay trans-0-4">
 										<div class="block2-btn-addcart w-size1 trans-0-4">
 											<!-- Button -->
@@ -37,7 +40,7 @@
     <div class="row">
     	<% if @sneakers.size < 1 %>
     		<div class="col-md-12">
-    			<h1 class="text-center">Désolé, aucun résultat :-/</h1>
+    			<h1 class="text-center">Désolé, aucun résultat pour la recherche</h1>
     		</div>
     	<% end %>
     </div>

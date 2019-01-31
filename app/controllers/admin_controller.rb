@@ -6,6 +6,10 @@ class AdminController < ApplicationController
     @sneakers = Sneaker.all.reverse
     @stocks = Stock.all
     @sellers = Seller.all
+    
+    @sneakersize = Sneaker.all.size
+    @stocksize = Stock.all.size
+    @sellersize = Seller.all.size
   end
   
   # def updatesneakers
