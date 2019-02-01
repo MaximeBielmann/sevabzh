@@ -31,7 +31,7 @@ class ListingUploaderController < ApplicationController
     end
     
     def upload_stocks
-        CSV.foreach('public/upload.csv', headers: true) do |row|
+        CSV.foreach('public/upload.csv', :col_sep => (";"), headers: true) do |row|
             Stock.where(sneaker_id: Sneaker.where(sneakers_ref: row['sneakers_ref']).ids, 
                         seller_id: Seller.where(vendor: row['seller']).ids,
                         size: row['size'], 
