@@ -6628,8 +6628,8 @@ time.icon {
   position: relative;
   top: 5px;
   left: 5px;
-  width: 4em;
-  height: 4em;
+  width: 3.8em;
+  height: 3.8em;
   background-color: #fff;
   border-radius: 0.6em;
   border: 1px solid #e5e5e5;
@@ -6650,7 +6650,7 @@ time.icon strong {
   top: 0;
   padding: 0.2em 0;
   color: #fff;
-  background-color: #fd9f1b;
+  background-color: #ff0000;
 }
 
 time.icon span {
