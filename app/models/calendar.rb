@@ -1,4 +1,5 @@
 class Calendar < ApplicationRecord
+    
     validates :sneaker_id, presence: true
     validates :seller_id, presence: true
     validates :release_date, presence: true

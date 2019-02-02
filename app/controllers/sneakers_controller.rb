@@ -35,6 +35,7 @@ class SneakersController < ApplicationController
     @sneakers = Sneaker.find(params[:id])
     @stocks = Sneaker.find(params[:id]).stocks
     @sellers = Seller.includes(:stocks).references(:stocks).where(stocks: { sneaker_id: params[:id] })
+    @releases = Sneaker.find(params[:id]).calendars
     # Stock.includes(:sellers).where(sneaker_id: "4113").select(:logo_url, :vendor, :size, :old_price, :price, :offer_link)
     # Seller.joins(:stocks).where(stocks: { sneaker_id: "4113" })
     # Seller.includes(:stocks).where(stocks: { sneaker_id: "4113" }).select(:logo_url, :vendor, :size, :old_price, :price, :offer_link)
@@ -57,6 +58,7 @@ class SneakersController < ApplicationController
   def destroy
   @sneakerid = params[:id]
   Stock.where(sneaker_id: params[:id]).destroy_all
+  Calendar.where(sneaker_id: params[:id]).destroy_all
   Sneaker.find(@sneakerid).destroy
   redirect_to "/sneakers"
   end

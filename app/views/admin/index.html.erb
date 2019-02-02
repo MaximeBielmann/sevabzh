@@ -73,7 +73,7 @@
       </div>
       <div class="row m-t-50">
             <div class="col-md-6">
-            <h3>Ajouter au calendrier</h3>
+            <h3>Ajouter une release</h3>
             <%= form_tag "/calendar", method: "post" do %>
                 <form>
                   <div class="form-group">
@@ -103,30 +103,49 @@
                 </form>
             <% end %>
             </div>
+            <div class="col-md-6">
+    <h3>Ajouter un stock</h3>
+         <%= form_tag "/stocks", method: "post" do %>
+                <form>
+                  <div class="form-group">
+                    <select name="sneaker_id" class="form-control border">
+                    <% @sneakers.each do |sneaker| %>
+                    <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%= sneaker.brand %> - <%= sneaker.title %></option>
+                    <% end %>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <select name="seller_id" class="form-control border">
+                    <% @sellers.each do |seller| %>
+                    <option value="<%= seller.id %>"><%= seller.vendor %> - <%= seller.country %></option>
+                    <% end %>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control border" placeholder="Taille" name="size" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control border" placeholder="Lien vers l'offre" name="offer_link" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control border" placeholder="Coût d'envoi" name="shipping_cost" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control border" placeholder="Vieux prix" name="old_prix" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control border" placeholder="Nouveau prix" name="price" />
+                  </div>
+                  <button type="submit" class="btn btn-primary">Ajouter le stock</button>
+                </form>
+            <% end %>
+        </div>
       </div>
 </div>
 
 <div class="container m-t-50">
     <div class="row">
-        <div class="col-md-6">
-            <h3>Ajouter un stock</h3>
-            <%= form_tag '/stocks', method: 'post' do %>
-                <ul class="list-group">
-                    <li class="list-item"><select name="sneaker_id">
-                    <% @sneakers.each do |sneaker| %>
-                    <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%= sneaker.brand %> - <%= sneaker.title %></option>
-                    <% end %>
-                    </select></li>
-                    <li class="list-item">Seller : <input type="text" placeholder="seller_id" name="seller_id" /></li>
-                    <li class="list-item">Size : <input type="text" placeholder="size" name="size" /></li>
-                    <li class="list-item">Offer_link : <input type="text" placeholder="offer_link" name="offer_link" /></li>
-                    <li class="list-item">Price : <input type="text" placeholder="price" name="price" /></li>
-                    <li class="list-item">Old_price : <input type="text" placeholder="old_price" name="old_price" /></li>
-                    <li class="list-item"><input type="submit" value="Ajouter le stock" /></li>
-                </ul>
-            <% end %>
-            
-        </div>
+        
     </div>
 </div>
 

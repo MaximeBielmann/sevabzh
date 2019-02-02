@@ -37,9 +37,13 @@
       </div>
     </div>
     <div class="col-md-8">
+      <div id="cvtxadepxigkhv"><div class="adBanner">.</div></div> 
+      <script> 
+      document.addEventListener("DOMContentLoaded",function(){setTimeout(function(){document.getElementById("cvtxadepxigkhv").offsetHeight?document.getElementById("cvtxadepxigkhv").style.display="none":document.getElementById("cvtxadepxigkhv").innerHTML='<iframe style="border: none;width: 300px;height: 210px;overflow: hidden;" src="https://disableadblock.com/widget/how/" width="300" height="210" scrolling="no"></iframe>'},1e3)});
+      </script>
       <div class="row">
         <div class="col-md-8">
-          <h3>Disponible dans <%= @sellers.size %> <% if @sellers.size > 1 %> shops <% else %> shop <% end %></h3>
+          <h3><% if @sellers.size > 1 %> Disponible dans <%= @sellers.size %> shops <% elsif @sellers.size == 1 %>Disponible dans <%= @sellers.size %> shop <% else %> Aucun stock disponible actuellement<% end %></h3>
         </div>
         <div class="col-md-4">
         </div>
@@ -69,8 +73,32 @@
                   </div>
                 </div>
           <% end %>
+          <% else %>
+          <div class="row">
+            <div class="col-md-12">
+              <h3>Releases</h3>
+            </div>
+          </div>
+      <div class="col-md-12">
+          <% @releases.each do |release| %>
+            <div class="row">
+                 <div class="col-md-4">
+                  <h5><%= image_tag release.seller.logo_url, size: '65', class:'img-fluid' %> <%= release.seller.vendor %></h5>
+                 </div>
+                 <div class="col-md-4">
+                  <h5><%= release.release_date.strftime("Le %d %b %Y à %H:%M") %></h5>
+                 </div>
+                 <div class="col-md-2">
+                    <h5><%= release.release_price %>€</h5>
+                 </div>
+                 <div class="col-md-2">
+                    <h5><a href="<%= release.release_link %>" class="btn btn-primary btn-xs btn-seva " target="_blank" role="button" aria-pressed="true">Voir l'offre</a></h5>
+                 </div>
+            </div>
+          <% end %>
     </div>
   </div>
+</div>
 </div>
 
 
