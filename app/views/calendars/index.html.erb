@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row m-t-50 m-b-250">
 		<% @releases.each do |r| %>
-			<div class="col-md-3 m-b-250">
+			<div class="col-md-3 m-t-50 m-b-250">
 					<div class="position-absolute">
 					<a href="/sneakers/<%= r.id %>">
 						<%= image_tag (r.img_url), class:'img-fluid' %>
