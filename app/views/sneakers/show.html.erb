@@ -37,10 +37,10 @@
       </div>
     </div>
     <div class="col-md-8">
-      <div id="cvtxadepxigkhv"><div class="adBanner">.</div></div>
-      <script> 
-      document.addEventListener("DOMContentLoaded",function(){setTimeout(function(){document.getElementById("cvtxadepxigkhv").offsetHeight?document.getElementById("cvtxadepxigkhv").style.display="none":document.getElementById("cvtxadepxigkhv").innerHTML='<iframe style="border: none;width: 400px;height: 200px;overflow: hidden;" src="https://res.cloudinary.com/hqfexni0y/image/upload/v1549214543/error/adblock.png" width="400" height="200" scrolling="no"></iframe>'},1e3)});
-      </script>
+      <div class="center">
+      <h5 class="bg-success" id="adb-not-enabled" style="display: none;">AdBlock is disabled</h5>
+      <h5 class="bg-danger" id="adb-enabled" style="display: none;">AdBlock is enabled</h5>
+      </div>
       <div class="row">
         <div class="col-md-8">
           <h3><% if @sellers.size > 1 %> Disponible dans <%= @sellers.size %> shops <% elsif @sellers.size == 1 %>Disponible dans <%= @sellers.size %> shop <% else %> Aucun stock disponible actuellement<% end %></h3>

@@ -37,7 +37,38 @@
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     
-    
+    <script src="./adblockDetector.js"></script>
+	<script>
+	// Configure the adblock detector
+	(function(){
+		var enabledEl = document.getElementById('adb-enabled');
+		var disabledEl = document.getElementById('adb-not-enabled');
+		function adBlockDetected() {
+			enabledEl.style.display = 'block';
+			disabledEl.style.display = 'none';
+		}
+		function adBlockNotDetected() {
+			disabledEl.style.display = 'block';
+			enabledEl.style.display = 'none';
+		}
+		
+		if(typeof window.adblockDetector === 'undefined') {
+			adBlockDetected();
+		} else {
+			window.adblockDetector.init(
+				{
+					debug: true,
+					found: function(){
+						adBlockDetected();
+					},
+					notFound: function(){
+						adBlockNotDetected();
+					}
+				}
+			);
+		}
+	}());
+	</script>
   </head>
     
     <!-- Header -->
@@ -87,7 +118,7 @@
 							</li>
 							
 							<li>
-							  <%= link_to "Calendrier", '/calendar' %>
+							  <%= link_to "Coming Soon", '/calendar', class: "new-feature" %>
 							</li>
 							
 							<li>
@@ -123,7 +154,7 @@
 							</li>
 							
 							<li>
-							  <%= link_to "Calendrier", '/calendar' %>
+							  <%= link_to "Coming Soon", '/calendar', class: "new-feature" %>
 							</li>
 
 							<li>
@@ -211,7 +242,7 @@
 							</li>
 							
 								<li class="p-b-9 text-center">
-							  <%= link_to "Calendrier", '/calendar' %>
+							  <%= link_to "Coming Soon", '/calendar' %>
 							</li>
 
 							<li class="p-b-9 text-center">
