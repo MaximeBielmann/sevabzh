@@ -1,21 +1,23 @@
 <div class="container">
 	<div class="row m-t-50 m-b-250">
-		<% @i = 0 %>
-		<% @releases.each do |release| %>
-			<% if @i < 1 %>
+		<% @releases.each do |r| %>
 			<div class="col-md-3">
 					<div class="position-absolute">
-					<a href="/sneakers/<%= release.sneaker.id %>">
-	          		<%= image_tag release.sneaker.img_url, class:'img-fluid' %>
-	          		<p><%= release.sneaker.title %></p></a>
+					<a href="/sneakers/<%= r.id %>">
+						<%= image_tag (r.img_url), class:'img-fluid' %>
+	          		<p><%= r.title %></p></a>
 	          		</div>
-					<time class="icon">
-					  <strong><%= release.release_date.strftime("%B") %></strong>
-					  <span><%= release.release_date.strftime("%d") %></span>
-					</time>
+	          		<% @i = 0 %>
+	          		<% r.calendars.each do |c| %>
+		          		<% if @i < 1 %>
+							<time class="icon">
+							  <strong><%= c.release_date.to_datetime.strftime("%B") %></strong>
+							  <span><%= c.release_date.to_datetime.strftime("%d") %></span>
+							</time>
+							<% @i += 1 %>
+						<% end %>
+					<% end %>
 	        </div>
-	        <% @i += 1 %>
-	        <% end %>
         <% end %>
 	<div class="m-b-100">
 	</div>

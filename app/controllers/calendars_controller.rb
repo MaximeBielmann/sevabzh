@@ -1,6 +1,7 @@
 class CalendarsController < ApplicationController
   def index
-    @releases = Calendar.includes(:sneaker).select(:sneaker_id, :release_date).distinct(:sneaker_id)
+    @releases = Sneaker.includes(:calendars).references(:calendars).where("sneaker_id > ?", true).distinct.reverse
+    #@releases = Sneaker.joins(:calendars).where("sneaker_id > ?", true).select(:sneaker_id, :title, :img_url).distinct
   end
   
   def create
