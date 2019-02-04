@@ -44,8 +44,14 @@ Rails.application.routes.draw do
   
   get 'contact-me', to: 'messages#new', as: 'new_message'
   post 'contact-me', to: 'messages#create', as: 'create_message'
+  
+  get 'admin/article' => "admin#article"
+  get 'blog' => "articles#index"
+  get 'blog/:id' => "articles#show"
+  post 'blog' => 'articles#create'
+  patch 'blog/:id' => 'articles#update'
+  delete 'blog/:id' => 'articles#destroy'
  
   # PAGES WITHOUT CONTROLLER / FUTUR FEATURES
-  get 'blog' => 'streetwears#index'
   get 'streetwear' => 'streetwears#index'
 end

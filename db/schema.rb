@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_21_151220) do
+ActiveRecord::Schema.define(version: 2019_02_04_141055) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name"
     t.string "password"
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.integer "admin_id"
+    t.string "article_title"
+    t.text "article_text"
+    t.datetime "article_datetime"
+    t.text "article_img"
   end
 
   create_table "calendars", force: :cascade do |t|

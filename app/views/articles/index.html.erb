@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">BLOG</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+        <% @articles.each do |article| %>
+        <a href="/blog/<%= article.id %>">
+        <%= image_tag (article.article_img), class:'img-fluid' %>
+        <h3 class="text-center"><%= article.article_title %></h3></a>
+        <% end %>
+        </div>
+    </div>
+</div>

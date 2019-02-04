@@ -38,4 +38,11 @@ class AdminController < ApplicationController
     redirect_to "/admin"
   end
   
+  def article
+    if session[:admin_id]
+      @current_admin = Admin.find(session[:admin_id])
+    end
+    @admins = Admin.all
+  end
+  
 end
