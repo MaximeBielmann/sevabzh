@@ -1310,7 +1310,7 @@ li.sale-noti > a {
     font-size: 30px;
   }
   
-  footer a, p {
+  footer a, p, a {
     font-size: 30px;
   }
   
@@ -1339,6 +1339,14 @@ li.sale-noti > a {
   
   .mobile-calendar {
     margin-bottom: 500px;
+  }
+  
+  .blog-calendar h1, 
+  .blog-calendar h2,
+  .blog-calendar h3,
+  .blog-calendar h4,
+  .blog-calendar h5 {
+    color: black;
   }
   
 }

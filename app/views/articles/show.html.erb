@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@articles.article_title} #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "#{@articles.article_title} par #{@articles.admin.name}" %>
+<% content_for :meta_image, @articles.article_img %>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -6,7 +10,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 blog-article">
             <%= simple_format(@articles.article_text) %>
         </div>
     </div>
