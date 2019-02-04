@@ -1341,11 +1341,7 @@ li.sale-noti > a {
     margin-bottom: 500px;
   }
   
-  .blog-calendar h1, 
-  .blog-calendar h2,
-  .blog-calendar h3,
-  .blog-calendar h4,
-  .blog-calendar h5 {
+  strong {
     color: black;
   }
   
