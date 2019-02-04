@@ -31,6 +31,6 @@ class CalendarsController < ApplicationController
 
   def destroy
     Calendar.find(params[:id]).destroy
-    redirect_to "/calendar"
+    redirect_to "/calendar/"
   end
 end
