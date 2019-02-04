@@ -71,6 +71,10 @@ p {
 	margin: 0px;
 }
 
+strong {
+    color: black;
+  }
+
 ul, li {
 	margin: 0px;
 	list-style-type: none;
