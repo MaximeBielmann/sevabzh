@@ -1,12 +1,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center"><%= @articles.article_title %></h1>
+            <h1><%= @articles.article_title %></h1>
+            <h5><%= @articles.admin.name %> - <%= @articles.article_datetime.strftime("Le %d %b %Y à %H:%M") %></h5>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            <%= @articles.article_title %>
+            <%= @articles.article_text %>
         </div>
     </div>
 </div>

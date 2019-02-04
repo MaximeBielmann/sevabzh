@@ -1,3 +1,3 @@
 class Article < ApplicationRecord
-    has_one :admin
+    belongs_to :admin
 end
