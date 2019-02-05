@@ -11,7 +11,7 @@
     						</p>
     						<div class="row justify-content-center">
                             <div class="col-lg-10 col-md-12">
-                               <%= form_tag "/sneakers/search", class: "card card-sm", method: "post" do %>
+                              <%= form_tag "/sneakers/search", class: "card card-sm", method: "post" do %>
                                     <div class="card-body row no-gutters align-items-center">
                                         <div class="col-auto">
                                             <i class="fas fa-search h4 text-body"></i>
@@ -38,14 +38,19 @@
                                         <!--end of col-->
                                     </div>
                                     <% end %>
-                                </form>
                             </div>
                             <!--end of col-->
                         </div>
-                            </div>
+                      </div>
     					</div>
     			    </div>
     		    </div>
+    		    <% if @sneakers.count > 0 %>
+    		      <%= render(
+                partial: 'sneakers/list',
+                locals: { sneakers: @sneakers }
+              ) %>
+            <% end %>
     </section>
 
 <div class="container m-b-20 m-t-50">
@@ -59,7 +64,7 @@
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative">
-									<%= image_tag (Sneaker.find(40454).img_url) %>
+									<%#= image_tag (Sneaker.find(40454).img_url) %>
 
 									<div class="block2-overlay trans-0-4">
 										<div class="block2-btn-addcart w-size1 trans-0-4">
@@ -71,9 +76,9 @@
 
 								<div class="block2-txt p-t-20">
 									  <p class="text-center"><a href="/sneakers/40454">
-                    <%= Sneaker.find(40454).sneakers_ref %> - 
-                    <%= Sneaker.find(40454).brand %> - 
-                    <%= Sneaker.find(40454).title %></a>
+                    <%#= Sneaker.find(40454).sneakers_ref %> - 
+                    <%#= Sneaker.find(40454).brand %> - 
+                    <%#= Sneaker.find(40454).title %></a>
                     </p>
 								</div>
 					</div>
@@ -82,7 +87,7 @@
 							<!-- Block2 -->
 							<div class="block2 align-bottom">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative">
-									<%= image_tag (Sneaker.find(37493).img_url) %>
+									<%#= image_tag (Sneaker.find(37493).img_url) %>
 
 									<div class="block2-overlay trans-0-4">
 										<div class="block2-btn-addcart w-size1 trans-0-4">
@@ -94,9 +99,9 @@
 
 								<div class="block2-txt p-t-20">
 									  <p class="text-center"><a href="/sneakers/37493">
-                    <%= Sneaker.find(37493).sneakers_ref %> - 
-                    <%= Sneaker.find(37493).brand %> - 
-                    <%= Sneaker.find(37493).title %></a>
+                    <%#= Sneaker.find(37493).sneakers_ref %> - 
+                    <%#= Sneaker.find(37493).brand %> - 
+                    <%#= Sneaker.find(37493).title %></a>
                     </p>
 								</div>
 					</div>
@@ -105,7 +110,7 @@
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative">
-									<%= image_tag (Sneaker.find(40669).img_url) %>
+									<%#= image_tag (Sneaker.find(40669).img_url) %>
 
 									<div class="block2-overlay trans-0-4">
 										<div class="block2-btn-addcart w-size1 trans-0-4">
@@ -117,9 +122,9 @@
 
 								<div class="block2-txt p-t-20">
 									  <p class="text-center"><a href="/sneakers/40669">
-                    <%= Sneaker.find(40669).sneakers_ref %> - 
-                    <%= Sneaker.find(40669).brand %> - 
-                    <%= Sneaker.find(40669).title %></a>
+                    <%#= Sneaker.find(40669).sneakers_ref %> - 
+                    <%#= Sneaker.find(40669).brand %> - 
+                    <%#= Sneaker.find(40669).title %></a>
                     </p>
 								</div>
 					</div>

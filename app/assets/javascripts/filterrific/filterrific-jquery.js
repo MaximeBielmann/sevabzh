@@ -7,16 +7,16 @@
  * Released under the MIT license
  *
  */
-
-
-
+ 
+ 
+ 
 // Create global Filterrific namespace
 if (typeof Filterrific === 'undefined') {
   var Filterrific = {};
 }
-
-
-
+ 
+ 
+ 
 // Define function to submit Filterrific filter form
 Filterrific.submitFilterForm = function(){
   var form = $(this).parents("form"),
@@ -33,9 +33,9 @@ Filterrific.submitFilterForm = function(){
     $('.filterrific_spinner').hide();
   });
 };
-
-
-
+ 
+ 
+ 
 //
 // Embed jquery.observe_field.js to observe Filterrific filter inputs
 //
@@ -43,7 +43,6 @@ Filterrific.submitFilterForm = function(){
 // Wrap in immediately invoked function for compatibility with other js libraries
 //
 (function($) {
-
   $.fn.filterrific_observe_field = function(frequency, callback) {
     frequency = frequency * 1000; // translate to milliseconds
     return this.each(function(){
@@ -76,8 +75,8 @@ Filterrific.submitFilterForm = function(){
     });
   };
 })(jQuery);
-
-
+ 
+ 
 Filterrific.init = function() {
   // Add change event handler to all Filterrific filter inputs.
   $('#filterrific_filter').on(
@@ -85,7 +84,7 @@ Filterrific.init = function() {
     ":input",
     Filterrific.submitFilterForm
   );
-
+ 
   // Add periodic observer to selected inputs.
   // Use this for text fields you want to observe for change, e.g., a search input.
   $(".filterrific-periodically-observed").filterrific_observe_field(
@@ -93,8 +92,8 @@ Filterrific.init = function() {
     Filterrific.submitFilterForm
   );
 };
-
-
+ 
+ 
 // Initialize event observers on document ready and turbolinks page:load
 jQuery(document).on('turbolinks:load', function() {
   // Prevent double initilisation. With turbolinks 5 this function
@@ -102,7 +101,7 @@ jQuery(document).on('turbolinks:load', function() {
   jQuery(document).off('ready page:load')
   Filterrific.init();
 });
-
+ 
 jQuery(document).on('ready page:load', function() {
   Filterrific.init();
 });
