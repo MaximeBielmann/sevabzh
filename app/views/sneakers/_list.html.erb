@@ -33,7 +33,11 @@
 					</div>
 			</div>
 			<% end %>
-    			
+			<% if @sneakers.size < 1%>
+    		<div class="col-md-12">
+    			<h1 class="text-center">Désolé, il n'y aucun résultat à cette recherche.</h1>
+    		</div>
+    		<% end %>
     		</div>
     	</div>
             <div class="col-md-12">
