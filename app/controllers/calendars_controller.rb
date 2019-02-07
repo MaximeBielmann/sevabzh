@@ -6,7 +6,7 @@ class CalendarsController < ApplicationController
   
   def create
     Calendar.create sneaker_id: params[:sneaker_id], seller_id: params[:seller_id], release_date: params[:release_date], release_link: params[:release_link], release_price: params[:release_price]
-    redirect_to "/calendar"
+    redirect_to "/admin"
   end
   
   def show

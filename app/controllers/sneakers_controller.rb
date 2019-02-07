@@ -26,7 +26,7 @@ class SneakersController < ApplicationController
   
   def create
     Sneaker.create sneakers_ref: params[:sneakers_ref], brand: params[:brand], title: params[:title], color: params[:color], img_url: params[:img_url], img_url2: params[:img_url2], img_url3: params[:img_url3]
-    redirect_to "/sneakers/"
+    redirect_to "/admin/"
   end
   
   def show
