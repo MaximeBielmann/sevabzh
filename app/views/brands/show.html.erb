@@ -14,10 +14,46 @@
         </div>
     </div>
     <div class="row">
-        <%= render(
-          partial: 'sneakers/list',
-          locals: { sneakers: @sneakers }
-        ) %>
+    	<div class="col-md-1">
+    		
+    	</div>
+    	<div class="col-md-10">
+    		<div class="row">
+      <% @sneakers.each do |sneaker| %>
+      <div class="col-md-3 col-sm-6 p-b-50">
+							<!-- Block2 -->
+							<div class="block2">
+								<div class="block2-img wrap-pic-w of-hidden pos-relative">
+									<% if sneaker.img_url %>
+									<%= image_tag (sneaker.img_url) %>
+									<% else %>
+						          	<%= image_tag("noimage.png", class:'img-fluid') %>
+						          	<% end %>
+									<div class="block2-overlay trans-0-4">
+										<div class="block2-btn-addcart w-size1 trans-0-4">
+											<!-- Button -->
+												<a href="/sneakers/<%= sneaker.id %>" class="btn btn-primary btn-seva w-100">Voir la sneaker</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="block2-txt p-t-20">
+									  <p class="text-center"><a href="/sneakers/<%= sneaker.id %>">
+					                    <%= sneaker.sneakers_ref %> - 
+					                    <%= sneaker.brand.brand_title %> - 
+					                    <%= sneaker.title %></a>
+					                   </p>
+								</div>
+					</div>
+			</div>
+			<% end %>
+			<% if @sneakers.size < 1%>
+    		<div class="col-md-12">
+    			<h1 class="text-center">Désolé, il n'y a aucun résultat à cette recherche.</h1>
+    		</div>
+    		<% end %>
+    		</div>
+    	</div>
     </div>
 </div>
 
