@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_04_141055) do
+ActiveRecord::Schema.define(version: 2019_02_07_123733) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,12 @@ ActiveRecord::Schema.define(version: 2019_02_04_141055) do
     t.text "article_text"
     t.datetime "article_datetime"
     t.text "article_img"
+  end
+
+  create_table "brands", force: :cascade do |t|
+    t.string "brand_title"
+    t.text "brand_description"
+    t.text "brand_banner"
   end
 
   create_table "calendars", force: :cascade do |t|

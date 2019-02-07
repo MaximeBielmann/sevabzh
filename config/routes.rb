@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'brands/index'
+  get 'brands/create'
+  get 'brands/show'
+  get 'brands/update'
+  get 'brands/destroy'
   root 'pages#home'
   
   get 'sneakers' => 'sneakers#index'
@@ -16,6 +21,12 @@ Rails.application.routes.draw do
   post 'sellers' => 'sellers#create'
   patch 'sellers/:id' => 'sellers#update'
   delete 'sellers/:id' => 'sellers#destroy'
+  
+  get 'brands' => 'brands#index'
+  post 'brands' => 'brands#create'
+  get 'brands/:id' => 'brands#show'
+  patch 'brands/:id' => 'brands#update'
+  delete 'brands/:id' => 'brands#destroy'
   
   get 'calendar' => 'calendars#index'
   get 'calendar/:id' => 'calendars#show'
