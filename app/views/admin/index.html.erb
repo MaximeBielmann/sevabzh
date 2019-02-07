@@ -83,7 +83,7 @@
                   <div class="form-group">
                     <select name="sneaker_id" class="form-control border">
                     <% @sneakers.each do |sneaker| %>
-                    <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%= sneaker.brand %> - <%= sneaker.title %></option>
+                    <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%= sneaker.brand.brand_title %> - <%= sneaker.title %></option>
                     <% end %>
                     </select>
                   </div>
