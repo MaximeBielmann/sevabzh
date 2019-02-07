@@ -23,7 +23,11 @@
                     <input type="text" class="form-control border" label="sneakers_ref" placeholder="Référence" name="sneakers_ref" />
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control border" placeholder="Marque" name="brand" />
+                    <select name="brand_id" class="form-control border">
+                       <% @brands.each do |brand| %>
+                       <option value="<%= brand.id %>"><%= brand.brand_title %></option>
+                       <% end %>
+                    </select>
                   </div>
                   <div class="form-group">
                     <input type="text" class="form-control border" placeholder="Modèle" name="title" />

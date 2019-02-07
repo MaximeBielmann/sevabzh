@@ -47,6 +47,8 @@
     		</div>
     </section>
 
+<% if Rails.env.production? %>
+
 <div class="container m-b-20 m-t-50">
     <div class="row">
         <div class="col-sm-12">
@@ -71,11 +73,10 @@
 								<div class="block2-txt p-t-20">
 									  <p class="text-center"><a href="/sneakers/40454">
                     <%= Sneaker.find(40454).sneakers_ref %> - 
-                    <%= Sneaker.find(40454).brand %> - 
                     <%= Sneaker.find(40454).title %></a>
                     </p>
 								</div>
-					</div>
+					    </div>
 			</div>
 			<div class="col-md-4 p-b-50">
 							<!-- Block2 -->
@@ -94,7 +95,6 @@
 								<div class="block2-txt p-t-20">
 									  <p class="text-center"><a href="/sneakers/37493">
                     <%= Sneaker.find(37493).sneakers_ref %> - 
-                    <%= Sneaker.find(37493).brand %> - 
                     <%= Sneaker.find(37493).title %></a>
                     </p>
 								</div>
@@ -117,7 +117,6 @@
 								<div class="block2-txt p-t-20">
 									  <p class="text-center"><a href="/sneakers/40669">
                     <%= Sneaker.find(40669).sneakers_ref %> - 
-                    <%= Sneaker.find(40669).brand %> - 
                     <%= Sneaker.find(40669).title %></a>
                     </p>
 								</div>
@@ -125,6 +124,8 @@
 			</div>
     </div>
 </div>
+
+<% end %>
 
 <div class="container">
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

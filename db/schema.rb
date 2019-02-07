@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_07_123733) do
+ActiveRecord::Schema.define(version: 2019_02_07_172556) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name"
@@ -52,12 +52,12 @@ ActiveRecord::Schema.define(version: 2019_02_07_123733) do
 
   create_table "sneakers", force: :cascade do |t|
     t.string "sneakers_ref"
-    t.string "brand"
     t.string "title"
     t.string "color"
     t.text "img_url"
     t.text "img_url2"
     t.text "img_url3"
+    t.integer "brand_id"
     t.index ["sneakers_ref"], name: "index_sneakers_on_sneakers_ref", unique: true
   end
 

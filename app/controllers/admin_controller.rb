@@ -6,6 +6,7 @@ class AdminController < ApplicationController
     @sneakers = Sneaker.all.reverse
     @stocks = Stock.all
     @sellers = Seller.all
+    @brands = Brand.all
     
     @sneakersize = Sneaker.all.size
     @stocksize = Stock.all.size

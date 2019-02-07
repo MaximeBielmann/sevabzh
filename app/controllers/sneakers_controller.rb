@@ -6,7 +6,7 @@ class SneakersController < ApplicationController
      params[:filterrific],
      select_options: {
         search_sneakers_ref: Sneaker,
-        search_brand: Sneaker,
+        search_brand: Brand,
         search_title: Sneaker,
         search_color: Sneaker,
         search_price: Stock
@@ -25,7 +25,7 @@ class SneakersController < ApplicationController
   
   
   def create
-    Sneaker.create sneakers_ref: params[:sneakers_ref], brand: params[:brand], title: params[:title], color: params[:color], img_url: params[:img_url], img_url2: params[:img_url2], img_url3: params[:img_url3]
+    Sneaker.create sneakers_ref: params[:sneakers_ref], brand_id: params[:brand_id], title: params[:title], color: params[:color], img_url: params[:img_url], img_url2: params[:img_url2], img_url3: params[:img_url3]
     redirect_to "/admin/"
   end
   
@@ -34,6 +34,7 @@ class SneakersController < ApplicationController
       @current_admin = Admin.find(session[:admin_id])
     end
     @sneakers = Sneaker.find(params[:id])
+    @brands = Brand.all
     @stocks = Sneaker.find(params[:id]).stocks
     @sellers = Seller.includes(:stocks).references(:stocks).where(stocks: { sneaker_id: params[:id] })
     @releases = Sneaker.find(params[:id]).calendars
@@ -46,7 +47,7 @@ class SneakersController < ApplicationController
   def update
     @sneakers = Sneaker.find(params[:id])
     @sneakers.sneakers_ref = params[:sneakers_ref] 
-    @sneakers.brand = params[:brand]
+    @sneakers.brand_id = params[:brand_id]
     @sneakers.title = params[:title]
     @sneakers.color = params[:color]
     @sneakers.img_url = params[:img_url]
