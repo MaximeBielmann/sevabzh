@@ -35,6 +35,12 @@
           <% end %>
         </div>
       </div>
+      <div class="row">
+        <h3>Promos</h3>
+        <% @coupons.each do |coupon| %>
+        <p><a href="/coupons/<%= coupon.id %>" ><%= coupon.seller.vendor %> - <%= coupon.brand.brand_title %> - <%= coupon.sneaker.title %> - <%= coupon.coupon_title %></a></p>
+        <% end %>
+      </div>
     </div>
     <div class="col-md-8">
       <div id="cvtxadepxigkhv"><div class="adBanner">.</div></div>

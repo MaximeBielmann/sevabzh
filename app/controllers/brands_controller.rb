@@ -24,12 +24,14 @@ class BrandsController < ApplicationController
         search_price: Stock
         
       }, :persistence_id => false,
-   ) or return 
+    ) or return 
    
-   @sneakers = @filterrific.find.page(params[:page]).where(brand_id: params[:id])
-   respond_to do |format|
-     format.html
-     format.js
+     @sneakers = @filterrific.find.page(params[:page]).where(brand_id: params[:id])
+     respond_to do |format|
+       format.html
+       format.js
+       
+      @coupons = Coupon.where(brand_id: params[:id])
    end
    
   end

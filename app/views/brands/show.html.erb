@@ -1,21 +1,26 @@
 <div class="container">
     <div class="row">
-        <%= image_tag @brands.brand_banner, class:'img-fluid d-block mx-auto' %>
+        <%#= image_tag @brands.brand_banner, class:'img-fluid d-block mx-auto' %>
     </div>
+    <div class="row">
+        <div class="col-6">
+            <% if @coupons.size > 0 %>
+            <h3>Promos</h3>
+            <% end %>
+            <% @coupons.each do |coupon| %>
+                <p><a href="/coupons/<%= coupon.id %>" >
+                    <% if coupon.seller %><%= coupon.seller.vendor %> - <% end %>
+                    <% if coupon.brand %><%= coupon.brand.brand_title %> - <% end %>
+                    <% if coupon.sneaker %><%= coupon.sneaker.title %> - <% end %>
+                    <%= coupon.coupon_title %>
+                </a></p>
+            <% end %>
+        </div>
+     </div>
     <div class="row">
         <div class="mx-auto">
             <h1><%= @brands.brand_title %></h1>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <p><%= @brands.brand_description %></p>
-        </div>
-    </div>
-    <div class="row" id="search">
-    	<div class="col-12">
-    		<h3 class="text-center">Les sneakers made by <%= @brands.brand_title %></h3>
-    	</div>
     </div>
     
     <div class="row">

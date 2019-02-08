@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'coupons/index'
+  get 'coupons/create'
+  get 'coupons/show'
+  get 'coupons/update'
+  get 'coupons/destroy'
   get 'brands/index'
   get 'brands/create'
   get 'brands/show'
@@ -27,6 +32,12 @@ Rails.application.routes.draw do
   get 'brands/:id' => 'brands#show'
   patch 'brands/:id' => 'brands#update'
   delete 'brands/:id' => 'brands#destroy'
+  
+  get 'coupons' => 'coupons#index'
+  post 'coupons' => 'coupons#create'
+  get 'coupons/:id' => 'coupons#show'
+  patch 'coupons/:id' => 'coupons#update'
+  delete 'coupons/:id' => 'coupons#destroy'
   
   get 'calendar' => 'calendars#index'
   get 'calendar/:id' => 'calendars#show'

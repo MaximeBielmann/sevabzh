@@ -25,6 +25,21 @@
             <a href="<%= @sellers.shop_link %>" target ="_blank" class="btn btn-primary btn-seva m-t-10">Voir le shop</a> 
         </div>
     </div>
+    <div class="row">
+        <div class="col-6">
+            <% if @coupons.size > 0 %>
+            <h3>Promos</h3>
+            <% end %>
+            <% @coupons.each do |coupon| %>
+                <p><a href="/coupons/<%= coupon.id %>" >
+                    <% if coupon.seller %><%= coupon.seller.vendor %> - <% end %>
+                    <% if coupon.brand %><%= coupon.brand.brand_title %> - <% end %>
+                    <% if coupon.sneaker %><%= coupon.sneaker.title %> - <% end %>
+                    <%= coupon.coupon_title %>
+                </a></p>
+            <% end %>
+        </div>
+     </div>
 </div>
 
 <% if @current_admin %>
