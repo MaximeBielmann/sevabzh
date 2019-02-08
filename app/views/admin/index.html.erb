@@ -24,6 +24,7 @@
                   </div>
                   <div class="form-group">
                     <select name="brand_id" class="form-control border">
+                       <option value=""> -- select an option -- </option>
                        <% @brands.each do |brand| %>
                        <option value="<%= brand.id %>"><%= brand.brand_title %></option>
                        <% end %>
@@ -82,6 +83,7 @@
                 <form>
                   <div class="form-group">
                     <select name="sneaker_id" class="form-control border">
+                    <option value=""> -- select an option -- </option>
                     <% @sneakers.each do |sneaker| %>
                     <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%= sneaker.brand.brand_title %> - <%= sneaker.title %></option>
                     <% end %>
@@ -89,6 +91,7 @@
                   </div>
                   <div class="form-group">
                     <select name="seller_id" class="form-control border">
+                    <option value=""> -- select an option -- </option>
                     <% @sellers.each do |seller| %>
                     <option value="<%= seller.id %>"><%= seller.vendor %> - <%= seller.country %></option>
                     <% end %>
@@ -113,6 +116,7 @@
                 <form>
                   <div class="form-group">
                     <select name="sneaker_id" class="form-control border">
+                    <option value=""> -- select an option -- </option>
                     <% @sneakers.each do |sneaker| %>
                     <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%= sneaker.brand %> - <%= sneaker.title %></option>
                     <% end %>
@@ -120,6 +124,7 @@
                   </div>
                   <div class="form-group">
                     <select name="seller_id" class="form-control border">
+                    <option value=""> -- select an option -- </option>
                     <% @sellers.each do |seller| %>
                     <option value="<%= seller.id %>"><%= seller.vendor %> - <%= seller.country %></option>
                     <% end %>
@@ -193,6 +198,11 @@
            <button type="submit" class="btn btn-primary">Upload les stocks</button>
         <% end %>
     </div>
+    <div class="col-md-4">
+        <%= form_tag '/listing_uploader/brands', method: 'post' do %>
+           <button type="submit" class="btn btn-primary">Upload les marques</button>
+        <% end %>
+    </div>
     </div>
     <div class="col-md-6">
     <div class="col-md-12">
@@ -211,6 +221,11 @@
     <div class="col-md-4">
         <%= form_tag '/listing_uploader/stocks', method: 'delete' do %>
            <button type="submit" class="btn btn-primary">Supprimer les <%= @stocksize %> stocks</button>
+        <% end %>
+    </div>
+    <div class="col-md-4">
+        <%= form_tag '/listing_uploader/brands', method: 'delete' do %>
+           <button type="submit" class="btn btn-primary">Supprimer les <%= @stocksize %> marques</button>
         <% end %>
     </div>
   </div>

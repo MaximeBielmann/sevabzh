@@ -11,6 +11,7 @@ class AdminController < ApplicationController
     @sneakersize = Sneaker.all.size
     @stocksize = Stock.all.size
     @sellersize = Seller.all.size
+    @brandssize = Brand.all.size
   end
   
   # def updatesneakers

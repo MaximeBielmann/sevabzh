@@ -13,7 +13,25 @@ class BrandsController < ApplicationController
       @current_admin = Admin.find(session[:admin_id])
     end
     @brands = Brand.find(params[:id])
-    @sneakers = Sneaker.where(brand_id: params[:id])
+    
+    @filterrific = initialize_filterrific(
+     Sneaker,
+     params[:filterrific],
+     select_options: {
+        search_sneakers_ref: Sneaker,
+        search_title: Sneaker,
+        search_color: Sneaker,
+        search_price: Stock
+        
+      }, :persistence_id => false,
+   ) or return 
+   
+   @sneakers = @filterrific.find.page(params[:page]).where(brand_id: params[:id])
+   respond_to do |format|
+     format.html
+     format.js
+   end
+   
   end
 
   def update

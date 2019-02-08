@@ -43,6 +43,15 @@ class ListingUploaderController < ApplicationController
         redirect_to "/admin/"
     end
     
+    def upload_brands
+        CSV.foreach('public/brands.csv', headers: true) do |row|
+            Brand.where(brand_title: row['brand_title'], 
+                        brand_banner: row['brand_banner'],
+                        brand_description: row['brand_description']).first_or_create
+        end
+        redirect_to "/admin/"
+    end
+    
     def delete_sneakers
         Sneaker.destroy_all
         redirect_to "/admin/"
@@ -55,6 +64,11 @@ class ListingUploaderController < ApplicationController
     
     def delete_stocks
         Stock.destroy_all
+        redirect_to "/admin/"
+    end
+    
+    def delete_brands
+        Brand.destroy_all
         redirect_to "/admin/"
     end
 end

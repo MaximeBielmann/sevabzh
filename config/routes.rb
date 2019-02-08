@@ -37,10 +37,12 @@ Rails.application.routes.draw do
   post 'listing_uploader/sneakers' => 'listing_uploader#upload_sneakers'
   post 'listing_uploader/sellers' => 'listing_uploader#upload_sellers'
   post 'listing_uploader/stocks' => 'listing_uploader#upload_stocks'
+  post 'listing_uploader/brands' => 'listing_uploader#upload_brands'
   
   delete 'listing_uploader/sneakers' => 'listing_uploader#delete_sneakers'
   delete 'listing_uploader/sellers' => 'listing_uploader#delete_sellers'
   delete 'listing_uploader/stocks' => 'listing_uploader#delete_stocks'
+  delete 'listing_uploader/brands' => 'listing_uploader#delete_brands'
   
   get 'admin' => 'admin#index'
   get 'admin/login' => 'admin#login'

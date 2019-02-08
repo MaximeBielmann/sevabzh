@@ -9,12 +9,73 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <h3>Description</h3>
             <p><%= @brands.brand_description %></p>
         </div>
     </div>
+    <div class="row" id="search">
+    	<div class="col-12">
+    		<h3 class="text-center">Les sneakers made by <%= @brands.brand_title %></h3>
+    	</div>
+    </div>
+    
     <div class="row">
-    	<div class="col-md-1">
+                                <div class="col-md-2">
+                                    
+                                </div>
+                                <form class="card card-sm col-md-8 col-sm-10 m-t-20 m-b-20">
+
+                                    <%= form_for_filterrific @filterrific do |f| %>
+
+                                    <div class="card-body row no-gutters align-items-center">
+                                    	<div class="col-auto">
+                                            <i class="fas fa-search h4 text-body"></i>
+                                        </div>
+                                        <div class="col col-md-2 col-sm-12">
+                                            <%= f.text_field(
+                                          :search_sneakers_ref,
+                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
+                                          placeholder: "Référence"
+                                        ) %>
+                                        </div>
+                                        <div class="col col-md-2 col-sm-12">
+                                            <%= f.text_field(
+                                          :search_title,
+                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
+                                          placeholder: "Modèle"
+                                        ) %>
+                                        </div>
+                                        <div class="col col-md-2 col-sm-12">
+                                          <%= f.text_field(
+                                          :search_color,
+                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
+                                          placeholder: "Couleur"
+                                        ) %>
+                                        </div>
+                                        <div class="col col-md-2 col-sm-12">
+                                          <%= f.text_field(
+                                          :search_price,
+                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
+                                          placeholder: "Prix maxi"
+                                        ) %>
+                                        </div>
+                                        <!--end of col-->
+                                        <div class="col-auto col-md-2 col-sm-12">
+                                            <%= f.submit 'Chercher', class:'btn btn-md btn-seva float-right' %>
+                                        </div>
+                                        <div class="col-auto col-md-1 col-sm-12 text-right">
+                                            <%= link_to(
+                                              'reset',
+                                              reset_filterrific_url,
+                                              ) %>
+                                        </div
+                                        <!--end of col-->
+                                    </div>
+                                    <%= render_filterrific_spinner %>
+                                    <% end %>
+                                </form>
+                            </div>
+        <div class="row">
+        	div class="col-md-1">
     		
     	</div>
     	<div class="col-md-10">
@@ -54,6 +115,7 @@
     		<% end %>
     		</div>
     	</div>
+        </div>
     </div>
 </div>
 
