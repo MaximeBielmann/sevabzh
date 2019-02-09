@@ -39,7 +39,8 @@ class SneakersController < ApplicationController
     @sellers = Seller.includes(:stocks).references(:stocks).where(stocks: { sneaker_id: params[:id] })
     @releases = Sneaker.find(params[:id]).calendars
     
-    @coupons = Sneaker.find(params[:id]).coupons
+    
+    # Seller.includes(:stocks).references(:stocks).where(stocks: { sneaker_id: params[:id] })
   end
   
   def update

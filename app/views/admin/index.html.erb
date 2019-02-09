@@ -118,7 +118,7 @@
                     <select name="sneaker_id" class="form-control border">
                     <option value=""> -- select an option -- </option>
                     <% @sneakers.each do |sneaker| %>
-                    <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%= sneaker.brand %> - <%= sneaker.title %></option>
+                    <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%= sneaker.brand.brand_title %> - <%= sneaker.title %></option>
                     <% end %>
                     </select>
                   </div>
@@ -140,7 +140,7 @@
                     <input type="text" class="form-control border" placeholder="Coût d'envoi" name="shipping_cost" />
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control border" placeholder="Vieux prix" name="old_prix" />
+                    <input type="text" class="form-control border" placeholder="Vieux prix" name="old_price" />
                   </div>
                   <div class="form-group">
                     <input type="text" class="form-control border" placeholder="Nouveau prix" name="price" />
