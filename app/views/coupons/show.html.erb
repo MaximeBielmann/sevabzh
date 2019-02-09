@@ -53,6 +53,8 @@
      <% end %>
   </select></p>
   <p><input type="text" value="<%= @coupons.coupon_title %>"  name="coupon_title" /></p>
+  <p><input type="datetime-local" class="form-control border" name="coupon_start" /></p>
+  <p><input type="datetime-local" class="form-control border" name="coupon_end" /></p>
   <p><input type="submit" value="Mettre à jour la promo" /></p>
 <% end %>
 </div>

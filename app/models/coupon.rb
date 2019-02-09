@@ -4,4 +4,6 @@ class Coupon < ApplicationRecord
     belongs_to :brand, optional: true
     
     validates :coupon_title, presence: true
+    validates :coupon_start, presence: true
+    validates :coupon_end, presence: true
 end
