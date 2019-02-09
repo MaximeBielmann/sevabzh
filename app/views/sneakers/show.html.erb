@@ -35,29 +35,24 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12">
-        <h3>Promos</h3> <!-- DEBUT DES PROMOS -->
+        <div class="col-12 coupons-code m-t-50 p-b-10">
+        <h3>Code promos en cours :</h3> <!-- DEBUT DES PROMOS -->
         <% @sellers.each do |seller| %>
-            <% if seller.coupons.size > 0 %>
-            <div class="row">
-                 <div class="col-md-6 m-t-20">
-                  <h5><%= seller.vendor %></h5>
-                 </div>
-            </div>
-            <% end %>
-            <div class="row">
               <div class="col-md-12">
                 <ul class="list">
                   <% seller.coupons.each do |s| %>
-                    <% if s.brand.id == @sneakers.brand.id && s.sneaker.id == @sneakers.id %>
-                      <li class="list-item"><p>
-                      <%= s.coupon_title %></p>
-                      <p>valable du <%= s.coupon_start.strftime("%d %b %Y") %> au <%= s.coupon_end.strftime(" %d %b %Y") %></p></li>
+                    <% if s.brand.id || s.brand.id == @sneakers.brand.id  %>
+                        <li class="list-item m-t-10"><p>
+                        <%= s.seller.vendor %> : <%= s.coupon_title %></p>
+                        <p>valable du <%= s.coupon_start.strftime("%d %b %Y") %> au <%= s.coupon_end.strftime(" %d %b %Y") %></p></li>
+                    <% else s.sneaker.id || s.sneaker.id == @sneakers.id %>
+                        <li class="list-item m-t-10"><p>
+                        <%= s.coupon_title %></p>
+                        <p>valable du <%= s.coupon_start.strftime("%d %b %Y") %> au <%= s.coupon_end.strftime(" %d %b %Y") %></p></li>
                     <% end %>
-                  <% end %>
+                   <% end %>
                 </ul>
               </div>
-            </div>
           <% end %>  <!-- FIN DES PROMOS -->
       </div>
       </div>
