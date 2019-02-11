@@ -6,7 +6,8 @@
     <div class="row">
         <div class="col-md-12">
             <h1><%= @articles.article_title %></h1>
-            <h5><%= @articles.admin.name %> - <%= @articles.article_datetime.strftime("Le %d %b %Y à %H:%M") %></h5>
+            <h5><%= @articles.admin.name %>
+            <% if @articles.article_datetime %> - <%= @articles.article_datetime.strftime("Le %d %b %Y à %H:%M") %></h5><% end %>
         </div>
     </div>
     <div class="row">
