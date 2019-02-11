@@ -26,8 +26,10 @@ function myFunction() {
 
   // If the checkbox is checked, display the output text
   if (checkBox.checked == true){
-    text.style.display = "block";
+    for (var i=0;i<text.length;i+=1){
+    text[i].style.display = "block";}
   } else {
-    text.style.display = "none";
+    for (var i=0;i<text.length;i+=1){
+    text[i].style.display = "none";}
   }
 }

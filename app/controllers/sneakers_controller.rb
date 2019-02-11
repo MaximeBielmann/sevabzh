@@ -37,7 +37,7 @@ class SneakersController < ApplicationController
     @brands = Brand.all
     @stocks = Sneaker.find(params[:id]).stocks
     @sellers = Seller.includes(:stocks).references(:stocks).where(stocks: { sneaker_id: params[:id] })
-    @releases = Sneaker.find(params[:id]).calendars
+    @releases = Sneaker.find(params[:id]).calendars.where("release_date > ?", 1.day.ago)
     
     
     # Seller.includes(:stocks).references(:stocks).where(stocks: { sneaker_id: params[:id] })

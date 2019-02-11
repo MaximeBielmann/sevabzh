@@ -43,7 +43,8 @@
       <div class="row">
         <div class="col-md-8">
           <h3><% if @sellers.size > 1 %> Disponible dans <%= @sellers.size %> shops <% elsif @sellers.size == 1 %>Disponible dans <%= @sellers.size %> shop <% else %> Aucun stock disponible actuellement<% end %></h3>
-          <input type="checkbox" id="myCheck" onclick="myFunction()">
+          
+          <h5><input type="checkbox" id="myCheck" onclick="myFunction()"> Afficher les promos</h5>
         </div>
         <div class="col-md-4">
         </div>
