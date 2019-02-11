@@ -17,13 +17,16 @@
 //= require_tree .
 //= require filterrific/filterrific-jquery
 
-function toggleCheckbox() {
-  var lfckv = document.getElementById("_My.notFinal").checked;
-  if (lfckv) {
-    document.getElementById("LicenseCustomer").style.display = "block";
+function myFunction() {
+  // Get the checkbox
+  var checkBox = document.getElementById("myCheck");
+  // Get the output text
+  var text = document.getElementById("text");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    text.style.display = "block";
   } else {
-    document.getElementById("LicenseCustomer").style.display = "none";
+    text.style.display = "none";
   }
 }
-
-document.getElementById("_My.notFinal").onclick = toggleCheckbox;

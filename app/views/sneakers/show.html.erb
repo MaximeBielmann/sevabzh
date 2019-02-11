@@ -43,8 +43,7 @@
       <div class="row">
         <div class="col-md-8">
           <h3><% if @sellers.size > 1 %> Disponible dans <%= @sellers.size %> shops <% elsif @sellers.size == 1 %>Disponible dans <%= @sellers.size %> shop <% else %> Aucun stock disponible actuellement<% end %></h3>
-          <input type="checkbox" id="_My.notFinal" />
-          <label>Afficher les promos<label>
+          <input type="checkbox" id="myCheck" onclick="myFunction()">
         </div>
         <div class="col-md-4">
         </div>
@@ -79,7 +78,7 @@
                   </div>
                   
                    
-                 <div class="col-12 m-t-20" id="LicenseCustomer" style="display:none">
+                 <div class="col-12 m-t-20" id="text" style="display:none">
                 <ul class="list">
                   <% seller.coupons.each do |s| %>
                     <% if s.brand.id || s.brand.id == @sneakers.brand.id  %>
