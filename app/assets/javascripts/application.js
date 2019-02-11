@@ -16,3 +16,14 @@
 //= require turbolinks
 //= require_tree .
 //= require filterrific/filterrific-jquery
+
+function toggleCheckbox() {
+  var lfckv = document.getElementById("_My.notFinal").checked;
+  if (lfckv) {
+    document.getElementById("LicenseCustomer").style.display = "block";
+  } else {
+    document.getElementById("LicenseCustomer").style.display = "none";
+  }
+}
+
+document.getElementById("_My.notFinal").onclick = toggleCheckbox;
