@@ -17,11 +17,12 @@
 //= require_tree .
 //= require filterrific/filterrific-jquery
 
+
 function myFunction() {
   // Get the checkbox
   var checkBox = document.getElementById("myCheck");
   // Get the output text
-  var text = document.getElementById("text");
+  var text = document.getElementsByClassName("red");
 
   // If the checkbox is checked, display the output text
   if (checkBox.checked == true){
