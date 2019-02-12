@@ -3,19 +3,19 @@
         <%#= image_tag @brands.brand_banner, class:'img-fluid d-block mx-auto' %>
     </div>
     <div class="row">
-        <div class="col-6">
-            <% if @coupons.size > 0 %>
+        <!-- <div class="col-6">
+            <%# if @coupons.size > 0 %>
             <h3>Promos</h3>
-            <% end %>
-            <% @coupons.each do |coupon| %>
-                <p><a href="/coupons/<%= coupon.id %>" >
-                    <% if coupon.seller %><%= coupon.seller.vendor %> - <% end %>
-                    <% if coupon.brand %><%= coupon.brand.brand_title %> - <% end %>
-                    <% if coupon.sneaker %><%= coupon.sneaker.title %> - <% end %>
-                    <%= coupon.coupon_title %>
+            <%# end %>
+            <%# @coupons.each do |coupon| %>
+                <p><a href="/coupons/<%#= coupon.id %>" >
+                    <%# if coupon.seller %><%#= coupon.seller.vendor %> - <%# end %>
+                    <%# if coupon.brand %><%#= coupon.brand.brand_title %> - <%# end %>
+                    <%# if coupon.sneaker %><%#= coupon.sneaker.title %> - <%# end %>
+                    <%#= coupon.coupon_title %>
                 </a></p>
-            <% end %>
-        </div>
+            <%# end %>
+        </div> -->
      </div>
     <div class="row">
         <div class="mx-auto">
