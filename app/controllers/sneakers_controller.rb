@@ -6,7 +6,7 @@ class SneakersController < ApplicationController
      params[:filterrific],
      select_options: {
         search_sneakers_ref: Sneaker,
-        search_brand: Sneaker,
+        search_brand: Brand,
         search_title: Sneaker,
         search_color: Sneaker,
         search_price: Stock
@@ -25,7 +25,7 @@ class SneakersController < ApplicationController
   
   
   def create
-    Sneaker.create sneakers_ref: params[:sneakers_ref], brand: params[:brand], title: params[:title], color: params[:color], img_url: params[:img_url], img_url2: params[:img_url2], img_url3: params[:img_url3]
+    Sneaker.create sneakers_ref: params[:sneakers_ref], brand_id: params[:brand_id], title: params[:title], color: params[:color], img_url: params[:img_url], img_url2: params[:img_url2], img_url3: params[:img_url3]
     redirect_to "/admin/"
   end
   
@@ -34,19 +34,19 @@ class SneakersController < ApplicationController
       @current_admin = Admin.find(session[:admin_id])
     end
     @sneakers = Sneaker.find(params[:id])
+    @brands = Brand.all
     @stocks = Sneaker.find(params[:id]).stocks
     @sellers = Seller.includes(:stocks).references(:stocks).where(stocks: { sneaker_id: params[:id] })
-    @releases = Sneaker.find(params[:id]).calendars
-    # Stock.includes(:sellers).where(sneaker_id: "4113").select(:logo_url, :vendor, :size, :old_price, :price, :offer_link)
-    # Seller.joins(:stocks).where(stocks: { sneaker_id: "4113" })
-    # Seller.includes(:stocks).where(stocks: { sneaker_id: "4113" }).select(:logo_url, :vendor, :size, :old_price, :price, :offer_link)
-    # Stock.preload(:sellers).where(sneaker_id: "4113")
+    @releases = Sneaker.find(params[:id]).calendars.where("release_date > ?", 1.day.ago)
+    
+    
+    # Seller.includes(:stocks).references(:stocks).where(stocks: { sneaker_id: params[:id] })
   end
   
   def update
     @sneakers = Sneaker.find(params[:id])
     @sneakers.sneakers_ref = params[:sneakers_ref] 
-    @sneakers.brand = params[:brand]
+    @sneakers.brand_id = params[:brand_id]
     @sneakers.title = params[:title]
     @sneakers.color = params[:color]
     @sneakers.img_url = params[:img_url]
@@ -60,6 +60,7 @@ class SneakersController < ApplicationController
   @sneakerid = params[:id]
   Stock.where(sneaker_id: params[:id]).destroy_all
   Calendar.where(sneaker_id: params[:id]).destroy_all
+  Coupon.where(sneaker_id: params[:id]).destroy_all
   Sneaker.find(@sneakerid).destroy
   redirect_to "/sneakers"
   end

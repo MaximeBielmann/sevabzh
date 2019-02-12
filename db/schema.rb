@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_04_141055) do
+ActiveRecord::Schema.define(version: 2019_02_09_135401) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name"
@@ -25,12 +25,27 @@ ActiveRecord::Schema.define(version: 2019_02_04_141055) do
     t.text "article_img"
   end
 
+  create_table "brands", force: :cascade do |t|
+    t.string "brand_title"
+    t.text "brand_description"
+    t.text "brand_banner"
+  end
+
   create_table "calendars", force: :cascade do |t|
     t.integer "sneaker_id"
     t.integer "seller_id"
     t.datetime "release_date"
     t.text "release_link"
     t.text "release_price"
+  end
+
+  create_table "coupons", force: :cascade do |t|
+    t.integer "seller_id"
+    t.integer "brand_id"
+    t.integer "sneaker_id"
+    t.string "coupon_title"
+    t.datetime "coupon_start"
+    t.datetime "coupon_end"
   end
 
   create_table "sellers", force: :cascade do |t|
@@ -46,12 +61,12 @@ ActiveRecord::Schema.define(version: 2019_02_04_141055) do
 
   create_table "sneakers", force: :cascade do |t|
     t.string "sneakers_ref"
-    t.string "brand"
     t.string "title"
     t.string "color"
     t.text "img_url"
     t.text "img_url2"
     t.text "img_url3"
+    t.integer "brand_id"
     t.index ["sneakers_ref"], name: "index_sneakers_on_sneakers_ref", unique: true
   end
 

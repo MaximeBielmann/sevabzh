@@ -6673,3 +6673,15 @@ time.icon span {
   padding-top: 1.3em;
   color: #2f2f2f;
 }
+
+.coupons-code h3 {
+    margin-bottom: 0px;
+}
+
+.coupons-code p {
+  color: black;
+}
+
+.coupons-code {    background-color: #dcdcdc;
+    
+}

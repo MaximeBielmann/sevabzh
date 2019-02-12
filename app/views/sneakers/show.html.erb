@@ -1,11 +1,11 @@
-<% content_for :meta_title, "#{@sneakers.brand} - #{@sneakers.title} #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, "#{@sneakers.brand} - #{@sneakers.title}" %>
+<% content_for :meta_title, "#{@sneakers.brand.brand_title} - #{@sneakers.title} #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "#{@sneakers.brand.brand_title} - #{@sneakers.title}" %>
 <% content_for :meta_image, @sneakers.img_url %>
 
 <div class="container">
   <div class="row">
     <div class="col-md-4 text-left title">
-      <h6><%= @sneakers.brand %></h6>
+      <h6><%= @sneakers.brand.brand_title %></h6>
       <h5><%= @sneakers.title %></h5>
       <p><%= @sneakers.sneakers_ref %></p>
     </div>
@@ -26,7 +26,6 @@
         <div class="col-md-6">
           <% if @sneakers.img_url2 %>
           <%= image_tag @sneakers.img_url2, class:'img-fluid' %>
-          
           <% end %>
         </div>
         <div class="col-md-6">
@@ -44,6 +43,8 @@
       <div class="row">
         <div class="col-md-8">
           <h3><% if @sellers.size > 1 %> Disponible dans <%= @sellers.size %> shops <% elsif @sellers.size == 1 %>Disponible dans <%= @sellers.size %> shop <% else %> Aucun stock disponible actuellement<% end %></h3>
+          
+          <h5><input type="checkbox" id="myCheck" onclick="myFunction()"> Afficher les promos</h5>
         </div>
         <div class="col-md-4">
         </div>
@@ -67,13 +68,25 @@
                   <div class="col-md-12">
                     <ul class="list-inline">
                     <% seller.stocks.each do |s| %>
-                        <li class="list-inline-item m-l-20"><p><%= s.size %></p></li>
+                        <li class="list-inline-item">Tailles : </li>
+                        <li class="list-inline-item"><p><%= s.size %></p></li>
                     <% end %>
                 </ul>
                   </div>
+                  
+                   
+                 <div class="col-12 m-t-20">
+                <ul class="list">
+                  <% seller.coupons.each do |s| %>
+                        <li class="list-item m-t-10">
+                          <p class="red" style="display:none"><%= s.seller.vendor %> : <%= s.coupon_title %> valable du <%= s.coupon_start.strftime("%d %b %Y") %> au <%= s.coupon_end.strftime(" %d %b %Y") %></p>
+                        </li>
+                   <% end %>
+                </ul>
+              </div>
+              
                 </div>
           <% end %>
-          <% else %>
           <div class="row">
             <div class="col-md-12">
               <% if @releases.size > 0 %>
@@ -118,7 +131,11 @@
 <div class="row">
     <%= form_tag "/sneakers/#{@sneakers.id}", method: "patch" do %>
   <p><input type="text" value="<%= @sneakers.sneakers_ref %>" name="sneakers_ref" /></p> 
-  <p><input type="text" value="<%= @sneakers.brand %>" name="brand" /></p>
+  <p><select name="brand_id" class="form-control border">
+     <% @brands.each do |brand| %>
+     <option value="<%= brand.id %>"><%= brand.brand_title %></option>
+     <% end %>
+  </select></p>
   <p><input type="text" value="<%= @sneakers.title %>"  name="title" /></p>
   <p><input type="text" value="<%= @sneakers.color %>"  name="color" /></p>
   <p><input type="text" value="<%= @sneakers.img_url %>"  name="img_url" /></p>

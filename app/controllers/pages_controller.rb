@@ -5,7 +5,7 @@ class PagesController < ApplicationController
      params[:filterrific],
      select_options: {
         search_sneakers_ref: Sneaker,
-        search_brand: Sneaker,
+        search_brand: Brand,
         search_title: Sneaker
         
       }, :persistence_id => false,
