@@ -4,16 +4,16 @@ class ListingUploaderController < ApplicationController
     # https://s3.us-east-2.amazonaws.com/sevabzh/upload.csv
     
     def upload_sneakers
-        CSV.foreach('public/sneakers.csv', headers: true) do |row|
-            Sneaker.where(sneakers_ref: row['sneakers_ref'],
-                        brand_id: Brand.where(brand_title: row['brand']).ids,
-                        title: row['title'], 
-                        color: row['color'], 
-                        img_url: row['img_url'],
-                        img_url2: row['img_url2'],
-                        img_url3: row['img_url3']).first_or_create
-        end
-        redirect_to "/admin/"
+        # CSV.foreach('public/sneakers.csv', headers: true) do |row|
+        #    Sneaker.where(sneakers_ref: row['sneakers_ref'],
+        #                brand_id: Brand.where(brand_title: row['brand']).ids,
+        #                title: row['title'], 
+        #                color: row['color'], 
+        #                img_url: row['img_url'],
+        #                img_url2: row['img_url2'],
+        #                img_url3: row['img_url3']).first_or_create
+        #end
+        #redirect_to "/admin/"
         
         CSV.foreach('public/sneakers.csv', headers: true) do |row|
             @sneakers = Sneaker.where(sneakers_ref: row['sneakers_ref'])
