@@ -14,6 +14,18 @@ class ListingUploaderController < ApplicationController
                         img_url3: row['img_url3']).first_or_create
         end
         redirect_to "/admin/"
+        
+        CSV.foreach('public/sneakers.csv', headers: true) do |row|
+            @sneakers = Sneaker.where(sneakers_ref: row['sneakers_ref'])
+            @sneakers.brand_id = Brand.where(brand_title: row['brand']).ids
+            @sneakers.title = row['title']
+            @sneakers.color = row['color'] 
+            @sneakers.img_url = row['img_url']
+            @sneakers.img_url2 = row['img_url2']
+            @sneakers.img_url3 = row['img_url3']
+            @sneakers.save
+        end
+        redirect_to "/admin/"
     end
     
     def upload_sellers
