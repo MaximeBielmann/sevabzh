@@ -46,6 +46,7 @@ Rails.application.routes.draw do
   delete 'calendar/:id' => 'calendars#destroy'
   
   post 'listing_uploader/sneakers' => 'listing_uploader#upload_sneakers'
+  patch 'listing_uploader/sneakers' => 'listing_uploader#update_sneakers'
   post 'listing_uploader/sellers' => 'listing_uploader#upload_sellers'
   post 'listing_uploader/stocks' => 'listing_uploader#upload_stocks'
   post 'listing_uploader/brands' => 'listing_uploader#upload_brands'

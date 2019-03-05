@@ -60,20 +60,20 @@
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative">
-									<%= image_tag (Sneaker.find(40454).img_url) %>
+									<%= image_tag (Sneaker.find(ENV['SNEAKER_ONE']).img_url) %>
 
 									<div class="block2-overlay trans-0-4">
 										<div class="block2-btn-addcart w-size1 trans-0-4">
 											<!-- Button -->
-												<a href="/sneakers/40454" class="btn btn-primary btn-seva w-100">Voir la sneaker</a>
+												<a href="/sneakers/<%= ENV['SNEAKER_ONE'] %>" class="btn btn-primary btn-seva w-100">Voir la sneaker</a>
 										</div>
 									</div>
 								</div>
 
 								<div class="block2-txt p-t-20">
-									  <p class="text-center"><a href="/sneakers/40454">
-                    <%= Sneaker.find(40454).sneakers_ref %> - 
-                    <%= Sneaker.find(40454).title %></a>
+									  <p class="text-center"><a href="/sneakers/<%= ENV['SNEAKER_ONE'] %>">
+                    <%= Sneaker.find(ENV['SNEAKER_ONE']).sneakers_ref %> - 
+                    <%= Sneaker.find(ENV['SNEAKER_ONE']).title %></a>
                     </p>
 								</div>
 					    </div>

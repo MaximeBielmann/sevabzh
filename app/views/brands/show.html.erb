@@ -1,6 +1,8 @@
 <div class="container">
     <div class="row">
-        <%#= image_tag @brands.brand_banner, class:'img-fluid d-block mx-auto' %>
+        <% if @brands.brand_banner %>
+            <%= image_tag @brands.brand_banner, class:'img-fluid d-block mx-auto' %>
+        <% end %>
     </div>
     <div class="row">
         <!-- <div class="col-6">
