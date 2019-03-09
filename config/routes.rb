@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   post 'calendar' => 'calendars#create'
   patch 'calendar/:id' => 'calendars#update'
   delete 'calendar/:id' => 'calendars#destroy'
+  get 'calendar-export' => 'calendars#export'
   
   post 'listing_uploader/sneakers' => 'listing_uploader#upload_sneakers'
   patch 'listing_uploader/sneakers' => 'listing_uploader#update_sneakers'

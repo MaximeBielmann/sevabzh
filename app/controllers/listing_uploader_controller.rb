@@ -20,14 +20,16 @@ class ListingUploaderController < ApplicationController
         @csv_text = File.read('public/sneakers.csv')
         @csv = CSV.parse(@csv_text, :headers => true)
         @csv.each do |row|
-          t = Sneaker.where(sneakers_ref: row["sneakers_ref"]).first
-          t.brand_id = Brand.where(brand_title: row["brand"]).ids
-          t.title = row["title"]
-          t.color = row["color"]
+          @t = Sneaker.where(sneakers_ref: row["sneakers_ref"]).first
+          if @t
+          @t.brand_id = Brand.where(brand_title: row["brand"]).ids
+          @t.title = row["title"]
+          @t.color = row["color"]
           # t.img_url = row["img_url"]
           # t.img_url2 = row["img_url2"]
           # t.img_url3 = row["img_url3"]
-          t.save
+          @t.save
+          end
         end
         redirect_to "/admin/"
     end

@@ -33,4 +33,8 @@ class CalendarsController < ApplicationController
     Calendar.find(params[:id]).destroy
     redirect_to "/calendar/"
   end
+  
+  def export
+    @calendars = Calendar.all
+  end
 end
