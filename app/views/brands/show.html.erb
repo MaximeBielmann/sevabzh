@@ -1,0 +1,155 @@
+<div class="container">
+    <div class="row">
+        <% if @brands.brand_banner %>
+            <%= image_tag @brands.brand_banner, class:'img-fluid d-block mx-auto' %>
+        <% end %>
+    </div>
+    <div class="row">
+        <!-- <div class="col-6">
+            <%# if @coupons.size > 0 %>
+            <h3>Promos</h3>
+            <%# end %>
+            <%# @coupons.each do |coupon| %>
+                <p><a href="/coupons/<%#= coupon.id %>" >
+                    <%# if coupon.seller %><%#= coupon.seller.vendor %> - <%# end %>
+                    <%# if coupon.brand %><%#= coupon.brand.brand_title %> - <%# end %>
+                    <%# if coupon.sneaker %><%#= coupon.sneaker.title %> - <%# end %>
+                    <%#= coupon.coupon_title %>
+                </a></p>
+            <%# end %>
+        </div> -->
+     </div>
+    <div class="row">
+        <div class="mx-auto">
+            <h1><%= @brands.brand_title %></h1>
+        </div>
+    </div>
+
+    <div class="row">
+                                <div class="col-md-2">
+
+                                </div>
+                                <form class="card card-sm col-md-8 col-sm-10 m-t-20 m-b-20">
+
+                                    <%= form_for_filterrific @filterrific do |f| %>
+
+                                    <div class="card-body row no-gutters align-items-center">
+                                    	<div class="col-auto">
+                                            <i class="fas fa-search h4 text-body"></i>
+                                        </div>
+                                        <div class="col col-md-2 col-sm-12">
+                                            <%= f.text_field(
+                                          :search_sneakers_ref,
+                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
+                                          placeholder: "Référence"
+                                        ) %>
+                                        </div>
+                                        <div class="col col-md-2 col-sm-12">
+                                            <%= f.text_field(
+                                          :search_title,
+                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
+                                          placeholder: "Modèle"
+                                        ) %>
+                                        </div>
+                                        <div class="col col-md-2 col-sm-12">
+                                          <%= f.text_field(
+                                          :search_color,
+                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
+                                          placeholder: "Couleur"
+                                        ) %>
+                                        </div>
+                                        <div class="col col-md-2 col-sm-12">
+                                          <%= f.text_field(
+                                          :search_price,
+                                          class: 'filterrific-periodically-observed form-control form-control-lg form-control-borderless',
+                                          placeholder: "Prix maxi"
+                                        ) %>
+                                        </div>
+                                        <!--end of col-->
+                                        <div class="col-auto col-md-2 col-sm-12">
+                                            <%= f.submit 'Chercher', class:'btn btn-md btn-seva float-right' %>
+                                        </div>
+                                        <div class="col-auto col-md-1 col-sm-12 text-right">
+                                            <%= link_to(
+                                              'reset',
+                                              reset_filterrific_url,
+                                              ) %>
+                                        </div
+                                        <!--end of col-->
+                                    </div>
+                                    <%= render_filterrific_spinner %>
+                                    <% end %>
+                                </form>
+                            </div>
+        <div class="row">
+        	<div class="col-md-1">
+    	</div>
+    	<div class="col-md-10">
+    		<div class="row">
+      <% @sneakers.each do |sneaker| %>
+      <div class="col-md-3 col-sm-6 p-b-50">
+							<!-- Block2 -->
+							<div class="block2">
+								<div class="block2-img wrap-pic-w of-hidden pos-relative">
+									<% if sneaker.img_url %>
+									<%= image_tag (sneaker.img_url) %>
+									<% else %>
+						          	<%= image_tag("noimage.png", class:'img-fluid') %>
+						          	<% end %>
+									<div class="block2-overlay trans-0-4">
+										<div class="block2-btn-addcart w-size1 trans-0-4">
+											<!-- Button -->
+												<a href="/sneakers/<%= sneaker.id %>" class="btn btn-primary btn-seva w-100">Voir la sneaker</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="block2-txt p-t-20">
+									  <p class="text-center"><a href="/sneakers/<%= sneaker.id %>">
+					                    <%= sneaker.sneakers_ref %> - 
+					                    <%= sneaker.brand.brand_title %> - 
+					                    <%= sneaker.title %></a>
+					                   </p>
+								</div>
+					</div>
+			</div>
+			<% end %>
+			<% if @sneakers.size < 1%>
+    		<div class="col-md-12">
+    			<h1 class="text-center">Désolé, il n'y a aucun résultat à cette recherche.</h1>
+    		</div>
+    		<% end %>
+    		</div>
+    	</div>
+        </div>
+    </div>
+</div>
+
+<% if @current_admin %>
+
+<div class="container m-t-200">    
+
+<h1>Modifier la marque</h1>
+
+<div class="row">
+    <%= form_tag "/brands/#{@brands.id}", method: "patch" do %>
+  <p><input type="text" value="<%= @brands.brand_title %>" name="brand_title" /></p> 
+  <p><input type="text" value="<%= @brands.brand_banner %>" name="brand_banner" /></p>
+  <p><textarea rows="5" name="brand_description"><%= @brands.brand_description %></textarea></p>
+  <p><input type="submit" value="Mettre à jour la marque" /></p>
+<% end %>
+</div>
+
+<div class="row">
+<%= form_tag "/brands/#{@brands.id}", method: "delete" do %>
+  <input type="submit" value="Supprimer la marque" />
+<% end %>
+</div>
+
+<div class="row">
+<p><a href="/brands">Retourner à l’index</a></p>
+</div>
+
+</div>
+
+<% end %> 

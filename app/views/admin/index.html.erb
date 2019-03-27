@@ -23,7 +23,12 @@
                     <input type="text" class="form-control border" label="sneakers_ref" placeholder="Référence" name="sneakers_ref" />
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control border" placeholder="Marque" name="brand" />
+                    <select name="brand_id" class="form-control border">
+                       <option value=""> -- select an option -- </option>
+                       <% @brands.each do |brand| %>
+                       <option value="<%= brand.id %>"><%= brand.brand_title %></option>
+                       <% end %>
+                    </select>
                   </div>
                   <div class="form-group">
                     <input type="text" class="form-control border" placeholder="Modèle" name="title" />
@@ -78,13 +83,15 @@
                 <form>
                   <div class="form-group">
                     <select name="sneaker_id" class="form-control border">
+                    <option value=""> -- select an option -- </option>
                     <% @sneakers.each do |sneaker| %>
-                    <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%= sneaker.brand %> - <%= sneaker.title %></option>
+                    <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%= sneaker.brand.brand_title %> - <%= sneaker.title %></option>
                     <% end %>
                     </select>
                   </div>
                   <div class="form-group">
                     <select name="seller_id" class="form-control border">
+                    <option value=""> -- select an option -- </option>
                     <% @sellers.each do |seller| %>
                     <option value="<%= seller.id %>"><%= seller.vendor %> - <%= seller.country %></option>
                     <% end %>
@@ -109,13 +116,15 @@
                 <form>
                   <div class="form-group">
                     <select name="sneaker_id" class="form-control border">
+                    <option value=""> -- select an option -- </option>
                     <% @sneakers.each do |sneaker| %>
-                    <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%= sneaker.brand %> - <%= sneaker.title %></option>
+                    <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%= sneaker.brand.brand_title %> - <%= sneaker.title %></option>
                     <% end %>
                     </select>
                   </div>
                   <div class="form-group">
                     <select name="seller_id" class="form-control border">
+                    <option value=""> -- select an option -- </option>
                     <% @sellers.each do |seller| %>
                     <option value="<%= seller.id %>"><%= seller.vendor %> - <%= seller.country %></option>
                     <% end %>
@@ -131,7 +140,7 @@
                     <input type="text" class="form-control border" placeholder="Coût d'envoi" name="shipping_cost" />
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control border" placeholder="Vieux prix" name="old_prix" />
+                    <input type="text" class="form-control border" placeholder="Vieux prix" name="old_price" />
                   </div>
                   <div class="form-group">
                     <input type="text" class="form-control border" placeholder="Nouveau prix" name="price" />
@@ -140,6 +149,66 @@
                 </form>
             <% end %>
         </div>
+      </div>
+      <div class="row m-t-50">
+            <div class="col-md-6">
+            <h3>Ajouter une marque</h3>
+            <%= form_tag "/brands", method: "post" do %>
+                <form>
+                 <div class="form-group">
+                    <input type="text" class="form-control border" placeholder="Nom de la marque" name="brand_title" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control border" placeholder="URL de la bannière" name="brand_banner" />
+                  </div>
+                  <div class="form-group">
+                    <textarea class="form-control border" rows="5" placeholder="Texte" name="brand_description">Description de la marque</textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Ajouter la marque</button>
+                </form>
+            <% end %>
+            </div>
+            <div class="col-md-6">
+            <h3>Ajouter une promo</h3>
+            <%= form_tag "/coupons", method: "post" do %>
+                <form>
+                 <div class="form-group">
+                   <select name="sneaker_id" class="form-control border">
+                    <option value=""> -- select an option -- </option>
+                    <% @sneakers.each do |sneaker| %>
+                    <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%= sneaker.brand.brand_title %> - <%= sneaker.title %></option>
+                    <% end %>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <select name="brand_id" class="form-control border">
+                    <option value=""> -- select an option -- </option>
+                    <% @brands.each do |brand| %>
+                    <option value="<%= brand.id %>"><%= brand.brand_title %></option>
+                    <% end %>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <select name="seller_id" class="form-control border">
+                    <option value=""> -- select an option -- </option>
+                    <% @sellers.each do |seller| %>
+                    <option value="<%= seller.id %>"><%= seller.vendor %></option>
+                    <% end %>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control border" placeholder="Code promo ou articles" name="coupon_title" />
+                  </div>
+                  <div class="form-group">
+                    <input type="datetime-local" class="form-control border" name="coupon_start" />
+                  </div>
+                  <div class="form-group">
+                    <input type="datetime-local" class="form-control border" name="coupon_end" />
+                  </div>
+                  <button type="submit" class="btn btn-primary">Ajouter la promo</button>
+                </form>
+            <% end %>
+            </div>
       </div>
 </div>
 
@@ -161,6 +230,11 @@
         <% end %>
     </div>
     <div class="col-md-4">
+        <%= form_tag '/listing_uploader/sneakers', method: 'patch' do %>
+           <button type="submit" class="btn btn-primary">Update les sneakers</button>
+        <% end %>
+    </div>
+    <div class="col-md-4">
         <%= form_tag '/listing_uploader/sellers', method: 'post' do %>
            <button type="submit" class="btn btn-primary">Upload les shops</button>
         <% end %>
@@ -168,6 +242,11 @@
     <div class="col-md-4">
         <%= form_tag '/listing_uploader/stocks', method: 'post' do %>
            <button type="submit" class="btn btn-primary">Upload les stocks</button>
+        <% end %>
+    </div>
+    <div class="col-md-4">
+        <%= form_tag '/listing_uploader/brands', method: 'post' do %>
+           <button type="submit" class="btn btn-primary">Upload les marques</button>
         <% end %>
     </div>
     </div>
@@ -188,6 +267,11 @@
     <div class="col-md-4">
         <%= form_tag '/listing_uploader/stocks', method: 'delete' do %>
            <button type="submit" class="btn btn-primary">Supprimer les <%= @stocksize %> stocks</button>
+        <% end %>
+    </div>
+    <div class="col-md-4">
+        <%= form_tag '/listing_uploader/brands', method: 'delete' do %>
+           <button type="submit" class="btn btn-primary">Supprimer les <%= @brandsize %> marques</button>
         <% end %>
     </div>
   </div>

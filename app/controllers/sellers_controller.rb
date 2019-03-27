@@ -13,6 +13,7 @@ class SellersController < ApplicationController
       @current_admin = Admin.find(session[:admin_id])
     end
     @sellers = Seller.find(params[:id])
+    @coupons = Coupon.where(seller_id: params[:id])
   end
   
   def update

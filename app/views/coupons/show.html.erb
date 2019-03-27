@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center"><%= @coupons.coupon_title %></h1>
+        </div>
+    </div>
+    <div class="row">
+        <% if @coupons.seller %>
+        <div class="col-12">
+            <h3>Valable chez : <%= @coupons.seller.vendor %></h3>
+        </div>
+        <% end %>
+        <% if @coupons.brand %>
+        <div class="col-12">
+            <h3>Sur la marque : <%= @coupons.brand.brand_title %></h3>
+        </div>
+        <% end %>
+        <% if @coupons.sneaker %>
+        <div class="col-12">
+            <h3>Sur la paire : <%= @coupons.sneaker.title %></h3>
+        </div>
+        <% end %>
+        <div class="col-12">
+            <h3>Code : <%= @coupons.coupon_title %></h3>
+        </div>
+    </div>
+</div>
+
+<% if @current_admin %>
+
+<div class="container m-t-200">    
+
+<h1>Modifier la promo</h1>
+
+<div class="row">
+    <%= form_tag "/coupons/#{@coupons.id}", method: "patch" do %>
+  <p><select name="brand_id" class="form-control border">
+    <option value=" "> -- select an option -- </option>
+     <% @brands.each do |brand| %>
+     <option value="<%= brand.id %>"><%= brand.brand_title %></option>
+     <% end %>
+  </select></p>
+  <p><select name="seller_id" class="form-control border">
+    <option value=" "> -- select an option -- </option>
+     <% @sellers.each do |seller| %>
+     <option value="<%= seller.id %>"><%= seller.vendor %></option>
+     <% end %>
+  </select></p>
+  <p><select name="sneaker_id" class="form-control border">
+    <option value=" "> -- select an option -- </option>
+     <% @sneakers.each do |sneaker| %>
+     <option value="<%= sneaker.id %>"><%= sneaker.title %></option>
+     <% end %>
+  </select></p>
+  <p><input type="text" value="<%= @coupons.coupon_title %>"  name="coupon_title" /></p>
+  <p><input type="datetime-local" class="form-control border" name="coupon_start" /></p>
+  <p><input type="datetime-local" class="form-control border" name="coupon_end" /></p>
+  <p><input type="submit" value="Mettre à jour la promo" /></p>
+<% end %>
+</div>
+
+<div class="row">
+<%= form_tag "/coupons/#{@coupons.id}", method: "delete" do %>
+  <input type="submit" value="Supprimer la promo" />
+<% end %>
+</div>
+
+</div>
+
+<% end %> 

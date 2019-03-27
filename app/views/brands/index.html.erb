@@ -1,0 +1,345 @@
+<div class="container">
+    <div class="row">
+        <ul class="list-inline mx-auto">
+            <li class="list-inline-item">A </li>
+            <li class="list-inline-item">B </li>
+            <li class="list-inline-item">C </li>
+            <li class="list-inline-item">D </li>
+            <li class="list-inline-item">E </li>
+            <li class="list-inline-item">F </li>
+            <li class="list-inline-item">G </li>
+            <li class="list-inline-item">H </li>
+            <li class="list-inline-item">I </li>
+            <li class="list-inline-item">J </li>
+            <li class="list-inline-item">K </li>
+            <li class="list-inline-item">L </li>
+            <li class="list-inline-item">M </li>
+            <li class="list-inline-item">N </li>
+            <li class="list-inline-item">O </li>
+            <li class="list-inline-item">Q </li>
+            <li class="list-inline-item">R </li>
+            <li class="list-inline-item">S </li>
+            <li class="list-inline-item">T </li>
+            <li class="list-inline-item">U </li>
+            <li class="list-inline-item">V </li>
+            <li class="list-inline-item">W </li>
+            <li class="list-inline-item">X </li>
+            <li class="list-inline-item">Y </li>
+            <li class="list-inline-item">Z </li>
+        </ul>
+    </div>
+    <div class="row">
+        <ul class="list-inline">
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>A</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "A" or brand.brand_title.chars.first == "a" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>B</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "B" or brand.brand_title.chars.first == "b" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>C</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "C" or brand.brand_title.chars.first == "c" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>D</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "D" or brand.brand_title.chars.first == "d" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>E</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "E" or brand.brand_title.chars.first == "e" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>F</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "F" or brand.brand_title.chars.first == "f" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>G</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "G" or brand.brand_title.chars.first == "g" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>H</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "H" or brand.brand_title.chars.first == "h" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %><% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>I</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "I" or brand.brand_title.chars.first == "i" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1 id="z">J</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "J" or brand.brand_title.chars.first == "j" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>K</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "K" or brand.brand_title.chars.first == "k" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>L</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "L" or brand.brand_title.chars.first == "l" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>M</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "M" or brand.brand_title.chars.first == "m" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>N</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "N" or brand.brand_title.chars.first == "n" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>O</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "O" or brand.brand_title.chars.first == "o" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>P</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "P" or brand.brand_title.chars.first == "p" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %><% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>Q</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "Q" or brand.brand_title.chars.first == "q" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>R</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "R" or brand.brand_title.chars.first == "r" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>S</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "S" or brand.brand_title.chars.first == "s" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>T</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "T" or brand.brand_title.chars.first == "t" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>U</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "U" or brand.brand_title.chars.first == "u" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>V</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "V" or brand.brand_title.chars.first == "v" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>W</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "W" or brand.brand_title.chars.first == "w" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>X</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "X" or brand.brand_title.chars.first == "x" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>Y</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "Y" or brand.brand_title.chars.first == "y" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+                <% @i = 0 %>
+                <% @brands.each.each do |brand| %>
+                    <% if @i < 1 %>
+                    <h1>Z</h1>
+                    <% @i += 1 %>
+                    <% end %>
+                    <% if brand.brand_title.chars.first == "Z" or brand.brand_title.chars.first == "z" %>
+                        <li class="list-inline-item">
+                            <a href="/brands/<%= brand.id %>" ><%= brand.brand_title %></a>
+                        </li>
+                    <% end %>
+                <% end %>
+        </ul>
+    </div>
+</div>
