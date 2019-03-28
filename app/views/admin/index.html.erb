@@ -249,6 +249,11 @@
            <button type="submit" class="btn btn-primary">Upload les marques</button>
         <% end %>
     </div>
+    <div class="col-md-4">
+        <%= form_tag '/listing_uploader/update_brands', method: 'post' do %>
+           <button type="submit" class="btn btn-primary">Update les marques (id etc)</button>
+        <% end %>
+    </div>
     </div>
     <div class="col-md-6">
     <div class="col-md-12">

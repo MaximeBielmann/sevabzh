@@ -70,5 +70,15 @@ class ListingUploaderController < ApplicationController
         Brand.destroy_all
         redirect_to "/admin/"
     end
+    
+    def update_brands
+        @sneakers = Sneaker.all
+        
+        @sneakers.each do |sneaker|
+            sneaker.brand_id = Brand.where(brand_title: sneaker.brand)
+            sneaker.save
+        end
+        redirect_to "/admin"
+    end
 end
        

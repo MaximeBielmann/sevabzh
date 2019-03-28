@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   post 'listing_uploader/sellers' => 'listing_uploader#upload_sellers'
   post 'listing_uploader/stocks' => 'listing_uploader#upload_stocks'
   post 'listing_uploader/brands' => 'listing_uploader#upload_brands'
+  post 'listing_uploader/update_brands' => 'listing_uploader#update_brands'
 
   
   delete 'listing_uploader/sneakers' => 'listing_uploader#delete_sneakers'
