@@ -6,7 +6,8 @@ class ListingUploaderController < ApplicationController
     def upload_sneakers
         CSV.foreach('public/sneakers.csv', headers: true) do |row|
             Sneaker.where(sneakers_ref: row['sneakers_ref'], 
-                        brand: row['brand'], 
+                        brand: row['brand'],
+                        brand_id: Brand.where(brand_title: row['brand']).ids,
                         title: row['title'], 
                         color: row['color'], 
                         img_url: row['img_url'],
