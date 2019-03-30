@@ -18,7 +18,8 @@
                                         </div>
                                         <!--end of col-->
                                         <div class="col">
-                                            <input class="form-control form-control-lg form-control-borderless" type="search" name="reference" placeholder="Référence">
+                                            <%= text_field_tag(:reference, nil, class: "form-control form-control-lg form-control-borderless", placeholder: "Référence") %>
+                                            <!--<input class="form-control form-control-lg form-control-borderless" type="search" name="reference" placeholder="Référence"> -->
                                         </div>
                                         <div class="col">
                                             <input class="form-control form-control-lg form-control-borderless" type="search" name="marque" placeholder="Marque">

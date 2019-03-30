@@ -82,4 +82,3 @@ class ListingUploaderController < ApplicationController
         redirect_to "/admin"
     end
 end
-       

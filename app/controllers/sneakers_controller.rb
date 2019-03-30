@@ -6,7 +6,7 @@ class SneakersController < ApplicationController
      params[:filterrific],
      select_options: {
         search_sneakers_ref: Sneaker,
-        search_brand: Sneaker,
+        search_brand: Brand,
         search_title: Sneaker,
         search_color: Sneaker,
         search_price: Stock
@@ -25,7 +25,7 @@ class SneakersController < ApplicationController
   
   
   def create
-    Sneaker.create sneakers_ref: params[:sneakers_ref], brand: params[:brand], title: params[:title], color: params[:color], img_url: params[:img_url], img_url2: params[:img_url2], img_url3: params[:img_url3]
+    Sneaker.create sneakers_ref: params[:sneakers_ref], brand_id: params[:brand_id], title: params[:title], color: params[:color], img_url: params[:img_url], img_url2: params[:img_url2], img_url3: params[:img_url3]
     redirect_to "/admin/"
   end
   
@@ -70,7 +70,7 @@ class SneakersController < ApplicationController
   @reference = params[:reference].to_s
   @marque = params[:marque].to_s
   @modele = params[:modele].to_s
-  redirect_to "/sneakers?utf8=✓&filterrific%5Bsearch_sneakers_ref%5D=#{@reference}&filterrific%5Bsearch_brand%5D=#{@marque}&filterrific%5Bsearch_title%5D=#{@modele}&filterrific%5Bsearch_color%5D=&commit=+++Chercher+++"
+  redirect_to "/sneakers?utf8=✓&filterrific%5Bsearch_sneakers_ref%5D=#{@reference}&filterrific%5Bsearch_brand%5D=#{@marque}&filterrific%5Bsearch_title%5D=#{@modele}&filterrific%5Bsearch_color%5D=&filterrific%5Bsearch_price%5D=&commit=Chercher"
   end
   
 end
