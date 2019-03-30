@@ -21,7 +21,6 @@ class Sneaker < ApplicationRecord
  has_many :coupons, :foreign_key => "sneaker_id"
  
  validates :sneakers_ref, presence: true, uniqueness: true
- validates :brand_id, presence: true
  validates :title, presence: true
  validates :img_url, presence: true
  

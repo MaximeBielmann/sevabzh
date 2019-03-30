@@ -47,7 +47,7 @@ class SneakersController < ApplicationController
   def update
     @sneakers = Sneaker.find(params[:id])
     @sneakers.sneakers_ref = params[:sneakers_ref] 
-    @sneakers.brand = params[:brand]
+    @sneakers.brand_id = params[:brand_id]
     @sneakers.title = params[:title]
     @sneakers.color = params[:color]
     @sneakers.img_url = params[:img_url]
