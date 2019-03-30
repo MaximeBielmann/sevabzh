@@ -26,7 +26,7 @@
                     <select name="brand_id" class="form-control border">
                        <option value=""> -- select an option -- </option>
                        <% @brands.each do |brand| %>
-                       <option value="<%= brand.id %>"><%= brand.brand_title %></option>
+                       <option value="<%#= brand.id %>"><%#= brand.brand_title %></option>
                        <% end %>
                     </select>
                   </div>
@@ -85,7 +85,7 @@
                     <select name="sneaker_id" class="form-control border">
                     <option value=""> -- select an option -- </option>
                     <% @sneakers.each do |sneaker| %>
-                    <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%= sneaker.brand.brand_title %> - <%= sneaker.title %></option>
+                    <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%#= sneaker.brand.brand_title %> - <%= sneaker.title %></option>
                     <% end %>
                     </select>
                   </div>
@@ -118,7 +118,7 @@
                     <select name="sneaker_id" class="form-control border">
                     <option value=""> -- select an option -- </option>
                     <% @sneakers.each do |sneaker| %>
-                    <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%= sneaker.brand.brand_title %> - <%= sneaker.title %></option>
+                    <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%#= sneaker.brand.brand_title %> - <%= sneaker.title %></option>
                     <% end %>
                     </select>
                   </div>
@@ -176,7 +176,7 @@
                    <select name="sneaker_id" class="form-control border">
                     <option value=""> -- select an option -- </option>
                     <% @sneakers.each do |sneaker| %>
-                    <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%= sneaker.brand.brand_title %> - <%= sneaker.title %></option>
+                    <option value="<%= sneaker.id %>"><%= sneaker.sneakers_ref %> - <%#= sneaker.brand.brand_title %> - <%= sneaker.title %></option>
                     <% end %>
                     </select>
                   </div>
@@ -184,7 +184,7 @@
                     <select name="brand_id" class="form-control border">
                     <option value=""> -- select an option -- </option>
                     <% @brands.each do |brand| %>
-                    <option value="<%= brand.id %>"><%= brand.brand_title %></option>
+                    <option value="<%#= brand.id %>"><%#= brand.brand_title %></option>
                     <% end %>
                     </select>
                   </div>
