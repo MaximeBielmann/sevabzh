@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">to export</h1>
+        </div>
+        <div class="col-12">
+            <% @calendars.each do |s| %>
+            <p>"<%= s.sneaker.sneakers_ref %>","<%= s.sneaker.img_url2 if s.sneaker.img_url2 %>","<%= s.sneaker.title %>","<%= s.sneaker.color %>","<%= s.sneaker.brand.brand_title %>","<%= s.sneaker.img_url if s.sneaker.img_url %>"</p>
+            <% end %>
+        </div>
+    </div>
+</div> 

@@ -1,6 +1,8 @@
 <div class="container">
     <div class="row">
-        <%#= image_tag @brands.brand_banner, class:'img-fluid d-block mx-auto' %>
+        <% if @brands.brand_banner %>
+            <%= image_tag @brands.brand_banner, class:'img-fluid d-block mx-auto' %>
+        <% end %>
     </div>
     <div class="row">
         <!-- <div class="col-6">
@@ -22,10 +24,10 @@
             <h1><%= @brands.brand_title %></h1>
         </div>
     </div>
-    
+
     <div class="row">
                                 <div class="col-md-2">
-                                    
+
                                 </div>
                                 <form class="card card-sm col-md-8 col-sm-10 m-t-20 m-b-20">
 
@@ -150,4 +152,4 @@
 
 </div>
 
-<% end %>
+<% end %> 

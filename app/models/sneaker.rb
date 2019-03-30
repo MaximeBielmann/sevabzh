@@ -18,6 +18,7 @@ class Sneaker < ApplicationRecord
  has_many :calendars, :foreign_key => "sneaker_id"
  has_many :coupons, :foreign_key => "sneaker_id"
  has_many :sellers, through: :stocks
+ has_many :coupons, :foreign_key => "sneaker_id"
  
  validates :sneakers_ref, presence: true, uniqueness: true
  validates :brand_id, presence: true
@@ -26,7 +27,7 @@ class Sneaker < ApplicationRecord
  
  
  scope :search_sneakers_ref, -> (search_sneakers_ref) { where("lower(sneakers_ref) LIKE ?", "%#{search_sneakers_ref.to_s.downcase}%") }
- scope :search_brand, -> (search_brand) { joins(:brand).where("lower(brand_title) LIKE ?", "%#{search_brand.to_s.downcase}%").select(:img_url, :sneakers_ref, :title, :brand_id, :brand_title, :brand_description, :brand_banner) }
+ scope :search_brand, -> (search_brand) { joins(:brand).where("lower(brand_title) LIKE ?", "%#{search_brand.to_s.downcase}%").select(:id, :img_url, :sneakers_ref, :title, :brand_id, :brand_title, :brand_description, :brand_banner) }
  scope :search_title, -> (search_title) { where("lower(title) LIKE ?", "%#{search_title.to_s.downcase}%") }
  scope :search_color, -> (search_color) { where("lower(color) LIKE ?", "%#{search_color.to_s.downcase}%") }
  scope :search_price, -> (search_price) { joins(:stocks).where("price < ?", "#{search_price.to_f}").select(:id, :sneakers_ref, :brand_id, :title, :color, :img_url).distinct }

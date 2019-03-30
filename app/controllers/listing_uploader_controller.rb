@@ -16,14 +16,14 @@ class ListingUploaderController < ApplicationController
         #redirect_to "/admin/"
         
         CSV.foreach('public/sneakers.csv', headers: true) do |row|
-            @sneakers = Sneaker.where(sneakers_ref: row['sneakers_ref'])
-            @sneakers.brand_id = Brand.where(brand_title: row['brand']).ids
-            @sneakers.title = row['title']
-            @sneakers.color = row['color'] 
-            @sneakers.img_url = row['img_url']
-            @sneakers.img_url2 = row['img_url2']
-            @sneakers.img_url3 = row['img_url3']
-            @sneakers.save
+            Sneaker.where(sneakers_ref: row['sneakers_ref'], 
+                        brand: row['brand'],
+                        brand_id: Brand.where(brand_title: row['brand']).ids,
+                        title: row['title'], 
+                        color: row['color'], 
+                        img_url: row['img_url'],
+                        img_url2: row['img_url2'],
+                        img_url3: row['img_url3']).first_or_create
         end
         redirect_to "/admin/"
     end
@@ -82,5 +82,14 @@ class ListingUploaderController < ApplicationController
         Brand.destroy_all
         redirect_to "/admin/"
     end
+    
+    def update_brands
+        @sneakers = Sneaker.all
+        
+        @sneakers.each do |sneaker|
+            sneaker.brand_id = Brand.where(brand_title: sneaker.brand)
+            sneaker.save
+        end
+        redirect_to "/admin"
+    end
 end
-       

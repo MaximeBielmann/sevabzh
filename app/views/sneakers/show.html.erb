@@ -42,8 +42,9 @@
       </script>
       <div class="row">
         <div class="col-md-8">
+          <% if @releases.size == 0 %>
           <h3><% if @sellers.size > 1 %> Disponible dans <%= @sellers.size %> shops <% elsif @sellers.size == 1 %>Disponible dans <%= @sellers.size %> shop <% else %> Aucun stock disponible actuellement<% end %></h3>
-          
+          <% end %>
           <h5><input type="checkbox" id="myCheck" onclick="myFunction()"> Afficher les promos</h5>
         </div>
         <div class="col-md-4">
@@ -74,7 +75,7 @@
                 </ul>
                   </div>
                   
-                   
+
                  <div class="col-12 m-t-20">
                 <ul class="list">
                   <% seller.coupons.each do |s| %>
@@ -84,7 +85,7 @@
                    <% end %>
                 </ul>
               </div>
-              
+
                 </div>
           <% end %>
           <div class="row">

@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class BrandsControllerTest < ActionDispatch::IntegrationTest
+<<<<<<< HEAD
   test "should get index" do
     get brands_index_url
     assert_response :success
@@ -26,4 +27,9 @@ class BrandsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+=======
+  # test "the truth" do
+  #   assert true
+  # end
+>>>>>>> old-state
 end
