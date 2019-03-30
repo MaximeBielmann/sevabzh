@@ -32,8 +32,4 @@ function myFunction() {
     for (var i=0;i<text.length;i+=1){
     text[i].style.display = "none";}
   }
-<<<<<<< HEAD
-}
-=======
 } 
->>>>>>> old-state
