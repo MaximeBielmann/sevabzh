@@ -83,13 +83,11 @@ class ListingUploaderController < ApplicationController
         redirect_to "/admin/"
     end
     
+    
+    
     def update_brands
-        @sneakers = Sneaker.all
-        
-        @sneakers.each do |sneaker|
-            sneaker.brand_id = Brand.where(brand_title: sneaker.brand)
-            sneaker.save
+        CSV.foreach('public/sneakers.csv', headers: true) do |row|
+            Sneaker.where(sneakers_ref: row['sneakers_ref']).update(brand_id: Brand.where(brand_title: row['brand']).ids)
         end
-        redirect_to "/admin"
     end
 end
