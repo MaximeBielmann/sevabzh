@@ -16,8 +16,7 @@ class ListingUploaderController < ApplicationController
         #redirect_to "/admin/"
         
         CSV.foreach('public/sneakers.csv', headers: true) do |row|
-            Sneaker.where(sneakers_ref: row['sneakers_ref'], 
-                        brand: row['brand'],
+            Sneaker.where(sneakers_ref: row['sneakers_ref'],
                         brand_id: Brand.where(brand_title: row['brand']).ids,
                         title: row['title'], 
                         color: row['color'], 
@@ -88,10 +87,7 @@ class ListingUploaderController < ApplicationController
     def update_brands
         
         CSV.foreach('public/sneakers.csv', headers: true) do |row|
-            @sneaky = Sneaker.find_by(sneakers_ref: row['sneakers_ref'])
-            @sneaky.update(brand_id: Brand.where(brand_title: row['brand']).ids)
-            
-            # Sneaker.where(sneakers_ref: row['sneakers_ref']).update_all(brand_id: Brand.where(brand_title: row['brand']).ids)
+            Sneaker.where(sneakers_ref: row['sneakers_ref']).first_or_create.update(brand_id: Brand.where(brand_title: row['brand']).ids)
         end
     end
 end
