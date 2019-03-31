@@ -85,7 +85,7 @@ class ListingUploaderController < ApplicationController
     
     
     def update_brands
-        @sneakers = Sneaker.all
+        @sneakers = Sneaker.where(brand_id: nil)
         @sneakers.each do |s|
             s.brand_id = "1"
             s.save
