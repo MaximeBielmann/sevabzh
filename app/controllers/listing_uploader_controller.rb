@@ -88,7 +88,8 @@ class ListingUploaderController < ApplicationController
         @sneakers = Sneaker.all
         CSV.foreach('public/sneakers.csv', headers: true) do |row|
             @sneakers.each do |s|
-                s.update(brand_id: Brand.where(brand_title: row['brand']).ids)
+                s.brand_id = Brand.where(brand_title: row['brand']).ids
+                s.save
             end
         end
     end
