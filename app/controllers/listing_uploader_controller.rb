@@ -87,7 +87,7 @@ class ListingUploaderController < ApplicationController
     def update_brands
         
         CSV.foreach('public/sneakers.csv', headers: true) do |row|
-            Sneaker.where(sneakers_ref: row['sneakers_ref']).first_or_initialize(brand_id: row['brand'])
+            Sneaker.where(sneakers_ref: row['sneakers_ref']).first_or_initialize(brand_id: Brand.where(brand_title: row['brand']).ids)
         end
     end
 end
