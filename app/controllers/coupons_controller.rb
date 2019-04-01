@@ -5,6 +5,7 @@ class CouponsController < ApplicationController
 
   def create
     Coupon.create seller_id: params[:seller_id], brand_id: params[:brand_id], sneaker_id: params[:sneaker_id], coupon_title: params[:coupon_title], coupon_start: params[:coupon_start], coupon_end: params[:coupon_end]
+    redirect_to "/admin"
   end
 
   def show
