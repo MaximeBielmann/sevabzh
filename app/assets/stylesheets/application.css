@@ -6685,3 +6685,12 @@ time.icon span {
 .coupons-code {    
   background-color: #dcdcdc;
 } 
+
+.announce {
+  background-color: red;
+}
+
+.announce p, a {
+  color: white;
+  font-weight: bold;
+}
