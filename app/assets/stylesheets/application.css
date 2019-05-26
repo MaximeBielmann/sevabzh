@@ -6690,7 +6690,12 @@ time.icon span {
   background-color: red;
 }
 
-.announce p, a {
+.announce p {
+  color: white;
+  font-weight: bold;
+}
+
+.announce a {
   color: white;
   font-weight: bold;
 }
