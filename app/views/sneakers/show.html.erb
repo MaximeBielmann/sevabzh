@@ -1,5 +1,5 @@
-<% content_for :meta_title, "#{@sneakers.title} #{DEFAULT_META["meta_product_name"]}" %> <!-- #{@sneakers.brand.brand_title} -->
-<% content_for :meta_description, "#{@sneakers.title}" %> <!-- #{@sneakers.brand.brand_title} -->
+<% content_for :meta_title, "#{@sneakers.title} - #{@sneakers.sneakers_ref} #{DEFAULT_META["meta_product_name"]}" %> 
+<% content_for :meta_description, "#{@sneakers.title} - #{@sneakers.sneakers_ref}" %> <!-- #{@sneakers.brand.brand_title} -->
 <% content_for :meta_image, @sneakers.img_url %>
 
 <div class="container m-t-75">
